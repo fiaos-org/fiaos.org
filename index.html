@@ -1,206 +1,360 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Umbrella Project - Environmental Intelligence Platform</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Asimovian&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Michroma&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="page/styles/main.css">
+    <title>The Umbrella Project - Environmental Intelligence Research</title>
+    <meta name="description" content="A self-sustaining platform for environmental intelligence, autonomous systems research, and scientific discovery">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/styles/global.css">
     <link rel="icon" type="image/png" href="assets/media/umbrella-logo-clean.png">
 </head>
 <body>
-    <!-- Header Navigation -->
-    <header class="header">
-        <div class="container">
-            <div class="nav-wrapper">
-                <div class="logo">
-                    <img src="assets/media/umbrella-logo-clean.png" alt="Meta Logo">
+    <!-- Top Toolbar -->
+    <div class="top-toolbar">
+        <div class="toolbar-left">
+            <button id="searchToggle" class="toolbar-btn" aria-label="Search" title="Search">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+        <div class="toolbar-right">
+            <button id="themeToggle" class="toolbar-btn" aria-label="Toggle theme" title="Toggle Theme">
+                <i class="bi bi-sun-fill"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-brand">
+                <img src="assets/media/umbrella-logo-clean.png" alt="Umbrella Project" class="brand-logo">
+                <div class="brand-text">
+                    <h1 class="brand-title">The Umbrella Project</h1>
+                    <p class="brand-subtitle">Environmental Intelligence Research</p>
                 </div>
-                <nav class="nav-menu">
-                    <div class="nav-item dropdown">
-                        <span>Research</span>
-                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                            <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <span>API</span>
-                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                            <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <span>LIVE</span>
-                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                            <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <span>Blog</span>
-                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                            <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                    </div>
-                </nav>
-                <a href="#engineering" class="cta-button">The Engineering</a>
             </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link active">HOME</a>
+                <a href="research/index.html" class="nav-link">RESEARCH</a>
+                <a href="docs/index.html" class="nav-link">DOCUMENTATION</a>
+                <a href="archive/index.html" class="nav-link">ARCHIVE</a>
+                <a href="data/index.html" class="nav-link">DATA</a>
+            </nav>
+            <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Menu">
+                <i class="bi bi-list"></i>
+            </button>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-video-background">
-            <video autoplay muted  playsinline>
-                <source src="assets/media/495675067-4e026476-d13c-48b1-8e27-3bbbfdf65598.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="floating-banner">
-            <h1 class="floating-title">The Umbrella Project</h1>
-            <p class="floating-description">
-                The Umbrella-Project is here for creating a self-sustaining platform advancing environmental intelligence, research and scientific discovery.
-            </p>
-            <div class="floating-buttons">
-                <a href="#how-it-works" class="btn btn-primary btn-small">How it's made</a>
-                <a href="#announcement" class="btn btn-secondary btn-small">Read the announcement</a>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenuOverlay" class="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <div class="header-brand">
+                    <img src="assets/media/umbrella-logo-clean.png" alt="Umbrella Project" class="brand-logo">
+                </div>
+                <button id="mobileMenuClose" class="mobile-menu-close" aria-label="Close menu">
+                    <i class="bi bi-x"></i>
+                </button>
             </div>
+            <nav class="mobile-nav">
+                <a href="index.html" class="mobile-nav-link">HOME</a>
+                <a href="research/index.html" class="mobile-nav-link">RESEARCH</a>
+                <a href="docs/index.html" class="mobile-nav-link">DOCUMENTATION</a>
+                <a href="archive/index.html" class="mobile-nav-link">ARCHIVE</a>
+                <a href="data/index.html" class="mobile-nav-link">DATA</a>
+                <a href="api/index.html" class="mobile-nav-link">API</a>
+                <a href="sources/index.html" class="mobile-nav-link">SOURCES</a>
+            </nav>
         </div>
-    </section>
+    </div>
 
-    <!-- Innovation Tools Section -->
-    <section class="innovation-section">
-        <div class="container">
-            <div class="innovation-grid">
-                <div class="innovation-item">
-                    <div class="innovation-image">
-                        <img src="assets/media/umbrella-logo.png" alt="AI Glasses Innovation">
-                    </div>
-                    <div class="innovation-content">
-                        <h2>Access tools built for innovation</h2>
-                        <p>Enjoy early access to our SDK, testing tools and documentation to help you kick start building with AI glasses.</p>
-                    </div>
-                </div>
-                <div class="innovation-item reverse">
-                    <div class="innovation-image">
-                        <img src="assets/media/umbrellaproject.png" alt="Umbrella Project Device">
-                    </div>
-                    <div class="innovation-content">
-                        <h2>Environmental Intelligence Platform</h2>
-                        <p>A compact 10 cm module that converts environmental data into over 100 unique parameters, generating millions of real data points for research and autonomous systems.</p>
-                    </div>
-                </div>
+    <!-- Search Overlay -->
+    <div id="searchOverlay" class="search-overlay">
+        <div class="search-overlay-content">
+            <div class="search-overlay-header">
+                <button id="searchClose" class="search-overlay-close" aria-label="Close search">
+                    <i class="bi bi-x"></i>
+                </button>
+                <input type="text" id="searchInput" class="search-overlay-input" placeholder="Search documentation..." aria-label="Search">
             </div>
+            <div id="searchOverlayResults" class="search-overlay-results"></div>
         </div>
-    </section>
+    </div>
 
-    <!-- Features Section -->
+    <!-- Main Container -->
+    <div class="page-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Quick Navigation</h3>
+                <nav class="sidebar-nav">
+                    <a href="#overview" class="sidebar-link"><i class="bi bi-info-circle"></i> Overview</a>
+                    <a href="#research" class="sidebar-link"><i class="bi bi-journal-text"></i> Research</a>
+                    <a href="#documentation" class="sidebar-link"><i class="bi bi-file-earmark-text"></i> Documentation</a>
+                    <a href="#specifications" class="sidebar-link"><i class="bi bi-cpu"></i> Technical Specs</a>
+                    <a href="#publications" class="sidebar-link"><i class="bi bi-book"></i> Publications</a>
+                </nav>
+            </div>
 
-    <!-- Technical Specs Section -->
-    <section class="specs-section">
-        <div class="container">
-            <h2 class="section-title">Technical Specifications</h2>
-            <div class="specs-grid">
-                <div class="spec-category">
-                    <h3>Hardware</h3>
-                    <ul>
-                        <li>Temperature/Humidity: DHT22 or BME280</li>
-                        <li>Pressure Sensor: BME280</li>
-                        <li>Virtual Radiation: Solar panel + TEG</li>
-                        <li>Microcontroller: Low-power embedded</li>
-                        <li>Power: Solar with battery backup</li>
-                    </ul>
-                </div>
-                <div class="spec-category">
-                    <h3>Accuracy</h3>
-                    <ul>
-                        <li>Temperature: ±0.5°C</li>
-                        <li>Humidity: ±2-3% RH</li>
-                        <li>Pressure: ±1 hPa</li>
-                        <li>Radiation: ±15%</li>
-                        <li>ET Prediction: ±10-15%</li>
-                    </ul>
-                </div>
-                <div class="spec-category">
-                    <h3>Performance</h3>
-                    <ul>
-                        <li>100+ environmental parameters</li>
-                        <li>Milliliter-level irrigation precision</li>
-                        <li>Multi-zone management</li>
-                        <li>Machine learning integration</li>
-                        <li>Adaptive algorithms</li>
-                    </ul>
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Resources</h3>
+                <nav class="sidebar-nav">
+                    <a href="api/index.html" class="sidebar-link"><i class="bi bi-code-slash"></i> API Reference</a>
+                    <a href="sources/index.html" class="sidebar-link"><i class="bi bi-database"></i> Source Code</a>
+                    <a href="data/index.html" class="sidebar-link"><i class="bi bi-graph-up"></i> Datasets</a>
+                </nav>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">System Status</h3>
+                <div class="status-indicators">
+                    <div class="status-item">
+                        <span class="status-dot status-active"></span>
+                        <span class="status-label">Core System</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-dot status-active"></span>
+                        <span class="status-label">API Gateway</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-dot status-active"></span>
+                        <span class="status-label">Data Pipeline</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </aside>
 
-
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Join the Future of Environmental Intelligence</h2>
-                <p>Be part of the sustainable living revolution with autonomous technology that bridges science and research.</p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary btn-large">Get Started</a>
-                    <a href="#documentation" class="btn btn-secondary btn-large">View Documentation</a>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Overview Section -->
+            <section id="overview" class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">Project Overview</h2>
+                    <div class="section-meta">
+                        <span class="meta-item"><i class="bi bi-calendar3"></i> Updated: November 2025</span>
+                        <span class="meta-item"><i class="bi bi-tag"></i> Version 1.0</span>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
+                <div class="section-content">
+                    <p class="lead">The Umbrella Project is a self-sustaining platform for environmental intelligence, research, and scientific discovery. This system combines autonomous technology with predictive algorithms to create a comprehensive environmental monitoring and irrigation solution.</p>
+                    
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <div class="info-icon"><i class="bi bi-lightning-charge"></i></div>
+                            <h3>Autonomous Operation</h3>
+                            <p>Self-sustaining system with 10+ years operational lifespan</p>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon"><i class="bi bi-droplet"></i></div>
+                            <h3>Predictive Irrigation</h3>
+                            <p>Penman-Monteith algorithm for evapotranspiration prediction</p>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                            <h3>100+ Parameters</h3>
+                            <p>Comprehensive environmental data collection and analysis</p>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon"><i class="bi bi-currency-dollar"></i></div>
+                            <h3>Cost-Effective</h3>
+                            <p>Under $50 total hardware cost with 95% cost reduction</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Research Section -->
+            <section id="research" class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">Research & Publications</h2>
+                </div>
+                <div class="section-content">
+                    <div class="publication-list">
+                        <div class="publication-item">
+                            <div class="pub-header">
+                                <h3 class="pub-title">The Use of Evapotranspiration Algorithm in Umbrella Project and the Penman-Monteith Equation</h3>
+                                <span class="pub-badge">Research Paper</span>
+                            </div>
+                            <div class="pub-meta">
+                                <span><i class="bi bi-person"></i> Neksha DeSilva</span>
+                                <span><i class="bi bi-calendar"></i> August 2025</span>
+                                <span><i class="bi bi-tag"></i> Environmental Engineering</span>
+                            </div>
+                            <p class="pub-description">A comprehensive exploration of environmental intelligence, predictive irrigation, and the engineering challenges of implementing the Penman-Monteith equation in autonomous systems.</p>
+                            <div class="pub-links">
+                                <a href="research/penman-monteith-paper.html" class="btn-link"><i class="bi bi-file-text"></i> Read Paper</a>
+                                <a href="sources/penman-monteith-code.html" class="btn-link"><i class="bi bi-github"></i> Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Documentation Section -->
+            <section id="documentation" class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">Documentation</h2>
+                </div>
+                <div class="section-content">
+                    <div class="doc-categories">
+                        <div class="doc-category">
+                            <div class="doc-icon"><i class="bi bi-book"></i></div>
+                            <h3>Getting Started</h3>
+                            <ul class="doc-links">
+                                <li><a href="docs/introduction.html">Introduction</a></li>
+                                <li><a href="docs/installation.html">Installation Guide</a></li>
+                                <li><a href="docs/quickstart.html">Quick Start</a></li>
+                            </ul>
+                        </div>
+                        <div class="doc-category">
+                            <div class="doc-icon"><i class="bi bi-gear"></i></div>
+                            <h3>System Architecture</h3>
+                            <ul class="doc-links">
+                                <li><a href="docs/hardware.html">Hardware Components</a></li>
+                                <li><a href="docs/software.html">Software Stack</a></li>
+                                <li><a href="docs/algorithms.html">Algorithm Details</a></li>
+                            </ul>
+                        </div>
+                        <div class="doc-category">
+                            <div class="doc-icon"><i class="bi bi-code-slash"></i></div>
+                            <h3>Development</h3>
+                            <ul class="doc-links">
+                                <li><a href="api/index.html">API Reference</a></li>
+                                <li><a href="sources/index.html">Source Code</a></li>
+                                <li><a href="docs/contributing.html">Contributing</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Specifications -->
+            <section id="specifications" class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">Technical Specifications</h2>
+                </div>
+                <div class="section-content">
+                    <div class="spec-table-container">
+                        <table class="spec-table">
+                            <thead>
+                                <tr>
+                                    <th>Component</th>
+                                    <th>Specification</th>
+                                    <th>Accuracy</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Temperature Sensor</td>
+                                    <td>DHT22 / BME280</td>
+                                    <td>±0.5°C</td>
+                                </tr>
+                                <tr>
+                                    <td>Humidity Sensor</td>
+                                    <td>DHT22 / BME280</td>
+                                    <td>±2-3% RH</td>
+                                </tr>
+                                <tr>
+                                    <td>Pressure Sensor</td>
+                                    <td>BME280</td>
+                                    <td>±1 hPa</td>
+                                </tr>
+                                <tr>
+                                    <td>Radiation Estimation</td>
+                                    <td>Solar Panel + TEG</td>
+                                    <td>±15%</td>
+                                </tr>
+                                <tr>
+                                    <td>ET Prediction</td>
+                                    <td>Penman-Monteith Algorithm</td>
+                                    <td>±10-15%</td>
+                                </tr>
+                                <tr>
+                                    <td>Power System</td>
+                                    <td>Solar with Battery Backup</td>
+                                    <td>10+ years lifespan</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="spec-details">
+                        <h3>System Performance</h3>
+                        <ul>
+                            <li><strong>Environmental Parameters:</strong> 100+ unique input parameters</li>
+                            <li><strong>Data Points:</strong> Over 1 million real data points generated</li>
+                            <li><strong>Irrigation Precision:</strong> Milliliter-level accuracy</li>
+                            <li><strong>Water Savings:</strong> 30-40% compared to timer-based systems</li>
+                            <li><strong>Communication Range:</strong> Up to 5 kilometers</li>
+                            <li><strong>Platform Support:</strong> iOS, Windows, Web, IFTTT integration</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Publications List -->
+            <section id="publications" class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">Additional Publications</h2>
+                </div>
+                <div class="section-content">
+                    <div class="publication-list">
+                        <div class="loading-state">
+                            <i class="bi bi-hourglass-split"></i>
+                            <p>Additional publications will be listed here</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Project</h4>
+                <ul>
+                    <li><a href="research/index.html">Research</a></li>
+                    <li><a href="docs/index.html">Documentation</a></li>
+                    <li><a href="archive/index.html">Archive</a></li>
+                    <li><a href="data/index.html">Data</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="api/index.html">API Reference</a></li>
+                    <li><a href="sources/index.html">Source Code</a></li>
+                    <li><a href="docs/contributing.html">Contributing</a></li>
+                    <li><a href="docs/license.html">License</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:nekshavs@gmail.com">nekshavs@gmail.com</a></li>
+                    <li><a href="https://nekshadesilva.com">Author Website</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <p class="footer-note">© 2025 The Umbrella Project. A Meta-affiliated research initiative.</p>
+                <p class="footer-note">This is a research work. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+        <!-- Footer -->
+    <footer class="footer" >
+        
         <div class="container">
+            
+                
             <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="https://static.xx.fbcdn.net/rsrc.php/y3/r/y6QsbGgc866.svg" alt="Meta Logo">
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Developer Centers</h4>
-                        <ul>
-                            <li><a href="#ai">AI</a></li>
-                            <li><a href="#meta-horizon">Meta Horizon OS</a></li>
-                            <li><a href="#social">Social technologies</a></li>
-                            <li><a href="#wearables">Wearables</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Documentation</h4>
-                        <ul>
-                            <li><a href="#llama">Llama</a></li>
-                            <li><a href="#unity">Unity</a></li>
-                            <li><a href="#worlds">Worlds in Meta Horizon</a></li>
-                            <li><a href="#spatial-sdk">Meta Spatial SDK</a></li>
-                            <li><a href="#wearables-doc">Wearables</a></li>
-                            <li><a href="#facebook">Facebook Login</a></li>
-                            <li><a href="#instagram">Instagram Platform</a></li>
-                            <li><a href="#whatsapp">WhatsApp Business Platform</a></li>
-                            <li><a href="#threads">Threads API</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Resources</h4>
-                        <ul>
-                            <li><a href="#blog">Blog</a></li>
-                            <li><a href="#success">Success stories</a></li>
-                            <li><a href="#videos">Videos</a></li>
-                            <li><a href="#programs">Programs</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Support</h4>
-                        <ul>
-                            <li><a href="#ai-support">AI</a></li>
-                            <li><a href="#meta-horizon-support">Meta Horizon</a></li>
-                            <li><a href="#wearables-support">Wearables</a></li>
-                            <li><a href="#social-support">Social technologies</a></li>
-                        </ul>
-                    </div>
+              
+                <div class="footer-logo" style=" margin-top: 1rem;">
+                    <img src="./assets/media/umbrellaproject.png" alt="Meta Logo">
                 </div>
             </div>
             <div class="footer-social">
@@ -231,28 +385,12 @@
                 </a>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 Meta</p>
-                <div class="footer-language">
-                    <a href="#language">English (US)</a>
-                </div>
+                <p> Copyrights © Neksha DeSilva and www.nekshadesilva.com All rights reserved.</p>
+                
             </div>
         </div>
     </footer>
 
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-consent" class="cookie-consent">
-        <div class="cookie-content">
-            <div class="cookie-text">
-                <p><b>This is an educational and research-focused website.</strong></b></p>
-                <p>Copyrights © Neksha DeSilva and www.nekshadesilva.com.<br><br> By using this website, you are accepting our terms and conditions. We use cookies to enhance your browsing experience.</p>
-            </div>
-            <div class="cookie-buttons">
-                <button id="accept-cookies" class="btn btn-primary btn-small">Accept</button>
-                <button id="decline-cookies" class="btn btn-secondary btn-small"><a href="https://google.com">Decline</a></button>
-            </div>
-        </div>
-    </div>
-
-    <script src="page/javascript/main.js"></script>
+    <script src="assets/scripts/main.js"></script>
 </body>
 </html>

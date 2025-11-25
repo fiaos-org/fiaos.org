@@ -50,7 +50,7 @@ height: 70px;
 }
 
 .logo img {
-    height: 100px;
+    height: 40px;
     width: auto;
 }
 
@@ -615,7 +615,7 @@ height: 70px;
     .nav-menu {
         display: none;
     }
-
+    
     .hero {
         padding: 0;
     }
