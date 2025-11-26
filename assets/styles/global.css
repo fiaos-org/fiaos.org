@@ -913,13 +913,14 @@ a:hover {
     margin-bottom: 40px;
 }
 .footer-logo{
+      width: max-content;
       display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 
 }
 .footer-logo img {
-width: 10rem;
-
+min-width: 4rem;
 height: auto;
 }
 
@@ -957,11 +958,11 @@ height: auto;
 
 .footer-social {
     display: flex;
+  
     gap: 20px;
     justify-content: center;
-    padding: 30px 0;
-    border-top: 1px solid rgb(126, 126, 126);
-    border-bottom: 1px solid rgb(126, 126, 126);
+    padding: 1rem 0;
+
 }
 
 .footer-social a {
