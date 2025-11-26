@@ -1,5 +1,5 @@
 // ============================================
-// FIAOS ETCA - MAIN JAVASCRIPT
+// FIAOS ETSCI+ - MAIN JAVASCRIPT
 // Professional Research Institution Website
 // ============================================
 
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================
     // Console Info
     // ============================================
-    console.log('%cFiaOS ETCA', 'font-size: 18px; font-weight: bold; color: #0a66c2;');
+    console.log('%cFiaOS ETSci+', 'font-size: 18px; font-weight: bold; color: #0a66c2;');
     console.log('%cEnvironmental Intelligence Research', 'font-size: 12px; color: #666;');
     console.log('%cA Meta-affiliated research initiative', 'font-size: 10px; color: #999;');
     

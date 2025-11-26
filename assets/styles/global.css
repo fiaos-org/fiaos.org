@@ -1,5 +1,5 @@
 /* ============================================
-   GLOBAL STYLES - FIAOS ETCA
+   GLOBAL STYLES - FIAOS ETSCI+
    Professional Research Institution Website
    ============================================ */
 
@@ -180,6 +180,13 @@ a:hover {
 .brand-logo {
     height: 32px;
     width: auto;
+ 
+    filter: invert(1);
+}
+
+/* Invert logo in dark mode */
+[data-theme="dark"] .brand-logo {
+    filter: invert(0);
 }
 
 .brand-text {
