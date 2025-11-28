@@ -9,6 +9,29 @@
     <link rel="icon" type="image/png" href="../assets/media/umbrella-logo-clean.png">
 </head>
 <body>
+    <!-- Announcement Ribbon -->
+    <div id="announcementRibbon" class="announcement-ribbon">
+        <div class="announcement-content">
+            <i class="bi bi-megaphone-fill"></i>
+            <span><strong>Developer Release v0.1</strong> — ETSci+ framework is now open source. <a href="../docs/index.html">View Documentation →</a></span>
+        </div>
+        <button id="dismissAnnouncement" class="announcement-dismiss" aria-label="Dismiss"><i class="bi bi-x"></i></button>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-consent">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-text">
+                <h3>Terms of Use & Data Policy</h3>
+                <p>By accessing FiaOS ETSci+ research platform, you acknowledge and agree to our <a href="../docs/terms.html">Terms of Service</a>, <a href="../docs/privacy.html">Privacy Policy</a>, and <a href="../docs/data-policy.html">Data Usage Policy</a>. This platform uses cookies and local storage for essential functionality.</p>
+            </div>
+            <div class="cookie-consent-actions">
+                <button id="acceptCookies" class="cookie-btn cookie-btn-accept">Accept & Continue</button>
+                <a href="../docs/privacy.html" class="cookie-btn cookie-btn-learn">Learn More</a>
+            </div>
+        </div>
+    </div>
+
     <div class="top-toolbar">
         <div class="toolbar-left">
             <button id="searchToggle" class="toolbar-btn"><i class="bi bi-search"></i></button>
@@ -24,7 +47,7 @@
                 <img src="../assets/media/umbrella-logo-clean.png" alt="FiaOS ETSci+" class="brand-logo">
                 <div class="brand-text">
                     <h1 class="brand-title">FiaOS ETSci+</h1>
-                    <p class="brand-subtitle">Environmental Intelligence Research</p>
+                    <p class="brand-subtitle">On-board Learning Environmental Intelligence Research</p>
                 </div>
             </div>
             <nav class="main-nav">

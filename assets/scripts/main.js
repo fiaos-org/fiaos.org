@@ -6,6 +6,56 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     // ============================================
+    // Cookie Consent Management
+    // ============================================
+    const cookieConsent = document.getElementById('cookieConsent');
+    const acceptCookies = document.getElementById('acceptCookies');
+    
+    function checkCookieConsent() {
+        const hasConsent = localStorage.getItem('fiaos-cookie-consent');
+        if (hasConsent === 'accepted') {
+            cookieConsent.classList.add('hidden');
+        }
+    }
+    
+    if (acceptCookies) {
+        acceptCookies.addEventListener('click', function() {
+            localStorage.setItem('fiaos-cookie-consent', 'accepted');
+            localStorage.setItem('fiaos-consent-date', new Date().toISOString());
+            cookieConsent.classList.add('hidden');
+        });
+    }
+    
+    checkCookieConsent();
+    
+    // ============================================
+    // Announcement Ribbon Management
+    // ============================================
+    const announcementRibbon = document.getElementById('announcementRibbon');
+    const dismissAnnouncement = document.getElementById('dismissAnnouncement');
+    
+    function checkAnnouncementDismissed() {
+        const dismissed = localStorage.getItem('fiaos-announcement-dismissed');
+        const dismissedVersion = localStorage.getItem('fiaos-announcement-version');
+        const currentVersion = 'dev-release-v0.1';
+        
+        // Show again if it's a new announcement version
+        if (dismissed === 'true' && dismissedVersion === currentVersion) {
+            announcementRibbon.classList.add('hidden');
+        }
+    }
+    
+    if (dismissAnnouncement) {
+        dismissAnnouncement.addEventListener('click', function() {
+            localStorage.setItem('fiaos-announcement-dismissed', 'true');
+            localStorage.setItem('fiaos-announcement-version', 'dev-release-v0.1');
+            announcementRibbon.classList.add('hidden');
+        });
+    }
+    
+    checkAnnouncementDismissed();
+    
+    // ============================================
     // Theme Toggle
     // ============================================
     const themeToggle = document.getElementById('themeToggle');
