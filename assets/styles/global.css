@@ -1007,7 +1007,7 @@ height: auto;
    ============================================ */
 
 .announcement-ribbon {
-    background: linear-gradient(90deg, #0a66c2 0%, #0077b5 100%);
+    background: linear-gradient(90deg, #1a1a2e 0%, #16213e 100%);
     color: #fff;
     padding: 10px 20px;
     display: flex;
@@ -1025,7 +1025,7 @@ height: auto;
 
 .announcement-content {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
