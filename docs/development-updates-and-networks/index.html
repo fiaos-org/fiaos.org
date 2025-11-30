@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Reference - FiaOS ETSci+</title>
+    <title>Research - FiaOS ETSci+</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../assets/styles/global.css">
+   <link rel="stylesheet" href="../../assets/styles/global.css">
     <link rel="icon" type="image/png" href="../assets/media/umbrella-logo-clean.png">
 </head>
 <body>
+   
     <!-- Announcement Ribbon -->
     <div id="announcementRibbon" class="announcement-ribbon">
         <div class="announcement-content">
@@ -27,7 +28,7 @@
             </div>
             <div class="cookie-consent-actions">
                 <button id="acceptCookies" class="cookie-btn cookie-btn-accept">Accept & Continue</button>
-                <a href="../docs/privacy.html" class="cookie-btn cookie-btn-learn">Learn More</a>
+                <a href="../../docs/privacy/" class="cookie-btn cookie-btn-learn">Learn More</a>
             </div>
         </div>
     </div>
@@ -44,15 +45,15 @@
     <header class="site-header">
         <div class="header-container">
             <div class="header-brand">
-                <img src="../assets/media/umbrella-logo-clean.png" alt="FiaOS ETSci+" class="brand-logo">
+                <img src="../../assets/media/umbrella-logo-clean.png" alt="FiaOS ETSci+" class="brand-logo">
                 <div class="brand-text">
                     <h1 class="brand-title">FiaOS ETSci+</h1>
-                    <p class="brand-subtitle">Environmental Intelligence Research</p>
+                    <p class="brand-subtitle">On-board Learning Environmental Intelligence Research</p>
                 </div>
             </div>
             <nav class="main-nav">
                 <a href="../index.html" class="nav-link">HOME</a>
-                <a href="../research/index.html" class="nav-link">RESEARCH</a>
+                <a href="index.html" class="nav-link active">RESEARCH</a>
                 <a href="../docs/index.html" class="nav-link">DOCUMENTATION</a>
                 <a href="../archive/index.html" class="nav-link">ARCHIVE</a>
                 <a href="../data/index.html" class="nav-link">DATA</a>
@@ -61,24 +62,37 @@
         </div>
     </header>
 
-    <div class="page-container">
-        <main class="main-content">
-            <section class="content-section">
-                <div class="section-header">
-                    <h2 class="section-title">API Reference</h2>
-                </div>
-                <div class="section-content">
-                    <p class="lead">Complete API documentation for integrating with the FiaOS ETSci+ system.</p>
-                    <div class="loading-state">
-                        <i class="bi bi-code-slash"></i>
-                        <p>API documentation will be listed here</p>
-                    </div>
-                </div>
-            </section>
-        </main>
+    <div class="page-container" style="padding: 2rem 1rem ; flex-direction: column;">
+        <h2>Development Updates & Service Status</h2>
+        <p>
+             <br>
+            During updates to FiaOS software, firmware, or hardware, or in the event of outages from third-party providers (such as database or API infrastructure), FiaOS.org may display a non-green status indicator or labels such as <strong>"Test"</strong>, <strong>"Testing"</strong>, or <strong>"Recovery"</strong>. These indicate that certain servers or services are temporarily unavailable. Our team works to restore affected services as quickly as possible to minimize downtime.
+        </p>
+        <p>
+            <br>
+            <strong>For Transparency:</strong> We rely on several major third-party service providers, including:
+        </p>
+         <br>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li><a href="https://www.cloudflare.com/" target="_blank" rel="noopener">Cloudflare Inc.</a></li>
+            <li><a href="https://vercel.com/" target="_blank" rel="noopener">Vercel, Inc.</a></li>
+            <li><a href="https://www.microsoft.com/" target="_blank" rel="noopener">Microsoft Corporation</a></li>
+            <li><a href="https://nekshadesilva.com/about" target="_blank" rel="noopener">GVMA Research Institute</a></li>
+            <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub Inc.</a></li>
+        </ul>
+        <br>
+        <p>
+             <br>
+            Outages or disruptions from these providers may directly or indirectly impact FiaOS API, Cloud Platform, IoT devices, embedded systems, and other custom applications until normal service resumes.
+        </p>
+        <p>
+             <br>
+            <strong>Disclaimer:</strong> FiaOS.org is not liable for any financial or other losses incurred by users, companies, or entities due to service interruptions. For unresolved outages or urgent issues, please contact Neksha DeSilva, the author of FiaOS ET firmware.
+        </p>
+         <br>
     </div>
-
-      <!-- Footer -->
+    <!-- Footer -->
+</div>
     <footer class="site-footer">
         <div class="footer-container">
               <div class="footer-section">
@@ -86,7 +100,7 @@
                 <span style="font-weight: 400;">Future is Autonomous.</span>
                
                  <div class="footer-logo" style=" margin-top: 1rem;">
-                    <img src="../assets/media/logo-satur.png" alt="Meta Logo">
+                    <img src="./../../assets/media/logo-satur.png" alt="Meta Logo">
                  
                 </div>
                 
@@ -144,7 +158,6 @@
             </div>
         </div>
     </footer>
-
-    <script src="../assets/scripts/main.js"></script>
+    <script src="../.././assets/scripts/main.js"></script>
 </body>
 </html>

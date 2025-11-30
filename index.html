@@ -14,11 +14,45 @@
     <div id="announcementRibbon" class="announcement-ribbon">
         <div class="announcement-content">
             <i class="bi bi-info-circle-fill"></i>
-            <span><strong>Developer Release v0.1</strong> — ETSci+ framework is now open source. Build on top of our environmental intelligence platform. <a href="docs/index.html">View Documentation →</a></span>
+            <span><strong>Developer Release v0.1</strong> — ETSci+ framework is now open source. Build on top of our environmental intelligence platform. <a href="docs/">View Documentation →</a></span>
         </div>
         <button id="dismissAnnouncement" class="announcement-dismiss" aria-label="Dismiss">
             <i class="bi bi-x"></i>
         </button>
+    </div>
+
+    <!-- Mobile Network Status Ribbon (visible only on mobile) -->
+    <div class="mobile-network-status">
+        <div class="network-status-inner">
+            <span class="network-status-label"><i class="bi bi-broadcast"></i> Network:</span>
+            <div class="network-status-display">
+                <div class="network-status-item active" data-index="0">
+                    <span class="status-dot status-declined"></span>
+                    <span class="location">New York, USA</span>
+                    <span class="status-text">• Testing</span>
+                </div>
+                <div class="network-status-item" data-index="1">
+                    <span class="status-dot status-declined"></span>
+                    <span class="location">Sydney, AU</span>
+                    <span class="status-text">• Testing</span>
+                </div>
+                <div class="network-status-item" data-index="2">
+                    <span class="status-dot status-declined"></span>
+                    <span class="location">Colombo, LK</span>
+                    <span class="status-text">• Testing</span>
+                </div>
+                <div class="network-status-item" data-index="3">
+                    <span class="status-dot status-active"></span>
+                    <span class="location">api.fiaos.org</span>
+                    <span class="status-text">• LIVE</span>
+                </div>
+                <div class="network-status-item" data-index="3">
+                    <span class="status-dot status-active"></span>
+                    <span class="location">cloud.fiaos.org</span>
+                    <span class="status-text">• LIVE</span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Cookie Consent Banner -->
@@ -60,11 +94,11 @@
                 </div>
             </div>
             <nav class="main-nav">
-                <a href="index.html" class="nav-link active">HOME</a>
-                <a href="research/index.html" class="nav-link">RESEARCH</a>
-                <a href="docs/index.html" class="nav-link">DOCUMENTATION</a>
-                <a href="archive/index.html" class="nav-link">ARCHIVE</a>
-                <a href="data/index.html" class="nav-link">DATA</a>
+                <a href="/" class="nav-link active">HOME</a>
+                <a href="research" class="nav-link">RESEARCH</a>
+                <a href="docs" class="nav-link">DOCUMENTATION</a>
+                <a href="archive" class="nav-link">ARCHIVE</a>
+                <a href="data" class="nav-link">DATA</a>
             </nav>
             <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Menu">
                 <i class="bi bi-list"></i>
@@ -85,12 +119,12 @@
             </div>
             <nav class="mobile-nav">
                 <a href="index.html" class="mobile-nav-link">HOME</a>
-                <a href="research/index.html" class="mobile-nav-link">RESEARCH</a>
-                <a href="docs/index.html" class="mobile-nav-link">DOCUMENTATION</a>
-                <a href="archive/index.html" class="mobile-nav-link">ARCHIVE</a>
-                <a href="data/index.html" class="mobile-nav-link">DATA</a>
-                <a href="api/index.html" class="mobile-nav-link">API</a>
-                <a href="sources/index.html" class="mobile-nav-link">SOURCES</a>
+                <a href="research" class="mobile-nav-link">RESEARCH</a>
+                <a href="docs" class="mobile-nav-link">DOCUMENTATION</a>
+                <a href="archive" class="mobile-nav-link">ARCHIVE</a>
+                <a href="data" class="mobile-nav-link">DATA</a>
+                <a href="api" class="mobile-nav-link">API</a>
+                <a href="sources" class="mobile-nav-link">SOURCES</a>
             </nav>
         </div>
     </div>
@@ -112,16 +146,7 @@
     <div class="page-container">
         <!-- Sidebar Navigation -->
         <aside class="sidebar">
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">Quick Navigation</h3>
-                <nav class="sidebar-nav">
-                    <a href="#overview" class="sidebar-link"><i class="bi bi-info-circle"></i> Overview</a>
-                    <a href="#research" class="sidebar-link"><i class="bi bi-journal-text"></i> Research</a>
-                    <a href="#documentation" class="sidebar-link"><i class="bi bi-file-earmark-text"></i> Documentation</a>
-                    <a href="#specifications" class="sidebar-link"><i class="bi bi-cpu"></i> Technical Specs</a>
-                    <a href="#publications" class="sidebar-link"><i class="bi bi-book"></i> Publications</a>
-                </nav>
-            </div>
+           
 
             <div class="sidebar-section">
                 <h3 class="sidebar-title">Resources</h3>
@@ -133,25 +158,32 @@
             </div>
 
             <div class="sidebar-section">
-                <h3 class="sidebar-title">Current Network</h3>
+                
+               <b> <h3 class="sidebar-title" style="font-weight:800; color:red;"><i class="bi bi-broadcast" style="color:red;"></i> LIVE</h3></em>
                 <div class="status-indicators">
                     <div class="status-item">
-                        <span class="status-dot status-active"></span>
+                        <span class="status-dot status-declined"></span>
                         <span class="status-label">New York, USA</span>
                     </div>
                     <div class="status-item">
-                        <span class="status-dot status-active"></span>
+                        <span class="status-dot status-declined"></span>
                         <span class="status-label">Sydney, AU</span>
                     </div>
                     <div class="status-item">
-                        <span class="status-dot status-active"></span>
+                        <span class="status-dot status-declined"></span>
                         <span class="status-label">Colombo, LK</span>
                     </div>
                     <div class="status-item">
                         <span class="status-dot status-active"></span>
-                        <span class="status-label">Lotus Tower, LK</span>
+                        <span class="status-label">api.fiaos.org</span>
+                    </div>
+                     <div class="status-item">
+                        <span class="status-dot status-active"></span>
+                        <span class="status-label">cloud.fiaos.org</span>
                     </div>
                 </div>
+                <br>
+                Systems are under testing and development. <br><a href="./docs/development-updates-and-networks">Learn more
             </div>
         </aside>
 
@@ -250,9 +282,9 @@
                             <div class="doc-icon"><i class="bi bi-code-slash"></i></div>
                             <h3>Development</h3>
                             <ul class="doc-links">
-                                <li><a href="api/index.html">API</a></li>
-                                <li><a href="sources/index.html">View Source</a></li>
-                                <li><a href="docs/contributing.html">Contributing</a></li>
+                                <li><a href="api">API</a></li>
+                                <li><a href="sources">View Source</a></li>
+                                <li><a href="docs/development-updates-and-networks">Contributing</a></li>
                             </ul>
                         </div>
                     </div>
@@ -322,7 +354,16 @@
                     </div>
                 </div>
             </section>
-
+            <section id="dev-updates-iframe" class="content-section" style="display: flex; flex-direction: column; align-items: center; margin: 2rem 0;">
+                <h2 class="section-title" style="margin-bottom: 1rem;">Development Updates & Networks</h2>
+                <iframe 
+                    src="./docs/development-updates-and-networks/" 
+                    style="width: 100%; max-width: 1100px; height: 50vh; border: none; border-radius: 18px; box-shadow: 0 2px 16px rgba(0,0,0,0.07);" 
+                    allowfullscreen
+                    loading="lazy"
+                    title="Development Updates and Networks"
+                ></iframe>
+            </section>
             <!-- Publications List -->
             <section id="publications" class="content-section">
                 <div class="section-header">
@@ -343,53 +384,49 @@
     <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
+              <div class="footer-section">
+                <br>
+                <span style="font-weight: 400;">Future is Autonomous.</span>
+               
+                 <div class="footer-logo" style=" margin-top: 1rem;">
+                    <img src="./assets/media/logo-satur.png" alt="Meta Logo">
+                 
+                </div>
+                
+           </div>
             <div class="footer-section">
                 <h4>Project</h4>
                 <ul>
-                    <li><a href="research/index.html">Research</a></li>
-                    <li><a href="docs/index.html">Documentation</a></li>
-                    <li><a href="archive/index.html">Archive</a></li>
-                    <li><a href="data/index.html">Data</a></li>
+                    <li><a href="research/">Research</a></li>
+                    <li><a href="docs/">Documentation</a></li>
+                    <li><a href="archive">Archive</a></li>
+                    <li><a href="data">Data</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Resources</h4>
                 <ul>
-                    <li><a href="api/index.html">API</a></li>
-                    <li><a href="sources/index.html">View Source</a></li>
+                    <li><a href="api/">API</a></li>
+                    <li><a href="./docs/development-updates-and-networks/">Service Shutdowns</a></li>
                     <li><a href="docs/contributing.html">Contributing</a></li>
-                    <li><a href="docs/license.html">License</a></li>
+                    <li><a href="docs/license">License</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
                 <ul>
                     <li><a href="mailto:nekshavs@gmail.com">nekshavs@gmail.com</a></li>
-                    <li><a href="https://nekshadesilva.com">Author Website</a></li>
+                    <li><a href="https://nekshadesilva.com">nekshadesilva.com</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <p class="footer-note">© 2025 FiaOS ETSci+. A Meta-affiliated research initiative.</p>
-                <p class="footer-note">This is a research work. All rights reserved.</p>
-            </div>
-        </div>
+           
     </footer>
         <!-- Footer -->
     <footer class="footer" >
         
         <div class="container">
-            
-                
-            <div class="footer-content">
-              
-                <div class="footer-logo" style=" margin-top: 1rem;">
-                    <img src="./assets/media/umbrellaproject.png" alt="Meta Logo">
-                    <img src="./assets/media/39283983928.jpg" alt="Meta Logo">
-                </div>
-
-            </div>
-         
-            <div class="footer-bottom">
+   
+            <div class="footer-bottom" style="text-align: center; padding:0 5rem;">
                 <p>Copyrights © Neksha DeSilva and www.nekshadesilva.com. All rights reserved.</p>
                 
             </div>
