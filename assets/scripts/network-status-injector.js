@@ -22,6 +22,11 @@
                         <span class="location">Sydney, AU</span>
                         <span class="status-text">• Testing</span>
                     </div>
+                     <div class="network-status-item" data-index="1">
+                        <span class="status-dot status-declined" aria-hidden="true"></span>
+                        <span class="location">Delhi, IN</span>
+                        <span class="status-text">• Testing</span>
+                    </div>
                     <div class="network-status-item" data-index="2">
                         <span class="status-dot status-declined" aria-hidden="true"></span>
                         <span class="location">Colombo, LK</span>
