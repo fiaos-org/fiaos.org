@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (data && data.country_code && data.country_name) {
                     const code = data.country_code.toLowerCase();
                     // Use flagcdn.com for flag images (free CDN)
-                    userCountryDisplay.innerHTML = `<img style="filter:invert(1); transform:translateY(2px);" src="https://flagcdn.com/20x15/${code}.png" alt="${data.country_name} flag" style="vertical-align: middle; margin-right: 6px; border-radius: 2px;"> ${data.country_name}`;
+                    userCountryDisplay.innerHTML = `<img class="hjkdfhj887" style=" transform:translateY(2px);" src="https://flagcdn.com/20x15/${code}.png" alt="${data.country_name} flag" style="vertical-align: middle; margin-right: 6px; border-radius: 2px;"> ${data.country_name}`;
                 }
             })
             .catch(() => {
