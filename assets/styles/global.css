@@ -1204,7 +1204,7 @@ height: auto;
    ============================================ */
 
 .mobile-network-status {
-   
+
     background: var(--bg-tertiary);
     border-bottom: 1px solid var(--border-color);
     padding: 10px 1rem;
@@ -1214,7 +1214,7 @@ height: auto;
 .network-status-inner {
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: flex-start;
     gap: 0.75rem;
     font-size: 0.8125rem;
 }
@@ -1225,31 +1225,30 @@ height: auto;
     display: flex;
     align-items: center;
     gap: 0.375rem;
+    white-space: nowrap;
 }
 
 .network-status-label i {
     color: var(--primary-color);
     font-size: 0.875rem;
-    white-space: nowrap;
 }
 
 .network-status-display {
     position: relative;
-    min-width: 140px;
+    min-width: 180px;
     height: 1.25rem;
     overflow: hidden;
 }
 
 .network-status-item {
-    width: max-content;
     position: absolute;
     top: 0;
     left: 0;
-  
+    width: max-content;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 0.5rem;
     opacity: 0;
     transform: translateY(10px);
@@ -1267,26 +1266,37 @@ height: auto;
 }
 
 .network-status-item .status-dot {
+    width: 8px;
+    height: 8px;
     min-width: 8px;
     min-height: 8px;
- 
     border-radius: 50%;
     flex-shrink: 0;
 }
 
+/* Status dot colors for network ribbon */
+.network-status-item .status-dot.status-active {
+    background-color: #28a745;
+}
+
+.network-status-item .status-dot.status-declined {
+    background-color: rgb(88, 88, 88);
+}
+
+.network-status-item .status-dot.status-warning {
+    background-color: #ffc107;
+}
+
 .network-status-item .location {
-    width: max-content;
-    white-space: nowrap;
     font-weight: 600;
     color: var(--text-primary);
+    white-space: nowrap;
 }
 
 .network-status-item .status-text {
     color: var(--text-tertiary);
-     width: max-content;
-    white-space:nowrap;
-    
     font-size: 0.75rem;
+    white-space: nowrap;
 }
 
 /* Show only on mobile/tablet where sidebar is hidden */

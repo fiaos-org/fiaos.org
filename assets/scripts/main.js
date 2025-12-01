@@ -273,34 +273,5 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('%cEnvironmental Intelligence Research', 'font-size: 12px; color: #666;');
     console.log('%cA Meta-affiliated research initiative', 'font-size: 10px; color: #999;');
     
-    // ============================================
-    // Mobile Network Status Cycling
-    // ============================================
-    const networkStatusDisplay = document.querySelector('.network-status-display');
-    if (networkStatusDisplay) {
-        const statusItems = networkStatusDisplay.querySelectorAll('.network-status-item');
-        let currentIndex = 0;
-        const totalItems = statusItems.length;
-        
-        function cycleNetworkStatus() {
-            // Remove active from current item and add exit animation
-            statusItems[currentIndex].classList.remove('active');
-            statusItems[currentIndex].classList.add('exit');
-            
-            // Move to next index
-            currentIndex = (currentIndex + 1) % totalItems;
-            
-            // Small delay then show next item
-            setTimeout(() => {
-                // Remove exit class from all
-                statusItems.forEach(item => item.classList.remove('exit'));
-                // Add active to new current
-                statusItems[currentIndex].classList.add('active');
-            }, 150);
-        }
-        
-        // Cycle every 3 seconds
-        setInterval(cycleNetworkStatus, 3000);
-    }
     
 });
