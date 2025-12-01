@@ -34,23 +34,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const userCountryDisplay = document.getElementById('userCountryDisplay');
     
     if (userCountryDisplay) {
-        // Convert country code to flag emoji
-        function countryCodeToFlag(countryCode) {
-            if (!countryCode || countryCode.length !== 2) return '';
-            const codePoints = countryCode
-                .toUpperCase()
-                .split('')
-                .map(char => 127397 + char.charCodeAt(0));
-            return String.fromCodePoint(...codePoints);
-        }
-        
         // Fetch user's country from IP
         fetch('https://ipapi.co/json/')
             .then(response => response.json())
             .then(data => {
                 if (data && data.country_code && data.country_name) {
-                    const flag = countryCodeToFlag(data.country_code);
-                    userCountryDisplay.textContent = `${flag} ${data.country_name}`;
+                    const code = data.country_code.toLowerCase();
+                    // Use flagcdn.com for flag images (free CDN)
+                    userCountryDisplay.innerHTML = `<img style="filter:invert(1); transform:translateY(2px);" src="https://flagcdn.com/20x15/${code}.png" alt="${data.country_name} flag" style="vertical-align: middle; margin-right: 6px; border-radius: 2px;"> ${data.country_name}`;
                 }
             })
             .catch(() => {
