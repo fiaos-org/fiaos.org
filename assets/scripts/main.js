@@ -29,6 +29,36 @@ document.addEventListener('DOMContentLoaded', function() {
     checkCookieConsent();
     
     // ============================================
+    // User Country Detection for Cookie Consent
+    // ============================================
+    const userCountryDisplay = document.getElementById('userCountryDisplay');
+    
+    if (userCountryDisplay) {
+        // Convert country code to flag emoji
+        function countryCodeToFlag(countryCode) {
+            if (!countryCode || countryCode.length !== 2) return '';
+            const codePoints = countryCode
+                .toUpperCase()
+                .split('')
+                .map(char => 127397 + char.charCodeAt(0));
+            return String.fromCodePoint(...codePoints);
+        }
+        
+        // Fetch user's country from IP
+        fetch('https://ipapi.co/json/')
+            .then(response => response.json())
+            .then(data => {
+                if (data && data.country_code && data.country_name) {
+                    const flag = countryCodeToFlag(data.country_code);
+                    userCountryDisplay.textContent = `${flag} ${data.country_name}`;
+                }
+            })
+            .catch(() => {
+                // Silent fail - don't show anything if detection fails
+            });
+    }
+    
+    // ============================================
     // Announcement Ribbon Management
     // ============================================
     const announcementRibbon = document.getElementById('announcementRibbon');
