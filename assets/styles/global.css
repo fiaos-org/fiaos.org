@@ -259,13 +259,13 @@ a:hover {
     background: #000000;
     z-index: 9999;
     display: none;
-    opacity: 0;
+    
     transition: opacity 0.2s ease;
 }
 
 .mobile-menu-overlay.active {
     display: flex;
-    opacity: 1;
+  
 }
 
 .mobile-menu-content {
@@ -323,13 +323,13 @@ a:hover {
     background: rgba(0, 0, 0, 0.95);
     z-index: 10000;
     display: none;
-    opacity: 0;
+ 
     transition: opacity 0.2s ease;
 }
 
 .search-overlay.active {
     display: block;
-    opacity: 1;
+
 }
 
 .search-overlay-content {
@@ -1250,13 +1250,13 @@ height: auto;
     align-items: center;
     justify-content: flex-start;
     gap: 0.5rem;
-    opacity: 0;
+    visibility: hidden;
     transform: translateY(10px);
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .network-status-item.active {
-    opacity: 1;
+    visibility: visible;
     transform: translateY(0);
 }
 
