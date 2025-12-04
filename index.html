@@ -338,14 +338,50 @@
             <!-- Publications List -->
             <section id="publications" class="content-section">
                 <div class="section-header">
-                    <h2 class="section-title">Additional Publications</h2>
+                    <h2 class="section-title">Publications</h2>
                 </div>
                 <div class="section-content">
+                    <style>
+                        .paper-entry { margin-bottom: 1.5rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border-color); }
+                        .paper-entry:last-child { border-bottom: none; }
+                        .paper-id { font-size: 0.875rem; color: var(--text-tertiary); margin-bottom: 0.25rem; }
+                        .paper-id a { color: var(--text-tertiary); margin-left: 0.5rem; }
+                        .paper-title { font-size: 1.125rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; line-height: 1.4; }
+                        .paper-title a { color: var(--primary-color); text-decoration: none; }
+                        .paper-title a:hover { text-decoration: underline; }
+                        .paper-authors { font-size: 0.9375rem; color: var(--text-secondary); margin-bottom: 0.25rem; }
+                        .paper-authors a { color: #b45309; }
+                        .paper-meta { font-size: 0.8125rem; color: var(--text-tertiary); margin-bottom: 0.5rem; }
+                        .paper-subjects { font-size: 0.8125rem; color: var(--text-secondary); }
+                        .paper-subjects strong { color: var(--text-primary); }
+                        .paper-abstract { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; margin-top: 0.75rem; }
+                        .paper-abstract summary { cursor: pointer; color: var(--primary-color); font-weight: 500; }
+                        .paper-abstract p { margin-top: 0.5rem; }
+                    </style>
                     <div class="publication-list">
-                        <div class="loading-state">
-                            <i class="bi bi-hourglass-split"></i>
-                            <p>Additional publications will be listed here</p>
-                        </div>
+                        <!-- Paper 1 -->
+                        <article class="paper-entry">
+                            <div class="paper-id">
+                                Preprint - Under review
+                                <a href="https://www.nekshadesilva.com/docs/Temporal-Derivative-Soft-Sensing-and-Reconstrcting-Solar-Radiation-and-Heat-Flux-from-Common-Environmental-Sensors-and-FiaOS-Engineering/assets/Temporal%20Derivative%20Soft-Sensing%20and%20Reconstructing%20Solar%20Radiation%20and%20Heat%20Flux%20from%20Common%20Environmental%20Sensors.pdf" target="_blank" rel="noopener">[pdf]</a>
+                            </div>
+                            <h3 class="paper-title">
+                                <a href="https://www.nekshadesilva.com/docs/Temporal-Derivative-Soft-Sensing-and-Reconstrcting-Solar-Radiation-and-Heat-Flux-from-Common-Environmental-Sensors-and-FiaOS-Engineering/assets/Temporal%20Derivative%20Soft-Sensing%20and%20Reconstructing%20Solar%20Radiation%20and%20Heat%20Flux%20from%20Common%20Environmental%20Sensors.pdf" target="_blank" rel="noopener">Temporal Derivative Soft-Sensing and Reconstructing Solar Radiation and Heat Flux from Common Environmental Sensors and FiaOS Engineering</a>
+                            </h3>
+                            <div class="paper-authors">
+                                <a href="https://nekshadesilva.com">Neksha V. DeSilva</a>
+                            </div>
+                            <div class="paper-meta">
+                                IIndependent researcher, FiaOS.org | Dated: November 25, 2025
+                            </div>
+                            <div class="paper-subjects">
+                                Subjects: <strong>Environmental Engineering</strong>; Soft-Sensing; Solar Radiation (physics.ao-ph); IoT Systems
+                            </div>
+                            <details class="paper-abstract">
+                                <summary>Summerized Abstract</summary>
+                                <p>Current environmental monitoring is fundamentally limited by a reliance on static state variables—temperature, pressure, and humidity—while remaining blind to the dynamic energy exchanges that drive them. This paper introduces Differential Temporal Derivative Soft-Sensing (DTDSS), a novel physics-based framework that transforms standard, low-cost environmental sensors into capability-dense radiometers. By employing a differential topology with Inertial Noise Reduction (INR), we can mathematically reconstruct Global Horizontal Irradiance (GHI) and convective heat flux without the cost or fragility of thermopile pyranometers. While validated using the FiaOS reference architecture, this methodology is hardware-agnostic. The ultimate vision of this work is the deployment of a high-performance, open-source computational library designed for professional embedded development environments. By distributing this algorithm via global repositories, we aim to upgrade the capabilities of millions of existing and future IoT devices. This library allows standard electronics to move beyond simple linear measurements and unlock higher-order environmental physics. By deriving complex energy flux parameters from common sensors, we open a new frontier of derived equations and applications—from precision agriculture to autonomous energy management—essentially democratizing advanced meteorological physics for the global engineering community.</p>
+                            </details>
+                        </article>
                     </div>
                 </div>
             </section>
@@ -387,7 +423,7 @@
                 <h4>Related Documents/Information</h4>
                 <ul>
                     <li><a href="mailto:research@fiaos.org">research@fiaos.org</a></li>
-                    <li><a href="https://nekshadesilva.com/docs">Published Research</a></li>
+                    <li><a href="https://nekshadesilva.com/research">Published Research</a></li>
                 </ul>
             </div>
            
