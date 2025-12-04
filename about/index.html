@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - FiaOS.org</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/styles/global.css">
+    <link rel="icon" type="image/png" href="../assets/media/umbrella-logo-clean.png">
+    <style>
+        .module-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; margin: 24px 0; }
+        .module-card { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; }
+        .module-card h4 { font-size: 16px; font-weight: 600; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; color: var(--text-primary); }
+        .module-card h4 i { color: #0a66c2; }
+        .module-card p { font-size: 13px; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.5; }
+        .module-card .module-files { font-size: 12px; color: var(--text-tertiary); font-family: monospace; background: var(--bg-tertiary); padding: 8px 12px; border-radius: 4px; }
+        .code-block { background: #1a1a2e; color: #e2e8f0; padding: 16px; border-radius: 6px; font-family: 'Consolas', monospace; font-size: 13px; overflow-x: auto; margin: 16px 0; }
+        .code-block .comment { color: #6b7280; }
+        .code-block .keyword { color: #f472b6; }
+        .code-block .string { color: #34d399; }
+        .code-block .number { color: #fbbf24; }
+        .spec-table-mini { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+        .spec-table-mini th, .spec-table-mini td { padding: 10px 12px; border: 1px solid var(--border-color); text-align: left; }
+        .spec-table-mini th { background: var(--bg-secondary); font-weight: 600; }
+        .version-badge { display: inline-block; background: #0a66c2; color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500; margin-left: 8px; }
+        .section-divider { border: 0; border-top: 1px solid var(--border-color); margin: 40px 0; }
+        .architecture-diagram { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; font-family: monospace; font-size: 12px; white-space: pre; overflow-x: auto; line-height: 1.4; }
+        .algorithm-box { background: var(--bg-secondary); border-left: 4px solid #0a66c2; padding: 16px 20px; margin: 16px 0; border-radius: 0 6px 6px 0; }
+        .algorithm-box h5 { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+        .algorithm-box code { background: var(--bg-tertiary); padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <!-- Announcement Ribbon -->
+
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-consent">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-text">
+                <h3>Terms of Use & Data Policy</h3>
+                <p>By accessing FiaOS ETSci+ research platform, you acknowledge and agree to our <a href="terms.html">Terms of Service</a>, <a href="privacy.html">Privacy Policy</a>, and <a href="data-policy.html">Data Usage Policy</a>. This platform uses cookies and local storage for essential functionality, theme preferences, and analytics. This is a research initiative—all documentation and data are provided for educational and non-commercial purposes unless otherwise specified.</p>
+            </div>
+            <div class="cookie-consent-actions">
+                <button id="acceptCookies" class="cookie-btn cookie-btn-accept">Accept & Continue</button>
+                <a href="privacy.html" class="cookie-btn cookie-btn-learn">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="top-toolbar">
+        <div class="toolbar-left">
+            <button id="searchToggle" class="toolbar-btn"><i class="bi bi-search"></i></button>
+        </div>
+        <div class="toolbar-right">
+            <button id="themeToggle" class="toolbar-btn"><i class="bi bi-sun-fill"></i></button>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-brand">
+                <img src="../assets/media/umbrella-logo-clean.png" alt="FiaOS ETSci+" class="brand-logo">
+                <div class="brand-text">
+                    <h1 class="brand-title">About</h1>
+                   
+                </div>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html" class="nav-link">HOME</a>
+                <a href="../research/index.html" class="nav-link">RESEARCH</a>
+                <a href="index.html" class="nav-link active">DOCUMENTATION</a>
+                <a href="../archive/index.html" class="nav-link">ARCHIVE</a>
+                <a href="../data/index.html" class="nav-link">DATA</a>
+            </nav>
+            <button id="mobileMenuBtn" class="mobile-menu-btn"><i class="bi bi-list"></i></button>
+        </div>
+    </header>
+    <div id="redirectLoader" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 300px; margin: 40px 0;">
+
+    <!-- Mobile Menu Overlay -->
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+              <div class="footer-section">
+                <br>
+                <span style="font-weight: 400;">Future is Autonomous.</span>
+               
+                 <div class="footer-logo" style=" margin-top: 1rem;">
+                    <img src="../assets/media/logo-satur.png" alt="Meta Logo">
+                 
+                </div>
+                
+           </div>
+            <div class="footer-section">
+                <h4>Project</h4>
+                <ul>
+                    <li><a href="research/index.html">Research</a></li>
+                    <li><a href="docs/index.html">Documentation</a></li>
+                    <li><a href="archive/index.html">Archive</a></li>
+                    <li><a href="data/index.html">Data</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="api/index.html">API</a></li>
+                    <li><a href="sources/index.html">View Source</a></li>
+                    <li><a href="docs/contributing.html">Contributing</a></li>
+                    <li><a href="docs/license.html">License</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Related Documents/Information</h4>
+                <ul>
+                    <li><a href="mailto:research@fiaos.org">research@fiaos.org</a></li>
+                    <li><a href="https://nekshadesilva.com/docs">Published Research</a></li>
+                </ul>
+            </div>
+           
+    </footer>
+        <!-- Footer -->
+    <footer class="footer" >
+        
+        <div class="container">
+   
+            <div class="footer-bottom" style="text-align: center; padding:0 5rem;">
+                <p>Copyrights © Neksha DeSilva and www.nekshadesilva.com. All rights reserved.</p>
+                
+            </div>
+               <div class="footer-social">
+                
+               
+                <a href="https://x.com/NekshaDesilva" aria-label="X (Twitter)">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+          
+                <a href="https://youtube.com/@NekshaDesilva" aria-label="YouTube">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/scripts/network-status-injector.js"></script>
+    <script src="../assets/scripts/main.js"></script>
+</body>
+</html>
