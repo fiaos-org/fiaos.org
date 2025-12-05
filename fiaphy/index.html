@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiaPhy - The Open-source Sensor Library</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/styles/global.css">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <meta name="description" content="FiaPhy is an open-source library that transforms standard environmental sensors into radiometers. Derive solar radiation and heat flux from common IoT sensors.">
+    
+    <style>
+        /* FiaPhy Landing Page Styles */
+        .fiaphy-hero {
+            text-align: center;
+            padding: 4rem 2rem 3rem;
+            background: var(--bg-secondary);
+        }
+        
+        .fiaphy-logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .fiaphy-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .fiaphy-tagline {
+            font-size: 1.35rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.5;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary-fia {
+            background: #58c4dc;
+            color: #1a1d23;
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary-fia:hover {
+            background: #7fd4e8;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary-fia {
+            background: transparent;
+            color: var(--text-primary);
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-secondary-fia:hover {
+            background: var(--bg-tertiary);
+            border-color: #58c4dc;
+        }
+        
+        /* Stats */
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            padding: 2.5rem 2rem;
+            background: var(--bg-tertiary);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .stat-item { text-align: center; }
+        .stat-value { font-size: 2.5rem; font-weight: 700; color: #58c4dc; }
+        .stat-label { font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.25rem; }
+        
+        /* Sections */
+        .fiaphy-section {
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .section-dark { background: var(--bg-tertiary); }
+        
+        .fiaphy-section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .fiaphy-section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.6;
+        }
+        
+        .code-tag {
+            background: var(--bg-tertiary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9em;
+            color: #58c4dc;
+        }
+        
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .feature-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.75rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            border-color: #58c4dc;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon { font-size: 2rem; color: #58c4dc; margin-bottom: 0.75rem; }
+        .feature-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-primary); }
+        .feature-card p { color: var(--text-secondary); line-height: 1.5; font-size: 0.9rem; }
+        
+        /* Code Showcase */
+        .code-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            align-items: start;
+        }
+        
+        @media (max-width: 850px) {
+            .code-showcase { grid-template-columns: 1fr; }
+        }
+        
+        .code-block-wrapper {
+            background: #1e1e1e;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        
+        .code-block-header {
+            background: #2d2d2d;
+            padding: 0.6rem 1rem;
+            font-size: 0.8rem;
+            color: #999;
+            border-bottom: 1px solid #404040;
+            font-family: 'Consolas', monospace;
+        }
+        
+        .code-block-content {
+            padding: 1.25rem;
+            font-family: 'Consolas', monospace;
+            font-size: 0.8rem;
+            line-height: 1.65;
+            overflow-x: auto;
+            color: #d4d4d4;
+        }
+        
+        .code-block-content .keyword { color: #c586c0; }
+        .code-block-content .function { color: #dcdcaa; }
+        .code-block-content .string { color: #ce9178; }
+        .code-block-content .comment { color: #6a9955; }
+        .code-block-content .number { color: #b5cea8; }
+        .code-block-content .type { color: #4ec9b0; }
+        
+        .output-preview {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .output-preview h4 { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem; font-weight: 500; }
+        .output-item { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); }
+        .output-item:last-child { border-bottom: none; }
+        .output-label { color: var(--text-secondary); font-size: 0.875rem; }
+        .output-value { font-size: 1.25rem; font-weight: 600; color: #58c4dc; font-family: 'Consolas', monospace; }
+        .output-unit { font-size: 0.75rem; color: var(--text-muted); margin-left: 0.2rem; }
+        
+        /* Use Cases */
+        .usecase-list { display: flex; flex-direction: column; gap: 1rem; }
+        .usecase-item {
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+            padding: 1.25rem;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            border-left: 3px solid #58c4dc;
+        }
+        
+        .usecase-icon { font-size: 1.75rem; color: #58c4dc; flex-shrink: 0; }
+        .usecase-item h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--text-primary); }
+        .usecase-item p { color: var(--text-secondary); font-size: 0.875rem; line-height: 1.5; }
+        
+        /* Install */
+        .install-section { text-align: center; padding: 3rem 2rem; background: var(--bg-tertiary); }
+        .install-box {
+            background: #1e1e1e;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1rem 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: 'Consolas', monospace;
+            font-size: 0.95rem;
+            color: #d4d4d4;
+            margin-top: 1.5rem;
+        }
+        
+        .install-box .prompt { color: #58c4dc; }
+        .install-box .copy-btn {
+            background: #404040;
+            border: none;
+            color: #999;
+            padding: 0.4rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .install-box .copy-btn:hover { background: #58c4dc; color: #1a1d23; }
+        
+        /* Platform Grid */
+        .platform-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        @media (max-width: 700px) { .platform-grid { grid-template-columns: 1fr; } }
+        
+        .platform-card {
+            background: var(--bg-secondary);
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        
+        .platform-mockup { background: var(--bg-tertiary); padding: 0.75rem; border-bottom: 1px solid var(--border-color); }
+        .mockup-bar {
+            background: var(--bg-primary);
+            border-radius: 6px;
+            padding: 0.4rem 0.75rem;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        
+        .platform-content { padding: 1.5rem; }
+        .platform-content h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-primary); }
+        .platform-content p { color: var(--text-secondary); line-height: 1.5; font-size: 0.875rem; }
+        .platform-content a { color: #58c4dc; }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            .fiaphy-title { font-size: 2.25rem; }
+            .fiaphy-tagline { font-size: 1.1rem; }
+            .fiaphy-section-title { font-size: 1.75rem; }
+            .fiaphy-section { padding: 2.5rem 1.25rem; }
+            .stats-row { gap: 1.5rem; }
+            .stat-value { font-size: 2rem; }
+            .usecase-item { flex-direction: column; gap: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Announcement Ribbon -->
+    <div id="announcementRibbon" class="announcement-ribbon">
+        <div class="announcement-content">
+            <i class="bi bi-circle-fill"></i><strong style="font-size: 1rem;"></strong>
+            <span>
+                Unlock advanced sensor capabilities with FiaPhy, open, powerful, and ready for integration.
+                <a href="../docs/index.html" class="announcement-link">Download&nbsp;<i class="bi bi-arrow-right"></i></a>
+            </span>
+        </div>
+        <button id="dismissAnnouncement" class="announcement-dismiss" aria-label="Dismiss"><i class="bi bi-x"></i></button>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-consent">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-text">
+                <h3>Terms of Use & Data Policy</h3>
+                <p>By accessing FiaOS ETSci+ research platform, you acknowledge and agree to our <a href="../docs/terms.html">Terms of Service</a>, <a href="../docs/privacy.html">Privacy Policy</a>, and <a href="../docs/data-policy.html">Data Usage Policy</a>. This platform uses cookies and local storage for essential functionality.</p>
+            </div>
+            <div class="cookie-consent-actions">
+                <button id="acceptCookies" class="cookie-btn cookie-btn-accept">Accept & Continue</button>
+                <a href="../docs/privacy.html" class="cookie-btn cookie-btn-learn">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="top-toolbar">
+        <div class="toolbar-left">
+            <button id="searchToggle" class="toolbar-btn"><i class="bi bi-search"></i></button>
+        </div>
+        <div class="toolbar-right">
+            <button id="themeToggle" class="toolbar-btn"><i class="bi bi-sun-fill"></i></button>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-brand">
+                <img src="../assets/media/umbrella-logo-clean.png" alt="FiaOS ETSci+" class="brand-logo">
+                <div class="brand-text">
+                    <h1 class="brand-title">FiaPhy</h1>
+                    <p class="brand-subtitle">Developers</p>
+                    
+                </div>
+            </div>
+            <nav class="main-nav">
+                <a href="../index.html" class="nav-link">HOME</a>
+                <a href="../research/index.html" class="nav-link">RESEARCH</a>
+                <a href="../docs/index.html" style="filter: invert(1);" class="nav-link">DOWNLOAD</a>
+               
+            </nav>
+            <button id="mobileMenuBtn" class="mobile-menu-btn"><i class="bi bi-list"></i></button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="fiaphy-hero">
+        <img src="../assets/media/umbrella-logo-clean.png" alt="FiaPhy" class="fiaphy-logo">
+        <h1 class="fiaphy-title">FiaPhy</h1>
+        <p class="fiaphy-tagline">The open-source library for transforming environmental sensors into radiometers</p>
+        <div class="hero-buttons">
+            <a href="https://github.com/fiaos-org/fiaphy" class="btn-primary-fia" target="_blank">
+                <i class="bi bi-github"></i> Get Started
+            </a>
+            <a href="../docs/" class="btn-secondary-fia">
+                <i class="bi bi-book"></i> Documentation
+            </a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-row">
+        <div class="stat-item">
+            <div class="stat-value">100+</div>
+            <div class="stat-label">Derived Parameters</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">&lt;$5</div>
+            <div class="stat-label">Sensor Cost</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">±15%</div>
+            <div class="stat-label">GHI Accuracy</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">Open</div>
+            <div class="stat-label">Source License</div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="fiaphy-section">
+        <h2 class="fiaphy-section-title">Unlock physics from simple sensors</h2>
+        <p class="fiaphy-section-subtitle">
+            FiaPhy implements <span class="code-tag">DTDSS</span> (Differential Temporal Derivative Soft-Sensing) to mathematically reconstruct 
+            Global Horizontal Irradiance and heat flux from common temperature, humidity, and pressure sensors.
+        </p>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="bi bi-sun"></i></div>
+                <h3>Solar Radiation Estimation</h3>
+                <p>Reconstruct GHI (Global Horizontal Irradiance) without expensive pyranometers. Use differential temperature readings to derive solar energy flux.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="bi bi-thermometer-half"></i></div>
+                <h3>Heat Flux Calculation</h3>
+                <p>Calculate convective and radiative heat transfer using temporal derivatives. No additional hardware required beyond standard sensors.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="bi bi-cpu"></i></div>
+                <h3>Edge Computing Ready</h3>
+                <p>Optimized for microcontrollers. Runs on ESP32, Arduino, STM32, and any C/C++ compatible platform with minimal memory footprint.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                <h3>Inertial Noise Reduction</h3>
+                <p>Built-in INR algorithms filter sensor noise and thermal inertia, delivering stable readings even in rapidly changing conditions.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="bi bi-droplet"></i></div>
+                <h3>Evapotranspiration</h3>
+                <p>Calculate ET₀ using the Penman-Monteith equation with derived radiation values. Perfect for precision agriculture and irrigation.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="bi bi-unlock"></i></div>
+                <h3>Fully Open Source</h3>
+                <p>MIT licensed. Use it in commercial products, modify it, contribute back. No vendor lock-in, no licensing fees.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Example Section -->
+    <section class="section-dark">
+        <div class="fiaphy-section">
+            <h2 class="fiaphy-section-title">Write physics with code</h2>
+            <p class="fiaphy-section-subtitle">
+                Simple API. Powerful results. Initialize sensors, call <span class="code-tag">fiaphy.update()</span>, and get derived parameters instantly.
+            </p>
+            
+            <div class="code-showcase">
+                <div class="code-block-wrapper">
+                    <div class="code-block-header">main.cpp</div>
+                    <div class="code-block-content">
+<span class="keyword">#include</span> <span class="string">&lt;FiaPhy.h&gt;</span>
+
+<span class="type">FiaPhy</span> fiaphy;
+
+<span class="keyword">void</span> <span class="function">setup</span>() {
+    fiaphy.<span class="function">begin</span>();
+    fiaphy.<span class="function">setSensorType</span>(<span class="string">BME280</span>);
+    fiaphy.<span class="function">enableINR</span>(<span class="keyword">true</span>);
+}
+
+<span class="keyword">void</span> <span class="function">loop</span>() {
+    fiaphy.<span class="function">update</span>();
+    
+    <span class="comment">// Get derived values</span>
+    <span class="keyword">float</span> ghi = fiaphy.<span class="function">getGHI</span>();
+    <span class="keyword">float</span> heatFlux = fiaphy.<span class="function">getHeatFlux</span>();
+    <span class="keyword">float</span> et0 = fiaphy.<span class="function">getET0</span>();
+    
+    <span class="function">Serial</span>.<span class="function">printf</span>(<span class="string">"GHI: %.1f W/m²\n"</span>, ghi);
+    <span class="function">delay</span>(<span class="number">1000</span>);
+}
+                    </div>
+                </div>
+                
+                <div class="output-preview">
+                    <h4>Serial Output</h4>
+                    <div class="output-item">
+                        <span class="output-label">Global Horizontal Irradiance</span>
+                        <span class="output-value">847.3<span class="output-unit">W/m²</span></span>
+                    </div>
+                    <div class="output-item">
+                        <span class="output-label">Heat Flux</span>
+                        <span class="output-value">124.8<span class="output-unit">W/m²</span></span>
+                    </div>
+                    <div class="output-item">
+                        <span class="output-label">Evapotranspiration (ET₀)</span>
+                        <span class="output-value">4.2<span class="output-unit">mm/day</span></span>
+                    </div>
+                    <div class="output-item">
+                        <span class="output-label">Temperature Rate</span>
+                        <span class="output-value">+0.12<span class="output-unit">°C/min</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Support -->
+    <section class="fiaphy-section">
+        <h2 class="fiaphy-section-title">Deploy on any platform</h2>
+        <p class="fiaphy-section-subtitle">
+            From Arduino sketches to industrial PLCs. FiaPhy is designed to run anywhere C/C++ compiles.
+        </p>
+        
+        <div class="platform-grid">
+            <div class="platform-card">
+                <div class="platform-mockup">
+                    <div class="mockup-bar">
+                        <i class="bi bi-cpu"></i> ESP32 / Arduino
+                    </div>
+                </div>
+                <div class="platform-content">
+                    <h3>Embedded Systems</h3>
+                    <p>Native support for ESP32, ESP8266, Arduino Uno/Mega, STM32, and Raspberry Pi Pico. Optimized for low memory and real-time operation. Install via <a href="#">PlatformIO</a> or Arduino Library Manager.</p>
+                </div>
+            </div>
+            <div class="platform-card">
+                <div class="platform-mockup">
+                    <div class="mockup-bar">
+                        <i class="bi bi-terminal"></i> Linux / Desktop
+                    </div>
+                </div>
+                <div class="platform-content">
+                    <h3>Server & Desktop</h3>
+                    <p>Run FiaPhy on any Linux system, Raspberry Pi, or desktop for batch processing and data analysis. Compile with GCC or integrate into Python via bindings. Perfect for research environments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="section-dark">
+        <div class="fiaphy-section">
+            <h2 class="fiaphy-section-title">Built for real applications</h2>
+            <p class="fiaphy-section-subtitle">
+                From farms to factories, FiaPhy enables advanced environmental intelligence without specialized instruments.
+            </p>
+            
+            <div class="usecase-list">
+                <div class="usecase-item">
+                    <div class="usecase-icon"><i class="bi bi-flower1"></i></div>
+                    <div>
+                        <h4>Precision Agriculture</h4>
+                        <p>Calculate crop water requirements using derived ET₀ values. Optimize irrigation schedules with real solar radiation data, saving 30-40% water compared to timer-based systems.</p>
+                    </div>
+                </div>
+                <div class="usecase-item">
+                    <div class="usecase-icon"><i class="bi bi-sun"></i></div>
+                    <div>
+                        <h4>Solar Energy Systems</h4>
+                        <p>Monitor solar panel performance by comparing expected vs actual output. Detect panel degradation, shading, or soiling without expensive reference cells.</p>
+                    </div>
+                </div>
+                <div class="usecase-item">
+                    <div class="usecase-icon"><i class="bi bi-building"></i></div>
+                    <div>
+                        <h4>Building Energy Management</h4>
+                        <p>Optimize HVAC systems with real-time heat flux data. Understand thermal gains and losses through building envelopes for predictive climate control.</p>
+                    </div>
+                </div>
+                <div class="usecase-item">
+                    <div class="usecase-icon"><i class="bi bi-cloud-sun"></i></div>
+                    <div>
+                        <h4>Weather Stations</h4>
+                        <p>Upgrade DIY and citizen science weather stations with derived radiation parameters. Fill gaps in meteorological networks with low-cost instrumentation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Install Section -->
+    <section class="install-section">
+        <h2 class="fiaphy-section-title">Get started in seconds</h2>
+        <p class="fiaphy-section-subtitle" style="margin-bottom: 0;">
+            Add FiaPhy to your project with a single command
+        </p>
+        <div class="install-box">
+            <span class="prompt">$</span>
+            <span>pio lib install "FiaPhy"</span>
+            <button class="copy-btn" onclick="navigator.clipboard.writeText('pio lib install FiaPhy')" title="Copy to clipboard">
+                <i class="bi bi-clipboard"></i>
+            </button>
+        </div>
+        <p style="color: var(--text-muted); margin-top: 1rem; font-size: 0.85rem;">
+            Or download directly from <a href="https://github.com/fiaos-org/fiaphy" style="color: #58c4dc;">GitHub</a>
+        </p>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="fiaphy-section" style="text-align: center;">
+        <h2 class="fiaphy-section-title">Ready to unlock sensor physics?</h2>
+        <p class="fiaphy-section-subtitle">
+            Join the community of engineers and researchers using FiaPhy to democratize environmental intelligence.
+        </p>
+        <div class="hero-buttons">
+            <a href="https://github.com/fiaos-org/fiaphy" class="btn-primary-fia" target="_blank">
+                <i class="bi bi-github"></i> View on GitHub
+            </a>
+            <a href="../research/" class="btn-secondary-fia">
+                <i class="bi bi-file-text"></i> Read the Research Paper
+            </a>
+        </div>
+    </section>
+  <footer class="site-footer">
+        <div class="footer-container">
+              <div class="footer-section">
+                <br>
+                <span style="font-weight: 400;">Future is Autonomous.</span>
+               
+                 <div class="footer-logo" style=" margin-top: 1rem;">
+                    <img src="../assets/media/logo-satur.png" alt="Meta Logo">
+                 
+                </div>
+                
+           </div>
+            <div class="footer-section">
+                <h4>Project</h4>
+                <ul>
+                    <li><a href="research/index.html">Research</a></li>
+                    <li><a href="docs/index.html">Documentation</a></li>
+                    <li><a href="archive/index.html">Archive</a></li>
+                    <li><a href="data/index.html">Data</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="api/index.html">API</a></li>
+                    <li><a href="sources/index.html">View Source</a></li>
+                    <li><a href="docs/contributing.html">Contributing</a></li>
+                    <li><a href="docs/license.html">License</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Related Documents/Information</h4>
+                <ul>
+                    <li><a href="mailto:research@fiaos.org">research@fiaos.org</a></li>
+                    <li><a href="https://nekshadesilva.com/docs">Published Research</a></li>
+                </ul>
+            </div>
+           
+    </footer>
+        <!-- Footer -->
+    <footer class="footer" >
+        
+        <div class="container">
+   
+            <div class="footer-bottom" style="text-align: center; padding:0 5rem;">
+                <p>Copyrights © Neksha DeSilva and www.nekshadesilva.com. All rights reserved.</p>
+                
+            </div>
+               <div class="footer-social">
+                
+               
+                <a href="https://x.com/NekshaDesilva" aria-label="X (Twitter)">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+          
+                <a href="https://youtube.com/@NekshaDesilva" aria-label="YouTube">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/scripts/network-status-injector.js"></script>
+    <script src="../assets/scripts/main.js"></script>
+</body>
+</html>
