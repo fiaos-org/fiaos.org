@@ -158,6 +158,172 @@
             </div>
         </aside>
 
+        <!-- FiaPhy Promotional Banner -->
+        <style>
+            .fiaphy-promo-banner {
+                background: linear-gradient(135deg, #000000 0%, #000000 50%, #16213e 100%);
+      
+                padding: 2rem 2rem;
+                margin: 1.5rem 0;
+         
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+                position: relative;
+                overflow: hidden;
+                border: 1px solid rgba(255,255,255,0.08);
+                box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+            }
+            
+            .fiaphy-promo-banner::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: radial-gradient(circle at 80% 20%, rgba(74, 158, 255, 0.08) 0%, transparent 50%),
+                            radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 40%);
+                pointer-events: none;
+            }
+            
+            .fiaphy-promo-logo {
+                flex-shrink: 0;
+                width: 72px;
+                height: 72px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                z-index: 1;
+            }
+            
+            .fiaphy-promo-logo img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+            }
+            
+            .fiaphy-promo-content {
+                flex: 1;
+                position: relative;
+                z-index: 1;
+            }
+            
+            .fiaphy-promo-eyebrow {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 0.7rem;
+                text-transform: uppercase;
+                letter-spacing: 0.15em;
+                color: #4a9eff;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+            }
+            
+            .fiaphy-promo-eyebrow i {
+                font-size: 0.6rem;
+                animation: pulse-dot 2s ease-in-out infinite;
+            }
+            
+            @keyframes pulse-dot {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.4; }
+            }
+            
+            .fiaphy-promo-title {
+                font-size: 1.35rem;
+                font-weight: 700;
+                color: #ffffff;
+                margin: 0 0 0.35rem 0;
+                letter-spacing: -0.02em;
+            }
+            
+            .fiaphy-promo-title span {
+                background: linear-gradient(90deg, #ffffff, #ffffff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            
+            .fiaphy-promo-desc {
+                font-size: 0.875rem;
+                color: rgba(255,255,255,0.65);
+                margin: 0;
+                line-height: 1.5;
+            }
+            
+            .fiaphy-promo-cta {
+                flex-shrink: 0;
+                position: relative;
+                z-index: 1;
+            }
+            
+            .fiaphy-promo-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.75rem 1.5rem;
+                background: #ffffff;
+                color: #0f0f0f;
+                font-size: 0.875rem;
+                font-weight: 600;
+                text-decoration: none;
+                border-radius: 0.5rem;
+                transition: all 0.2s ease;
+                border: none;
+            }
+            
+            .fiaphy-promo-btn:hover {
+                background: #000000;
+                color: #ffffff;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            }
+            
+            .fiaphy-promo-btn i {
+                font-size: 1rem;
+            }
+            
+            @media (max-width: 768px) {
+                .fiaphy-promo-banner {
+                    flex-direction: column;
+                    text-align: center;
+                    padding: 1.75rem 1.5rem;
+                    gap: 1.25rem;
+                }
+                
+                .fiaphy-promo-logo {
+                    width: 56px;
+                    height: 56px;
+                }
+                
+                .fiaphy-promo-title {
+                    font-size: 1.15rem;
+                }
+            }
+        </style>
+        
+        <div class="fiaphy-promo-banner">
+            <div class="fiaphy-promo-logo">
+                <img src="assets/media/fiaphy-clean.png" alt="FiaPhy">
+            </div>
+            <div class="fiaphy-promo-content">
+                <div class="fiaphy-promo-eyebrow">
+                  RESEARCH
+                </div>
+                <h3 class="fiaphy-promo-title">Built on top of <span>FiaPhy</span> Today</h3>
+                <p class="fiaphy-promo-desc">Transform standard sensors into capability-dense radiometers. Derive GHI, heat flux, and ET₀ from BME280 and similar environmental sensors.</p>
+            </div>
+            <div class="fiaphy-promo-cta">
+                <a href="fiaphy/" class="fiaphy-promo-btn">
+                    <i class="bi bi-arrow-right-circle"></i> FiaPhy
+                </a>
+            </div>
+        </div>
+
         <!-- Main Content -->
         <main class="main-content">
             <!-- Overview Section -->
