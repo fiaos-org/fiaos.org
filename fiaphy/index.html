@@ -458,6 +458,215 @@
             }
         }
         
+        /* Architecture Section */
+        .architecture-section {
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+        
+        .architecture-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .architecture-diagram {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1.5rem;
+            align-items: center;
+            padding: 2rem;
+            background: var(--bg-tertiary);
+            border-radius: 1rem;
+            border: 1px solid var(--border-subtle);
+        }
+        
+        .sensor-node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-subtle);
+            text-align: center;
+        }
+        
+        .sensor-node.reference {
+            border-color: #3b82f6;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+        }
+        
+        .sensor-node.flux {
+            border-color: #f59e0b;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.15);
+        }
+        
+        .sensor-icon {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.75rem;
+        }
+        
+        .sensor-node.reference .sensor-icon {
+            background: rgba(59, 130, 246, 0.15);
+        }
+        
+        .sensor-node.flux .sensor-icon {
+            background: rgba(245, 158, 11, 0.15);
+        }
+        
+        .sensor-node h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+        }
+        
+        .sensor-node p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.4;
+        }
+        
+        .differential-connector {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .connector-line {
+            width: 100px;
+            height: 3px;
+            background: var(--text-secondary);
+            position: relative;
+        }
+        
+        .connector-line::before,
+        .connector-line::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .connector-line::before {
+            left: -6px;
+            background: var(--text-primary);
+        }
+        
+        .connector-line::after {
+            right: -6px;
+            background: var(--text-primary);
+        }
+        
+        .differential-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+        
+        .architecture-output {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .output-card {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            background: var(--bg-tertiary);
+            border-radius: 0.5rem;
+            border: 1px solid var(--border-subtle);
+        }
+        
+        .output-card-icon {
+            font-size: 1.25rem;
+        }
+        
+        .output-card-text h5 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+        }
+        
+        .output-card-text span {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+        
+        .architecture-description {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .architecture-description p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        .architecture-description p:last-child {
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .architecture-diagram {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .differential-connector {
+                flex-direction: row;
+            }
+            
+            .connector-line {
+                width: 3px;
+                height: 60px;
+                background: var(--text-secondary);
+            }
+            
+            .connector-line::before {
+                left: 50%;
+                top: -6px;
+                transform: translateX(-50%);
+            }
+            
+            .connector-line::after {
+                left: 50%;
+                bottom: -6px;
+                top: auto;
+                transform: translateX(-50%);
+            }
+            
+            .architecture-output {
+                gap: 1rem;
+            }
+            
+            .output-card {
+                flex: 1 1 calc(50% - 0.5rem);
+                min-width: 140px;
+            }
+        }
+        
         /* Responsive */
         @media (max-width: 600px) {
             .fiaphy-title { font-size: 2.25rem; }
@@ -644,53 +853,51 @@
 
     <!-- Features Section -->
     <section class="fiaphy-section">
-        <h2 class="fiaphy-section-title">Unlock physics from simple sensors</h2>
+        <h2 class="fiaphy-section-title">What FiaPhy Delivers</h2>
         <p class="fiaphy-section-subtitle">
-            FiaPhy implements <span class="code-tag">DTDSS</span> (Differential Temporal Derivative Soft-Sensing) to mathematically reconstruct 
-            Global Horizontal Irradiance and heat flux from common temperature, humidity, and pressure sensors.
+            FiaPhy implements the <span class="code-tag">DTDSS</span> (Differential Temporal Derivative Soft-Sensing) framework—a physics-based approach that transforms standard environmental sensors into capability-dense radiometers.
         </p>
         
         <div class="feature-grid">
             <div class="feature-card">
                 <div class="feature-icon"><i class="bi bi-sun"></i></div>
-                <h3>Solar Radiation Estimation</h3>
-                <p>Reconstruct GHI (Global Horizontal Irradiance) without expensive pyranometers. Use differential temperature readings to derive solar energy flux.</p>
+                <h3>Global Horizontal Irradiance</h3>
+                <p>Derive GHI measurements without thermopile pyranometers. FiaPhy reconstructs solar radiation data from common sensor readings.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="bi bi-thermometer-half"></i></div>
-                <h3>Heat Flux Calculation</h3>
-                <p>Calculate convective and radiative heat transfer using temporal derivatives. No additional hardware required beyond standard sensors.</p>
+                <h3>Convective Heat Flux</h3>
+                <p>Obtain heat transfer measurements that traditional sensors cannot provide directly. Unlock energy exchange dynamics from your existing hardware.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon"><i class="bi bi-cpu"></i></div>
-                <h3>Edge Computing Ready</h3>
-                <p>Optimized for microcontrollers. Runs on ESP32, Arduino, STM32, and any C/C++ compatible platform with minimal memory footprint.</p>
+                <div class="feature-icon"><i class="bi bi-layers"></i></div>
+                <h3>Differential Topology</h3>
+                <p>Dual-node architecture separates environmental baseline from radiative flux detection. Common-mode noise rejection built into the hardware design.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="bi bi-graph-up-arrow"></i></div>
                 <h3>Inertial Noise Reduction</h3>
-                <p>Built-in INR algorithms filter sensor noise and thermal inertia, delivering stable readings even in rapidly changing conditions.</p>
+                <p>Proprietary INR signal processing compensates for thermal inertia and quantization noise. Real-time derivative calculation without phase delay.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="bi bi-globe-americas"></i></div>
+                <h3>Altitude-Agnostic</h3>
+                <p>Dynamic air density calculation from pressure readings. Deploy from sea level to 5000m without firmware modification or recalibration.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="bi bi-droplet"></i></div>
-                <h3>Evapotranspiration</h3>
-                <p>Calculate ET₀ using the Penman-Monteith equation with derived radiation values. Perfect for precision agriculture and irrigation.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="bi bi-unlock"></i></div>
-                <h3>Fully Open Source</h3>
-                <p>MIT licensed. Use it in commercial products, modify it, contribute back. No vendor lock-in, no licensing fees.</p>
+                <h3>Evapotranspiration Ready</h3>
+                <p>Derived radiation values enable Penman-Monteith ET₀ calculations. Environmental monitoring without specialized instrument costs.</p>
             </div>
         </div>
     </section>
 
     <!-- Code Example Section -->
-    <section class="section-dark">
-        <div class="fiaphy-section">
-            <h2 class="fiaphy-section-title">Write physics with code</h2>
-            <p class="fiaphy-section-subtitle">
-                Simple API. Powerful results. Initialize sensors, call <span class="code-tag">fiaphy.update()</span>, and get derived parameters instantly.
-            </p>
+    <section class="fiaphy-section">
+        <h2 class="fiaphy-section-title">Simple Integration</h2>
+        <p class="fiaphy-section-subtitle">
+            Configure your dual-sensor topology and let FiaPhy handle the physics. The library abstracts the differential processing internally.
+        </p>
             
             <div class="code-showcase">
                 <div class="code-block-wrapper">
@@ -698,47 +905,125 @@
                     <div class="code-block-content">
 <span class="keyword">#include</span> <span class="string">&lt;FiaPhy.h&gt;</span>
 
-<span class="type">FiaPhy</span> fiaphy;
+<span class="type">FiaPhy</span> fia;
 
 <span class="keyword">void</span> <span class="function">setup</span>() {
-    fiaphy.<span class="function">begin</span>();
-    fiaphy.<span class="function">setSensorType</span>(<span class="string">BME280</span>);
-    fiaphy.<span class="function">enableINR</span>(<span class="keyword">true</span>);
+    <span class="comment">// Initialize differential sensor pair</span>
+    fia.<span class="function">begin</span>();
+    fia.<span class="function">attachReference</span>(<span class="number">0x76</span>);  <span class="comment">// Ventilated sensor</span>
+    fia.<span class="function">attachFlux</span>(<span class="number">0x77</span>);       <span class="comment">// Black-body sensor</span>
+    fia.<span class="function">enableINR</span>(<span class="keyword">true</span>);
 }
 
 <span class="keyword">void</span> <span class="function">loop</span>() {
-    fiaphy.<span class="function">update</span>();
+    fia.<span class="function">update</span>();
     
-    <span class="comment">// Get derived values</span>
-    <span class="keyword">float</span> ghi = fiaphy.<span class="function">getGHI</span>();
-    <span class="keyword">float</span> heatFlux = fiaphy.<span class="function">getHeatFlux</span>();
-    <span class="keyword">float</span> et0 = fiaphy.<span class="function">getET0</span>();
+    <span class="comment">// Derived outputs</span>
+    <span class="keyword">float</span> ghi = fia.<span class="function">getGHI</span>();
+    <span class="keyword">float</span> flux = fia.<span class="function">getHeatFlux</span>();
+    <span class="keyword">float</span> et0 = fia.<span class="function">getET0</span>();
     
-    <span class="function">Serial</span>.<span class="function">printf</span>(<span class="string">"GHI: %.1f W/m²\n"</span>, ghi);
     <span class="function">delay</span>(<span class="number">1000</span>);
 }
                     </div>
                 </div>
                 
                 <div class="output-preview">
-                    <h4>Serial Output</h4>
+                    <h4>Derived Outputs</h4>
                     <div class="output-item">
                         <span class="output-label">Global Horizontal Irradiance</span>
-                        <span class="output-value">847.3<span class="output-unit">W/m²</span></span>
+                        <span class="output-value">847<span class="output-unit">W/m²</span></span>
                     </div>
                     <div class="output-item">
-                        <span class="output-label">Heat Flux</span>
-                        <span class="output-value">124.8<span class="output-unit">W/m²</span></span>
+                        <span class="output-label">Convective Heat Flux</span>
+                        <span class="output-value">124<span class="output-unit">W/m²</span></span>
                     </div>
                     <div class="output-item">
-                        <span class="output-label">Evapotranspiration (ET₀)</span>
+                        <span class="output-label">Reference Evapotranspiration</span>
                         <span class="output-value">4.2<span class="output-unit">mm/day</span></span>
                     </div>
                     <div class="output-item">
-                        <span class="output-label">Temperature Rate</span>
-                        <span class="output-value">+0.12<span class="output-unit">°C/min</span></span>
+                        <span class="output-label">Air Density (calculated)</span>
+                        <span class="output-value">1.18<span class="output-unit">kg/m³</span></span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section class="fiaphy-section architecture-section">
+        <h2 class="fiaphy-section-title">How It Works</h2>
+        <p class="fiaphy-section-subtitle">
+            A differential sensing architecture that derives atmospheric parameters from paired environmental sensors.
+        </p>
+        
+        <div class="architecture-visual">
+            <!-- Sensor Diagram -->
+            <div class="architecture-diagram">
+                <div class="sensor-node reference">
+                    <div class="sensor-icon"><i class="bi bi-thermometer-half"></i></div>
+                    <h4>Reference Node</h4>
+                    <p>Ventilated sensor at equilibrium with ambient conditions</p>
+                </div>
+                
+                <div class="differential-connector">
+                    <span class="differential-label">Differential</span>
+                    <div class="connector-line"></div>
+                    <span class="differential-label">Analysis</span>
+                </div>
+                
+                <div class="sensor-node flux">
+                    <div class="sensor-icon"><i class="bi bi-sun"></i></div>
+                    <h4>Flux Node</h4>
+                    <p>Reactive sensor responding to radiative and thermal fluxes</p>
+                </div>
+            </div>
+            
+            <!-- Output Cards -->
+            <div class="architecture-output">
+                <div class="output-card">
+                    <span class="output-card-icon"><i class="bi bi-sun"></i></span>
+                    <div class="output-card-text">
+                        <h5>Solar Irradiance</h5>
+                        <span>GHI in W/m²</span>
+                    </div>
+                </div>
+                <div class="output-card">
+                    <span class="output-card-icon"><i class="bi bi-fire"></i></span>
+                    <div class="output-card-text">
+                        <h5>Heat Flux</h5>
+                        <span>Convective transfer</span>
+                    </div>
+                </div>
+                <div class="output-card">
+                    <span class="output-card-icon"><i class="bi bi-droplet"></i></span>
+                    <div class="output-card-text">
+                        <h5>Evapotranspiration</h5>
+                        <span>Penman-Monteith ET₀</span>
+                    </div>
+                </div>
+                <div class="output-card">
+                    <span class="output-card-icon"><i class="bi bi-wind"></i></span>
+                    <div class="output-card-text">
+                        <h5>Air Density</h5>
+                        <span>Real-time ρ</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Description -->
+            <div class="architecture-description">
+                <p>
+                    FiaPhy implements a <strong>dual-sensor differential topology</strong> using standard environmental sensors (BME280, etc.). 
+                    By comparing a reference sensor at thermal equilibrium with a reactive flux sensor, the system extracts 
+                    atmospheric parameters that would traditionally require expensive specialized instruments.
+                </p>
+                <p>
+                    The built-in <strong>Inertial Noise Reduction (INR)</strong> filter ensures clean signals even in 
+                    noisy environments, while <strong>altitude-agnostic</strong> calculations use real-time pressure readings 
+                    to compute air density—eliminating the need for manual elevation calibration.
+                </p>
             </div>
         </div>
     </section>
@@ -786,10 +1071,10 @@
             
             <div class="usecase-list">
                 <div class="usecase-item">
-                    <div class="usecase-icon"><i class="bi bi-flower1"></i></div>
+                    <div class="usecase-icon"><i class="bi bi-house-gear"></i></div>
                     <div>
-                        <h4>Precision Agriculture</h4>
-                        <p>Calculate crop water requirements using derived ET₀ values. Optimize irrigation schedules with real solar radiation data, saving 30-40% water compared to timer-based systems.</p>
+                        <h4>Smart Home & IoT</h4>
+                        <p>Integrate environmental intelligence into home automation systems. Automate blinds, HVAC, and lighting based on real-time solar radiation and thermal conditions.</p>
                     </div>
                 </div>
                 <div class="usecase-item">
@@ -843,12 +1128,17 @@
         </p>
         <div class="hero-buttons">
             <a href="https://github.com/fiaos-org/fiaphy" class="btn-primary-fia" target="_blank">
-                <i class="bi bi-github"></i> View on GitHub
+                <i class="bi bi-github"></i> GitHub
             </a>
             <a href="../research/" class="btn-secondary-fia">
                 <i class="bi bi-file-text"></i> Read the Research Paper
             </a>
         </div>
+        <p style="margin-top: 1.5rem;">
+            <a href="../about/" style="color: var(--text-secondary); text-decoration: underline; font-size: 0.9rem;">
+                <i class="bi bi-clock-history"></i> View the timeline — how we built this
+            </a>
+        </p>
     </section>
   <footer class="site-footer">
         <div class="footer-container">
