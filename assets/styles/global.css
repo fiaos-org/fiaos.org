@@ -8,12 +8,12 @@
     --primary-color: #0a66c2;
     --secondary-color: #00a0dc;
     --text-primary: #000000;
-    --text-secondary: #666666;
-    --text-tertiary: #999999;
+    --text-secondary: #000000;
+    --text-tertiary: #000000;
     --bg-primary: #ffffff;
-    --bg-secondary: #f8f9fa;
-    --bg-tertiary: #e9ecef;
-    --border-color: #ffffff;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #ffffff;
+    --border-color: #000000;
     --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
     --shadow-md: 0 2px 4px rgba(0,0,0,0.1);
     --shadow-lg: 0 4px 8px rgba(0,0,0,0.15);
@@ -188,6 +188,9 @@ a:hover {
 [data-theme="dark"] .brand-logo {
     filter: invert(0);
 }
+[data-theme="light"] .fiaphy-logo {
+    filter: invert(1);
+}
 
 .brand-text {
     display: flex;
@@ -236,11 +239,11 @@ a:hover {
     color: var(--text-secondary);
     border-radius: 4px;
     transition: background-color var(--transition), color var(--transition);
-    white-space: nowrap;
+    white-space: nowrap; background: var(--bg-secondary);
 }
 
 .nav-link:hover {
-    background: var(--bg-secondary);
+   
     color: var(--text-primary);
 }
 
@@ -763,7 +766,7 @@ a:hover {
 /* Footer */
 .site-footer {
     background: var(--bg-secondary);
-    border-top: 1px solid var(--border-color);
+    
     padding: 2rem 0;
     margin-top: 4rem;
 }
