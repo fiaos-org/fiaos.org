@@ -312,18 +312,21 @@
             </div>
             <div class="fiaphy-promo-content">
                 <div class="fiaphy-promo-eyebrow">
-                  RESEARCH
+                  v1.0.1 RELEASED
                 </div>
-                <h3 class="fiaphy-promo-title">Built on top of <span>FiaPhy</span> Today</h3>
-                <p class="fiaphy-promo-desc">Transform standard sensors into capability-dense radiometers. Derive GHI, heat flux, and ET₀ from BME280 and similar environmental sensors.</p>
+                <h3 class="fiaphy-promo-title">Open-Source Library: <span>FiaPhy</span></h3>
+                <p class="fiaphy-promo-desc">Derive solar radiation and heat flux from standard environmental sensors. Works on Arduino, ESP32, Raspberry Pi. Based on IEEE-accepted research.</p>
             </div>
             <div class="fiaphy-promo-cta">
-                <a href="fiaphy/" class="fiaphy-promo-btn">
-                    <i class="bi bi-arrow-right-circle"></i> FiaPhy
+                <a href="https://github.com/fiaos-org/fiaphy/releases" class="fiaphy-promo-btn">
+                    <i class="bi bi-download"></i> Download
+                </a>
+                <a href="fiaphy/" class="fiaphy-promo-cta" style="background: transparent; margin-left: 1rem; margin-top: 0.5rem;">
+                    <i class="bi bi-arrow-right-circle"></i> Learn More
                 </a>
             </div>
         </div>
-
+        
         <!-- Main Content -->
         <main class="main-content">
             <!-- Overview Section -->
@@ -331,33 +334,33 @@
                 <div class="section-header">
                     <h2 class="section-title">Overview</h2>
                     <div class="section-meta">
-                        <span class="meta-item"><i class="bi bi-calendar3"></i> Updated: November 2025</span>
-                        <span class="meta-item"><i class="bi bi-tag"></i> Version 1.0</span>
+                        <span class="meta-item"><i class="bi bi-calendar3"></i> Updated: December 2025</span>
+                        <span class="meta-item"><i class="bi bi-tag"></i> Version 1.0.1</span>
                     </div>
                 </div>
                 <div class="section-content">
-                    <p class="lead">FiaOS ETSci+ is a self-sustaining platform for environmental intelligence, research, and scientific discovery. This system combines autonomous technology with predictive algorithms to create a comprehensive environmental monitoring and irrigation solution.</p>
+                    <p class="lead">FiaOS is a research platform focused on environmental sensing and derived parameter calculation. The platform demonstrates how standard, low-cost sensors can be used to derive advanced environmental parameters through physics-based algorithms. The core technology is FiaPhy, an open-source library implementing Differential Temporal Derivative Soft-Sensing (DTDSS) for reconstructing solar radiation and heat flux from commodity environmental sensors.</p>
                     
                     <div class="info-grid">
                         <div class="info-card">
-                            <div class="info-icon"><i class="bi bi-lightning-charge"></i></div>
-                            <h3>Autonomous Operation</h3>
-                            <p>Self-sustaining system with 10+ years operational lifespan</p>
+                            <div class="info-icon"><i class="bi bi-cpu"></i></div>
+                            <h3>FiaPhy Library</h3>
+                            <p>Open-source C++ library for Arduino, ESP32, Raspberry Pi, and PlatformIO</p>
                         </div>
                         <div class="info-card">
-                            <div class="info-icon"><i class="bi bi-droplet"></i></div>
-                            <h3>Predictive Irrigation</h3>
-                            <p>Penman-Monteith algorithm for evapotranspiration prediction</p>
+                            <div class="info-icon"><i class="bi bi-sun"></i></div>
+                            <h3>Derived Parameters</h3>
+                            <p>Calculate GHI, heat flux, and ET₀ from BME280 and similar sensors</p>
                         </div>
                         <div class="info-card">
-                            <div class="info-icon"><i class="bi bi-graph-up-arrow"></i></div>
-                            <h3>100+ Parameters</h3>
-                            <p>Comprehensive environmental data collection and analysis</p>
+                            <div class="info-icon"><i class="bi bi-file-earmark-text"></i></div>
+                            <h3>Research-Based</h3>
+                            <p>Accepted by IEEE for peer review, under active development</p>
                         </div>
                         <div class="info-card">
-                            <div class="info-icon"><i class="bi bi-currency-dollar"></i></div>
-                            <h3>Cost-Effective</h3>
-                            <p>Under $50 total hardware cost with 95% cost reduction</p>
+                            <div class="info-icon"><i class="bi bi-code-square"></i></div>
+                            <h3>Multi-Platform</h3>
+                            <p>VS Code extension, Arduino Library Manager, PlatformIO registry</p>
                         </div>
                     </div>
                 </div>
@@ -372,22 +375,35 @@
                     <div class="publication-list">
                         <div class="publication-item">
                             <div class="pub-header">
-                                <h3 class="pub-title">The Use of Evapotranspiration Algorithm in FiaOS ETSci+ and the Penman-Monteith Equation</h3>
-                                <span class="pub-badge">Research Paper</span>
+                                <h3 class="pub-title">Temporal Derivative Soft-Sensing and Reconstructing Solar Radiation and Heat Flux from Common Environmental Sensors and FiaOS Engineering</h3>
+                                <span class="pub-badge">Preprint - Under IEEE Review</span>
                             </div>
                             <div class="pub-meta">
-                                <span><i class="bi bi-person"></i> Neksha DeSilva</span>
-                                <span><i class="bi bi-calendar"></i> August 2025</span>
-                                <span><i class="bi bi-tag"></i> Environmental Engineering</span>
+                                <span><i class="bi bi-person"></i> Neksha V. DeSilva</span>
+                                <span><i class="bi bi-calendar"></i> November 25, 2025</span>
+                                <span><i class="bi bi-tag"></i> Environmental Engineering, Soft-Sensing, IoT Systems</span>
                             </div>
-                            <p class="pub-description">A comprehensive exploration of environmental intelligence, predictive irrigation, and the engineering challenges of implementing the Penman-Monteith equation in autonomous systems.</p>
+                            <p class="pub-description">This paper introduces Differential Temporal Derivative Soft-Sensing (DTDSS), a physics-based framework that transforms standard, low-cost environmental sensors into capability-dense radiometers. By employing a differential topology with Inertial Noise Reduction (INR), the system mathematically reconstructs Global Horizontal Irradiance (GHI) and convective heat flux without expensive thermopile pyranometers. The research demonstrates how to upgrade millions of existing and future IoT devices to derive complex energy flux parameters from common sensors.</p>
                             <div class="pub-links">
-                                <a href="research/penman-monteith-paper.html" class="btn-link"><i class="bi bi-file-text"></i> Read Paper</a>
-                                <a href="sources/penman-monteith-code.html" class="btn-link"><i class="bi bi-github"></i> Source Code</a>
+                                <a href="research/" class="btn-link"><i class="bi bi-file-text"></i> Read Paper</a>
+                                <a href="https://github.com/fiaos-org/fiaphy" target="_blank" class="btn-link"><i class="bi bi-github"></i> Source Code</a>
+                                <a href="https://www.nekshadesilva.com/docs/Temporal-Derivative-Soft-Sensing-and-Reconstrcting-Solar-Radiation-and-Heat-Flux-from-Common-Environmental-Sensors-and-FiaOS-Engineering/assets/Temporal%20Derivative%20Soft-Sensing%20and%20Reconstructing%20Solar%20Radiation%20and%20Heat%20Flux%20from%20Common%20Environmental%20Sensors.pdf" target="_blank" class="btn-link"><i class="bi bi-file-pdf"></i> Download PDF</a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </section>
+
+            <!-- FiaPhy Library Section -->
+            <section id="fiaphy-iframe" class="content-section" style="display: flex; flex-direction: column; align-items: center; margin: 2rem 0;">
+                <h2 class="section-title" style="margin-bottom: 1rem;">FiaPhy Library</h2>
+                <iframe 
+                    src="./fiaphy/" 
+                    style="width: 100%; max-width: 1100px; height: 80vh; border: none; box-shadow: 0 2px 16px rgba(0,0,0,0.07);" 
+                    allowfullscreen
+                    loading="lazy"
+                    title="FiaPhy Library"
+                ></iframe>
             </section>
 
             <!-- Documentation Section -->

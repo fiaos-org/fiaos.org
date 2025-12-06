@@ -683,10 +683,10 @@
     <!-- Announcement Ribbon -->
     <div id="announcementRibbon" class="announcement-ribbon">
         <div class="announcement-content">
-            <i class="bi bi-circle-fill"></i><strong style="font-size: 1rem;"></strong>
+            <i class="bi bi-circle-fill"></i><strong style="font-size: 1rem;">v1.0.1 Released</strong>
             <span>
-                Unlock advanced sensor capabilities with FiaPhy, open, powerful, and ready for integration.
-                <a href="../docs/index.html" class="announcement-link">Download&nbsp;<i class="bi bi-arrow-right"></i></a>
+                Latest version includes Magnus formula fix and improved stability. Repository restored after FiaOS core clearance.
+                <a href="https://github.com/fiaos-org/fiaphy/releases" class="announcement-link" target="_blank">Download&nbsp;<i class="bi bi-arrow-right"></i></a>
             </span>
         </div>
         <button id="dismissAnnouncement" class="announcement-dismiss" aria-label="Dismiss"><i class="bi bi-x"></i></button>
@@ -728,7 +728,7 @@
             <nav class="main-nav">
                 <a href="../index.html" class="nav-link">HOME</a>
                 <a href="../research/index.html" class="nav-link">RESEARCH</a>
-                <a href="../docs/index.html" style="filter: invert(1);" class="nav-link">DOWNLOAD</a>
+                <a href="https://github.com/fiaos-org/fiaphy/releases" style="filter: invert(1);" class="nav-link" target="_blank">DOWNLOAD</a>
                
             </nav>
             <button id="mobileMenuBtn" class="mobile-menu-btn"><i class="bi bi-list"></i></button>
@@ -739,14 +739,17 @@
     <section class="fiaphy-hero">
         <img src="../assets/media/fiaphy-clean.png" alt="FiaPhy" class="fiaphy-logo">
 
-        <p class="fiaphy-tagline">The <a href= "../research/">FIA Research</a> integrated open-source enhanced Physics framework.<br>Engineered to transform general-purpose sensors and microcontrollers into powerful scientific instruments</p>
+        <p class="fiaphy-tagline">Open-source library for deriving solar radiation and heat flux from standard environmental sensors. Based on published research, works on Arduino, ESP32, Raspberry Pi, and other embedded platforms.</p>
 
         <div class="hero-buttons">
-            <a href="https://github.com/fiaos-org/fiaphy" class="btn-primary-fia" target="_blank">
+            <a href="https://github.com/fiaos-org/fiaphy/releases" class="btn-primary-fia" target="_blank">
+                <i class="bi bi-download"></i> Download v1.0.1
+            </a>
+            <a href="https://github.com/fiaos-org/fiaphy" class="btn-secondary-fia" target="_blank">
                 <i class="bi bi-github"></i> GitHub
             </a>
-            <a href="../docs/" class="btn-secondary-fia">
-                <i class="bi bi-book"></i> Documentation
+            <a href="../research/" class="btn-secondary-fia">
+                <i class="bi bi-file-text"></i> Research Paper
             </a>
         </div>
     </section>
@@ -782,9 +785,9 @@
                 <svg viewBox="0 0 24 24"><path d="M0 7.334v8h6.666v1.332H12v-1.332h12v-8H0zm6.666 6.664H5.334v-4H3.999v4H1.335V8.667h5.331v5.331zm4 0v1.336H8.001V8.667h5.334v5.332h-2.669v-.001zm12.001 0h-1.33v-4h-1.336v4h-1.335v-4h-1.33v4h-2.671V8.667h8.002v5.331z"/></svg>
                 <span>npmJS</span>
             </a>
-            <a href="./download/" class="platform-logo-item" target="_blank" title="download">
+            <a href="https://github.com/fiaos-org/fiaphy/releases" class="platform-logo-item" target="_blank" title="download">
                 <svg viewBox="0 0 24 24"><path d="M11.851 0L.811 4.02l1.56 14.7L11.85 24l9.6-5.28 1.74-14.76L11.851 0zm0 2.4l7.56 2.88-7.56 2.88-7.44-2.88 7.44-2.88zm-8.4 4.56l8.4 3.12v11.04l-8.4-4.56V6.96zm16.8 0v9.6l-8.4 4.56V10.08l8.4-3.12z"/></svg>
-                <span>DIrect Download</span>
+                <span>Direct Download</span>
             </a>
         </div>
     </section>
@@ -850,7 +853,145 @@
             <p class="scholarly-body">Billions of sensors exist right now, measuring simple parameters only because that's how they were labeled. We are overlooking the true value of mathematical approximation. <br >As demonstrated in countless applications involving these sensors and sensing devices, a combination of such sensors can yield derived parameters—values we often cannot obtain directly with perfect precision. <br>But do we always need perfect precision? <br>Let's end this information crisis. Restricting sensor potential is like blocking our future generations from building upon what we create today. Old or new sensors, built for various purposes, combined together, can derive far more advanced real-world parameters in applications that don't demand absolute precision. We are wasting resources.<br> A single such waste can cause millions of organisms to suffer, fall behind, or be restricted. <br><br>Contribute to the next wave of planetary recovery—we can build frameworks that rely on frameworks. FiaPhy is a research initiative focused on maximizing the potential of sensors, the near-future carriers of full-human automation, to help sustain existing and upcoming innovations while enabling them to work with our frameworks for generations to come.<br><br> Contributing to the good of everywhere.</p>
         </div>
     </section>
+ <section class="fiaphy-section" style="background: var(--bg-secondary);">
+        <h2 class="fiaphy-section-title">Platform Availability</h2>
+        <p class="fiaphy-section-subtitle">
+            FiaPhy works across multiple platforms and development environments
+        </p>
+        
+        <div class="platform-availability-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
+            <div class="platform-card" style="background: var(--bg-primary); padding: 2rem; border-radius: 0.75rem; border: 1px solid var(--border-subtle);">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="color: var(--text-primary);">
+                        <path d="M23.15 2.587L18.21.21a1.494 1.494 0 00-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 00-1.276.057L.327 7.261A1 1 0 00.326 8.74L3.899 12 .326 15.26a1 1 0 00.001 1.479L1.65 17.94a.999.999 0 001.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 001.704.29l4.942-2.377A1.5 1.5 0 0024 20.06V3.939a1.5 1.5 0 00-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z"/>
+                    </svg>
+                    <h3 style="margin: 0; font-size: 1.1rem;">VS Code Extension</h3>
+                    <i class="bi bi-patch-check-fill" style="color: #0078d4; font-size: 1.2rem;" title="Verified Publisher"></i>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">Language support and syntax highlighting for FiaPhy library development</p>
+                <a href="https://marketplace.visualstudio.com/items?itemName=FiaOS.fiaphy-language-support" target="_blank" class="btn-primary-fia" style="width: 100%; justify-content: center; font-size: 0.875rem;">
+                    <i class="bi bi-download"></i> Install Extension
+                </a>
+            </div>
+            
+            <div class="platform-card" style="background: var(--bg-primary); padding: 2rem; border-radius: 0.75rem; border: 1px solid var(--border-subtle);">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="color: var(--text-primary);">
+                        <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm-1.5 17.5h-3l-.5-1h4l-.5 1zm-3-2.5l1.5-3h3l1.5 3h-6zm5.25-4h-4.5L7 8h10l-4.25 3z"/>
+                    </svg>
+                    <h3 style="margin: 0; font-size: 1.1rem;">Arduino IDE</h3>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">Install via Library Manager or manual ZIP file installation</p>
+                <a href="https://github.com/fiaos-org/fiaphy/releases" target="_blank" class="btn-primary-fia" style="width: 100%; justify-content: center; font-size: 0.875rem;">
+                    <i class="bi bi-download"></i> Download ZIP
+                </a>
+            </div>
+            
+            <div class="platform-card" style="background: var(--bg-primary); padding: 2rem; border-radius: 0.75rem; border: 1px solid var(--border-subtle);">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <svg width="28" height="28" viewBox="0 0 32 32" fill="currentColor" style="color: var(--text-primary);">
+                        <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm0 4.5c6.351 0 11.5 5.149 11.5 11.5S22.351 27.5 16 27.5 4.5 22.351 4.5 16 9.649 4.5 16 4.5zm0 3a8.5 8.5 0 100 17 8.5 8.5 0 000-17zm0 3a5.5 5.5 0 110 11 5.5 5.5 0 010-11z"/>
+                    </svg>
+                    <h3 style="margin: 0; font-size: 1.1rem;">PlatformIO</h3>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">Professional embedded development with dependency management</p>
+                <div class="install-box" style="margin-top: 1rem;">
+                    <span class="prompt">$</span>
+                    <span style="font-size: 0.75rem;">pio lib install fiaos-org/FiaPhy@^1.0.1</span>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText('pio lib install fiaos-org/FiaPhy@^1.0.1')" title="Copy">
+                        <i class="bi bi-clipboard"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Installation Guide Section -->
+    <section class="fiaphy-section">
+        <h2 class="fiaphy-section-title">Installation Instructions</h2>
+        
+        <div style="max-width: 900px; margin: 0 auto;">
+            <!-- Method 1: Arduino IDE -->
+            <div style="margin-bottom: 3rem;">
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-primary);">Arduino IDE Library Manager</h3>
+                <ol style="color: var(--text-secondary); line-height: 1.8; padding-left: 1.5rem;">
+                    <li>Open Arduino IDE</li>
+                    <li>Navigate to Sketch → Include Library → Manage Libraries</li>
+                    <li>Search for "FiaPhy" in the search box</li>
+                    <li>Click Install button</li>
+                </ol>
+                <div style="margin-top: 1.5rem; border-radius: 0.5rem; overflow: hidden; border: 1px solid var(--border-subtle);">
+                    <img src="../assets/media/7843748274872482.png" alt="Arduino IDE Library Installation" style="width: 100%; display: block;">
+                </div>
+            </div>
+            
+            <!-- Method 2: ZIP File -->
+            <div style="margin-bottom: 3rem;">
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-primary);">Manual ZIP File Installation</h3>
+                <ol style="color: var(--text-secondary); line-height: 1.8; padding-left: 1.5rem;">
+                    <li>Download FiaPhy-1.0.1.zip from <a href="https://github.com/fiaos-org/fiaphy/releases" target="_blank">GitHub Releases</a></li>
+                    <li>Open Arduino IDE</li>
+                    <li>Go to Sketch → Include Library → Add .ZIP Library</li>
+                    <li>Select the downloaded ZIP file</li>
+                    <li>Library will be installed and available in your sketches</li>
+                </ol>
+                <div style="margin-top: 1rem;">
+                    <a href="https://github.com/fiaos-org/fiaphy/releases" target="_blank" class="btn-primary-fia">
+                        <i class="bi bi-download"></i> Download from GitHub Releases
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Method 3: VS Code Extension -->
+            <div style="margin-bottom: 3rem;">
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-primary);">VS Code Extension <i class="bi bi-patch-check-fill" style="color: #0078d4; font-size: 1rem;" title="Verified Publisher"></i></h3>
+                <ol style="color: var(--text-secondary); line-height: 1.8; padding-left: 1.5rem;">
+                    <li>Open Visual Studio Code</li>
+                    <li>Go to Extensions (Ctrl+Shift+X or Cmd+Shift+X)</li>
+                    <li>Search for "FiaPhy Language Support"</li>
+                    <li>Click Install button (look for verified badge)</li>
+                </ol>
+                <div style="margin-top: 1.5rem; border-radius: 0.5rem; overflow: hidden; border: 1px solid var(--border-subtle);">
+                    <img src="../assets/media/894384394824.png" alt="VS Code Extension Installation" style="width: 100%; display: block;">
+                </div>
+                <div style="margin-top: 1.5rem;">
+                    <a href="https://marketplace.visualstudio.com/items?itemName=FiaOS.fiaphy-language-support" target="_blank" class="btn-primary-fia">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem;">
+                            <path d="M23.15 2.587L18.21.21a1.494 1.494 0 00-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 00-1.276.057L.327 7.261A1 1 0 00.326 8.74L3.899 12 .326 15.26a1 1 0 00.001 1.479L1.65 17.94a.999.999 0 001.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 001.704.29l4.942-2.377A1.5 1.5 0 0024 20.06V3.939a1.5 1.5 0 00-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z"/>
+                        </svg>
+                        Install from VS Code Marketplace
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Method 4: PlatformIO -->
+            <div>
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-primary);">PlatformIO</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Add to your platformio.ini configuration file:</p>
+                <div class="code-block-wrapper" style="margin-bottom: 1rem;">
+                    <div class="code-block-content" style="padding: 1.5rem; background: #1e1e1e; border-radius: 0.5rem; overflow-x: auto;">
+<span style="color: #9cdcfe;">[env:yourboard]</span>
+<span style="color: #c586c0;">platform</span> = <span style="color: #ce9178;">atmelavr</span>  <span style="color: #6a9955;">; or espressif32, etc.</span>
+<span style="color: #c586c0;">board</span> = <span style="color: #ce9178;">uno</span>
+<span style="color: #c586c0;">lib_deps</span> = 
+    <span style="color: #ce9178;">fiaos-org/FiaPhy@^1.0.1</span>
+    <span style="color: #ce9178;">adafruit/Adafruit BME280 Library@^2.2.2</span>
+                    </div>
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Or install via command line:</p>
+                <div class="install-box">
+                    <span class="prompt">$</span>
+                    <span>pio lib install fiaos-org/FiaPhy@^1.0.1</span>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText('pio lib install fiaos-org/FiaPhy@^1.0.1')" title="Copy to clipboard">
+                        <i class="bi bi-clipboard"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+  
     <!-- Features Section -->
     <section class="fiaphy-section">
         <h2 class="fiaphy-section-title">What FiaPhy Delivers</h2>
@@ -904,26 +1045,36 @@
                     <div class="code-block-header">main.cpp</div>
                     <div class="code-block-content">
 <span class="keyword">#include</span> <span class="string">&lt;FiaPhy.h&gt;</span>
+<span class="keyword">#include</span> <span class="string">&lt;Adafruit_BME280.h&gt;</span>
 
-<span class="type">FiaPhy</span> fia;
+<span class="type">Adafruit_BME280</span> refSensor;   <span class="comment">// 0x76</span>
+<span class="type">Adafruit_BME280</span> fluxSensor;  <span class="comment">// 0x77</span>
+<span class="type">FiaPhy::DTDSS</span> system;
 
 <span class="keyword">void</span> <span class="function">setup</span>() {
-    <span class="comment">// Initialize differential sensor pair</span>
-    fia.<span class="function">begin</span>();
-    fia.<span class="function">attachReference</span>(<span class="number">0x76</span>);  <span class="comment">// Ventilated sensor</span>
-    fia.<span class="function">attachFlux</span>(<span class="number">0x77</span>);       <span class="comment">// Black-body sensor</span>
-    fia.<span class="function">enableINR</span>(<span class="keyword">true</span>);
+    <span class="type">Serial</span>.<span class="function">begin</span>(<span class="number">115200</span>);
+    refSensor.<span class="function">begin</span>(<span class="number">0x76</span>);
+    fluxSensor.<span class="function">begin</span>(<span class="number">0x77</span>);
+    system.<span class="function">configure</span>(<span class="number">6.9271</span>, <span class="number">79.8612</span>, <span class="number">100.0</span>);
 }
 
 <span class="keyword">void</span> <span class="function">loop</span>() {
-    fia.<span class="function">update</span>();
+    system.<span class="function">feedReferenceData</span>(refSensor.<span class="function">readTemperature</span>(),
+                              refSensor.<span class="function">readHumidity</span>(),
+                              refSensor.<span class="function">readPressure</span>() / <span class="number">100.0</span>);
     
-    <span class="comment">// Derived outputs</span>
-    <span class="keyword">float</span> ghi = fia.<span class="function">getGHI</span>();
-    <span class="keyword">float</span> flux = fia.<span class="function">getHeatFlux</span>();
-    <span class="keyword">float</span> et0 = fia.<span class="function">getET0</span>();
+    system.<span class="function">feedFluxData</span>(fluxSensor.<span class="function">readTemperature</span>(),
+                         fluxSensor.<span class="function">readHumidity</span>(),
+                         fluxSensor.<span class="function">readPressure</span>() / <span class="number">100.0</span>);
     
-    <span class="function">delay</span>(<span class="number">1000</span>);
+    <span class="keyword">if</span> (system.<span class="function">isFrameReady</span>()) {
+        <span class="type">FiaPhy::RadiationResult</span> result = system.<span class="function">compute</span>();
+        <span class="keyword">if</span> (result.valid) {
+            <span class="type">Serial</span>.<span class="function">print</span>(<span class="string">"GHI: "</span>);
+            <span class="type">Serial</span>.<span class="function">println</span>(result.ghi_Wm2);
+        }
+    }
+    <span class="function">delay</span>(<span class="number">3000</span>);
 }
                     </div>
                 </div>
@@ -1044,7 +1195,7 @@
                 </div>
                 <div class="platform-content">
                     <h3>Embedded Systems</h3>
-                    <p>Native support for ESP32, ESP8266, Arduino Uno/Mega, STM32, and Raspberry Pi Pico. Optimized for low memory and real-time operation. Install via <a href="#">PlatformIO</a> or Arduino Library Manager.</p>
+                    <p>Native support for ESP32, ESP8266, Arduino (AVR, ARM Cortex), STM32, and Raspberry Pi Pico. Optimized for low memory and real-time operation. Install via <a href="https://platformio.org/lib/show/fiaphy" target="_blank">PlatformIO</a> or Arduino Library Manager.</p>
                 </div>
             </div>
             <div class="platform-card">
@@ -1055,7 +1206,7 @@
                 </div>
                 <div class="platform-content">
                     <h3>Server & Desktop</h3>
-                    <p>Run FiaPhy on any Linux system, Raspberry Pi, or desktop for batch processing and data analysis. Compile with GCC or integrate into Python via bindings. Perfect for research environments.</p>
+                    <p>Run FiaPhy on Raspberry Pi OS and Linux systems for research and data collection. Requires GCC 8.0+ and CMake 3.10+. Full source available on <a href="https://github.com/fiaos-org/fiaphy" target="_blank">GitHub</a> with example implementations.</p>
                 </div>
             </div>
         </div>
@@ -1101,45 +1252,70 @@
             </div>
         </div>
     </section>
-
-    <!-- Install Section -->
-    <section class="install-section">
-        <h2 class="fiaphy-section-title">Get started in seconds</h2>
-        <p class="fiaphy-section-subtitle" style="margin-bottom: 0;">
-            Add FiaPhy to your project with a single command
-        </p>
-        <div class="install-box">
-            <span class="prompt">$</span>
-            <span>pio lib install "FiaPhy"</span>
-            <button class="copy-btn" onclick="navigator.clipboard.writeText('pio lib install FiaPhy')" title="Copy to clipboard">
-                <i class="bi bi-clipboard"></i>
-            </button>
+  <section class="fiaphy-section" style="background: var(--bg-secondary);">
+        <h2 class="fiaphy-section-title">Frequently Asked Questions</h2>
+        
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-subtle);">
+                <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--text-primary);">Is this free?</h3>
+                <p style="color: var(--text-secondary); line-height: 1.7;">Yes. This is 100% free and open source. The library, research paper, and all source code are publicly available on GitHub.</p>
+            </div>
+            
+            <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-subtle);">
+                <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--text-primary);">How can we trust this technology?</h3>
+                <p style="color: var(--text-secondary); line-height: 1.7;">This technology is based on the research paper "Temporal Derivative Soft-Sensing and Reconstructing Solar Radiation and Heat Flux from Common Environmental Sensors." The paper has been accepted by IEEE for peer review. We are currently in the review process and continuing to improve the technology. This is a pre-release version under active testing and development.</p>
+            </div>
+            
+            <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-subtle);">
+                <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--text-primary);">Does this work on macOS, Windows, and Linux?</h3>
+                <p style="color: var(--text-secondary); line-height: 1.7;">Yes. FiaPhy works across all major operating systems (Windows, macOS, Linux) and on embedded platforms (ESP32, Arduino, Raspberry Pi, etc.). The library integrates with your development environment (Arduino IDE, PlatformIO, VS Code) rather than directly with the operating system.</p>
+            </div>
+            
+            <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-subtle);">
+                <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--text-primary);">How can I verify downloads are not fake?</h3>
+                <p style="color: var(--text-secondary); line-height: 1.7;">Look for the verified checkmark <i class="bi bi-patch-check-fill" style="color: #0078d4;"></i> next to the publisher name on the VS Code Marketplace. For GitHub releases, verify the repository URL is <code style="background: var(--bg-tertiary); padding: 0.2rem 0.5rem; border-radius: 0.25rem;">github.com/fiaos-org/fiaphy</code>. Official releases are signed by the FiaOS organization.</p>
+            </div>
+            
+            <div>
+                <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--text-primary);">What platforms are supported?</h3>
+                <p style="color: var(--text-secondary); line-height: 1.7;">FiaPhy supports Arduino (AVR, ARM Cortex-M0/M3/M4), ESP32/ESP8266, Raspberry Pi (Linux ARM), STM32, and other embedded platforms. You can use Arduino IDE, PlatformIO, or compile directly with GCC on Linux systems.</p>
+            </div>
         </div>
-        <p style="color: var(--text-muted); margin-top: 1rem; font-size: 0.85rem;">
-            Or download directly from <a href="https://github.com/fiaos-org/fiaphy" >GitHub</a>
-        </p>
     </section>
 
     <!-- CTA Section -->
     <section class="fiaphy-section" style="text-align: center;">
-        <h2 class="fiaphy-section-title">Ready to unlock sensor physics?</h2>
+        <h2 class="fiaphy-section-title">Start Using FiaPhy</h2>
         <p class="fiaphy-section-subtitle">
-            Join the community of engineers and researchers using FiaPhy to democratize environmental intelligence.
+            Download the latest version and integrate into your project
         </p>
+        <div class="hero-buttons" style="margin-bottom: 2rem;">
+            <a href="https://github.com/fiaos-org/fiaphy/releases" class="btn-primary-fia" target="_blank" style="font-size: 1.1rem; padding: 1rem 2.5rem;">
+                <i class="bi bi-download"></i> Download v1.0.1
+            </a>
+            <a href="https://marketplace.visualstudio.com/items?itemName=FiaOS.fiaphy-language-support" class="btn-primary-fia" target="_blank" style="font-size: 1.1rem; padding: 1rem 2.5rem;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem;">
+                    <path d="M23.15 2.587L18.21.21a1.494 1.494 0 00-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 00-1.276.057L.327 7.261A1 1 0 00.326 8.74L3.899 12 .326 15.26a1 1 0 00.001 1.479L1.65 17.94a.999.999 0 001.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 001.704.29l4.942-2.377A1.5 1.5 0 0024 20.06V3.939a1.5 1.5 0 00-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z"/>
+                </svg>
+                VS Code Extension
+            </a>
+        </div>
         <div class="hero-buttons">
-            <a href="https://github.com/fiaos-org/fiaphy" class="btn-primary-fia" target="_blank">
-                <i class="bi bi-github"></i> GitHub
+            <a href="https://github.com/fiaos-org/fiaphy" class="btn-secondary-fia" target="_blank">
+                <i class="bi bi-github"></i> GitHub Repository
             </a>
             <a href="../research/" class="btn-secondary-fia">
-                <i class="bi bi-file-text"></i> Read the Research Paper
+                <i class="bi bi-file-text"></i> Research Paper
             </a>
         </div>
         <p style="margin-top: 1.5rem;">
             <a href="../about/" style="color: var(--text-secondary); text-decoration: underline; font-size: 0.9rem;">
-                <i class="bi bi-clock-history"></i> View the timeline — how we built this
+                <i class="bi bi-clock-history"></i> View the timeline - how we built this
             </a>
         </p>
     </section>
+    <!-- Platform Availability Section -->
+   
   <footer class="site-footer">
         <div class="footer-container">
               <div class="footer-section">
