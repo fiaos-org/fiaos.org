@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atmel ATmega Demo - Autonomous 25 - FiaOS</title>
+    <meta name="description" content="Demonstration code for the Autonomous 25 presentation using FiaPhy library on Arduino.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="icon" type="image/png" href="../../assets/media/favicon.png">
+    
+    <style>
+        .autonomous-25-logo {
+            font-family: 'Product Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 500;
+        }
+        .code-block {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            white-space: pre;
+        }
+        .download-btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+        }
+        .download-btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Announcement Ribbon -->
+    <div id="announcementRibbon" class="announcement-ribbon">
+        <div class="announcement-content">
+            <i class="bi bi-megaphone-fill"></i>
+            <span><strong>Developer Release v0.1</strong> — Biome framework is now open source. <a href="../../docs/index.html">View Documentation →</a></span>
+        </div>
+        <button id="dismissAnnouncement" class="announcement-dismiss" aria-label="Dismiss"><i class="bi bi-x"></i></button>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-consent">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-text">
+                <h3>Terms of Use & Data Policy</h3>
+                <p>This platform uses cookies and local storage for essential functionality, theme preferences, and analytics. <br><br>All documentation and data are provided for educational and non-commercial purposes unless otherwise specified. <br> Copyrights © Neksha DeSilva and www.nekshadesilva.com All rights reserved.<br> You are in control.</p>
+            </div>
+            <div class="cookie-consent-actions">
+                <button id="acceptCookies" class="cookie-btn cookie-btn-accept">Accept & Continue</button>
+                <a href="https://google.com" class="cookie-btn cookie-btn-learn">Decline</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="top-toolbar">
+        <div class="toolbar-left">
+            <button id="searchToggle" class="toolbar-btn"><i class="bi bi-search"></i></button>
+        </div>
+        <div class="toolbar-right">
+            <button id="themeToggle" class="toolbar-btn"><i class="bi bi-sun-fill"></i></button>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-brand">
+                <img src="../../assets/media/umbrella-logo-clean.png" alt="FiaOS" class="brand-logo">
+                <div class="brand-text">
+                    <h1 class="brand-title autonomous-25-logo">Autonomous 25</h1>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <a href="../../index.html" class="nav-link">HOME</a>
+                <a href="../../research/index.html" class="nav-link">RESEARCH</a>
+                <a href="../../docs/index.html" class="nav-link">DOCUMENTATION</a>
+                <a href="../../archive/index.html" class="nav-link">ARCHIVE</a>
+                <a href="../../data/index.html" class="nav-link">DATA</a>
+            </nav>
+            <button id="mobileMenuBtn" class="mobile-menu-btn"><i class="bi bi-list"></i></button>
+        </div>
+    </header>
+
+    <div class="page-container">
+        <main class="main-content">
+            <section class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">Atmel ATmega Demo</h2>
+                </div>
+                <div class="section-content">
+                    <p>Demonstration code for the Autonomous 25 presentation.</p>
+                    
+                    <a href="main.ino" download class="download-btn">Download main.ino</a>
+                    
+                    <div class="code-block">/*Copyrights (c) 2025 FIA Operating Systems, Neksha DeSilva and www.nekshadesilva.com*/
+/*FiaPhy Solar Rad and Heat Flux Derivation through Relative Humidity, Temperature and Barometric Pressure.*/
+/*ARM M0 Example*/
+/*For more guides and tutorials, visit https://fiaos.org/fiaphy*/
+
+#include &lt;Wire.h&gt;
+#include &lt;LiquidCrystal_I2C.h&gt;
+#include &lt;DHT.h&gt;
+#include &lt;FiaPhy.h&gt;
+
+
+#define PIN_DHT_REF  2
+#define PIN_DHT_FLUX 3
+#define DHT_TYPE     DHT11
+
+const float LATITUDE    = 6.9271;
+const float LONGITUDE   = 79.8612;
+const float ALTITUDE_M  = 10.0;
+const float BASE_PRESSURE_HPA = 1014.0;  // Colombo data - testing purposes only. Since DHT11 has no barometric pressure out.
+
+LiquidCrystal_I2C lcd(0x27, 16, 2); 
+DHT dht_ref(PIN_DHT_REF, DHT_TYPE);
+DHT dht_flux(PIN_DHT_FLUX, DHT_TYPE);
+
+FiaPhy::PhysicsEngine engine;
+FiaPhy::INRFilter inr_ref;
+FiaPhy::INRFilter inr_flux;
+
+unsigned long last_sample_time = 0;
+const unsigned long SAMPLE_INTERVAL = 2000;
+
+void setup() {
+   
+    Serial.begin(9600);
+    while(!Serial);
+    Serial.println(F("\n=== SYSTEM BOOT (LITE MODE) ==="));
+
+    lcd.init();
+    lcd.backlight();
+    lcd.setCursor(0, 0);
+    lcd.print("FiaPhy Lib. v1.1.2");
+    lcd.setCursor(0, 1);
+    lcd.print("Memory = 1");
+    delay(1000);
+
+    dht_ref.begin();
+    dht_flux.begin();
+
+
+    engine.setLocation(LATITUDE, LONGITUDE);
+    
+    FiaPhy::CalibrationParams calib;
+    calib.thermal_time_constant_s = 45.0f; 
+    calib.solar_absorptivity = 0.90f;
+    engine.setCalibration(calib);
+
+    Serial.println(F("Success"));
+    lcd.clear();
+    lcd.print("Reading data..");
+}
+
+void loop() {
+    unsigned long current_time = millis();
+
+    if (current_time - last_sample_time &gt;= SAMPLE_INTERVAL) {
+        last_sample_time = current_time;
+
+
+        float t_ref = dht_ref.readTemperature();
+        float h_ref = dht_ref.readHumidity();
+        float t_flux = dht_flux.readTemperature();
+        float h_flux = dht_flux.readHumidity();
+
+        if (isnan(t_ref) || isnan(t_flux)) {
+            Serial.println(F("Sensor Error"));
+            lcd.setCursor(0, 0); lcd.print("Sensor Err");
+            return;
+        }
+
+  
+        FiaPhy::DifferentialFrame frame;
+        float sim_pressure = BASE_PRESSURE_HPA + (random(-10, 10) / 100.0);
+
+     
+        frame.ref.temperature_C = t_ref;
+        frame.ref.humidity_RH = h_ref;
+        frame.ref.pressure_hPa = sim_pressure;
+        frame.ref.complete = true;
+
+       
+        frame.flux.temperature_C = t_flux;
+        frame.flux.humidity_RH = h_flux;
+        frame.flux.pressure_hPa = sim_pressure;
+        frame.flux.complete = true;
+
+        frame.valid = true; 
+
+      
+        FiaPhy::RadiationResult result = engine.compute(frame, inr_ref, inr_flux);
+
+        
+        Serial.print(F("Ref:")); Serial.print(t_ref, 1);
+        Serial.print(F(" Flux:")); Serial.print(t_flux, 1);
+        Serial.print(F(" | GHI:")); Serial.println(result.ghi_Wm2);
+
+        updateLCD(result, t_ref, t_flux);
+    }
+}
+
+void updateLCD(FiaPhy::RadiationResult result, float t_ref, float t_flux) {
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("Sun: ");
+    lcd.print((int)result.ghi_Wm2);
+    lcd.print(" W/m2");
+
+    lcd.setCursor(0, 1);
+    lcd.print("Flx: ");
+    lcd.print((int)result.heat_flux_Wm2);
+    lcd.print(" W/m2");
+}</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+              <div class="footer-section">
+                <br>
+                <span style="font-weight: 400;">Future is Autonomous.</span>
+               
+                 <div class="footer-logo" style=" margin-top: 1rem;">
+                    <img src="../../assets/media/logo-satur.png" alt="Logo">
+                </div>
+           </div>
+            <div class="footer-section">
+                <h4>Project</h4>
+                <ul>
+                    <li><a href="../../research/index.html">Research</a></li>
+                    <li><a href="../../docs/index.html">Documentation</a></li>
+                    <li><a href="../../archive/index.html">Archive</a></li>
+                    <li><a href="../../data/index.html">Data</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="../../api/index.html">API</a></li>
+                    <li><a href="../../sources/index.html">View Source</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:research@fiaos.org">research@fiaos.org</a></li>
+                </ul>
+            </div>
+    </footer>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center; padding:0 5rem;">
+                <p>Copyrights © Neksha DeSilva and www.nekshadesilva.com. All rights reserved.</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://x.com/NekshaDesilva" aria-label="X (Twitter)">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                <a href="https://youtube.com/@NekshaDesilva" aria-label="YouTube">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/scripts/network-status-injector.js"></script>
+    <script src="../../assets/scripts/main.js"></script>
+</body>
+</html>
