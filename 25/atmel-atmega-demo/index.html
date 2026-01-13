@@ -48,7 +48,7 @@
     <div id="announcementRibbon" class="announcement-ribbon">
         <div class="announcement-content">
             <i class="bi bi-megaphone-fill"></i>
-            <span><strong>Developer Release v0.1</strong> — Biome framework is now open source. <a href="../../docs/index.html">View Documentation →</a></span>
+            <span>Developer Release v0.1 Biome framework is now open source. <a href="../../docs/index.html">View Documentation →</a></span>
         </div>
         <button id="dismissAnnouncement" class="announcement-dismiss" aria-label="Dismiss"><i class="bi bi-x"></i></button>
     </div>
@@ -102,10 +102,59 @@
                     <h2 class="section-title">Atmel ATmega Demo</h2>
                 </div>
                 <div class="section-content">
-                    <p>Demonstration code for the Autonomous 25 presentation.</p>
+                    <p style="margin-bottom: 1.5rem;">A beginner-friendly tutorial demonstrating the FiaPhy library running on 8-bit Atmel ATmega microcontrollers. This guide is designed to be accessible for hobbyists and newcomers to embedded programming.</p>
                     
-                    <a href="main.ino" download class="download-btn">Download main.ino</a>
+                    <!-- Important Notes Section -->
+                    <div style="background: var(--bg-secondary); padding: 1.25rem; border-radius: 8px; margin-bottom: 2rem; ">
+                        <h3 style="margin-top: 0; margin-bottom: 1rem;"><i class="bi bi-info-circle"></i> Important Notes</h3>
+                        <ul style="margin: 0; padding-left: 1.25rem;">
+                            <li style="margin-bottom: 0.5rem;">This tutorial uses the FiaPhy Condensed Edition, optimized for constrained 8-bit microcontrollers.</li>
+                            <li style="margin-bottom: 0.5rem;">We use the DHT11 sensor to make this tutorial more accessible. DHT11 does not measure barometric pressure, so we approximate it using external data.</li>
+                            <li style="margin-bottom: 0.5rem;">Barometric pressure data was derived from NASA LARC POWER datasets for Colombo, Sri Lanka (retrieved on December 24, 2025).</li>
+                            <li style="margin-bottom: 0.5rem;">This demo proves that FiaPhy runs smoothly on extremely constrained 8-bit hardware with limited RAM and processing power.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Why This Matters Section -->
+                    <h3 style="margin-bottom: 1rem;">Why This Matters</h3>
+                    <p style="margin-bottom: 1rem;">FiaPhy is an industry-grade software library originally designed for advanced multi-core processors (A0 to A9 class). However, this tutorial demonstrates that the same library executes flawlessly on 8-bit ATmega microcontrollers, which have extremely limited memory and processing capabilities.</p>
+                    <p style="margin-bottom: 1.5rem;">This demonstrates our core commitment to extreme scalability and resilience. FIA Operating Systems is dedicated to making professional-grade environmental sensing accessible to hobbyists, students, and makers worldwide. We plan to release versions specifically tailored for the hobbyist community.</p>
+
+                    <!-- Circuit Diagram Section -->
+                    <h3 style="margin-bottom: 1rem;">Circuit Diagram</h3>
+                    <p style="margin-bottom: 1rem;">Below is the wiring diagram for this project. Connect two DHT11 sensors to your Arduino: one as the Reference Node (measuring ambient conditions) and one as the Flux Node (exposed to sunlight through a clear dome).</p>
+                    <figure style="margin: 1.5rem 0; text-align: center;">
+                        <img src="diagram.jpg" alt="Circuit diagram showing DHT11 sensors connected to Arduino" style="max-width: 100%; height: auto; border-radius: 8px;">
+                        <figcaption style="font-size: 0.9375rem; color: var(--text-secondary); margin-top: 0.75rem;">Figure 1: Wiring diagram for dual DHT11 sensor setup with Arduino</figcaption>
+                    </figure>
+
+                    <!-- How to Install FiaPhy Section -->
+                    <h3 style="margin-bottom: 1rem;">Installing the FiaPhy Library</h3>
+                    <p style="margin-bottom: 1rem;">Follow these steps to install FiaPhy in your Arduino IDE or compatible development environment:</p>
+                    <ol style="margin-bottom: 1.5rem; padding-left: 1.25rem;">
+                        <li style="margin-bottom: 0.75rem;">Open Arduino IDE and go to Sketch → Include Library → Manage Libraries</li>
+                        <li style="margin-bottom: 0.75rem;">In the Library Manager search bar, type "FiaPhy"</li>
+                        <li style="margin-bottom: 0.75rem;">Find "FiaPhy" by FIA Operating Systems and click Install</li>
+                        <li style="margin-bottom: 0.75rem;">Alternatively, download from <a href="https://github.com/fiaos-org/fiaphy/releases" target="_blank">GitHub Releases</a> and install manually via Sketch → Include Library → Add .ZIP Library</li>
+                    </ol>
+                    <p style="margin-bottom: 1.5rem;">For other IDEs (PlatformIO, Atmel Studio, etc.), add FiaPhy to your project's library dependencies or include the source files directly.</p>
+
+                    <!-- Hardware Requirements Section -->
+                    <h3 style="margin-bottom: 1rem;">Hardware Requirements</h3>
+                    <ul style="margin-bottom: 1.5rem; padding-left: 1.25rem;">
+                        <li style="margin-bottom: 0.5rem;">Arduino Uno, Nano, or any ATmega328P-based board</li>
+                        <li style="margin-bottom: 0.5rem;">2x DHT11 temperature and humidity sensors</li>
+                        <li style="margin-bottom: 0.5rem;">16x2 I2C LCD display (optional, for visual output)</li>
+                        <li style="margin-bottom: 0.5rem;">Jumper wires and breadboard</li>
+                        <li style="margin-bottom: 0.5rem;">Clear plastic dome (for Flux Node sensor)</li>
+                    </ul>
+
+                    <!-- Download Section -->
+                    <h3 style="margin-bottom: 1rem;">Download the Code</h3>
+                    <a href="main.ino" download class="download-btn"><i class="bi bi-download"></i> Download main.ino</a>
                     
+                    <!-- Code Section -->
+                    <h3 style="margin-bottom: 1rem;">Source Code</h3>
                     <div class="code-block">/*Copyrights (c) 2025 FIA Operating Systems, Neksha DeSilva and www.nekshadesilva.com*/
 /*FiaPhy Solar Rad and Heat Flux Derivation through Relative Humidity, Temperature and Barometric Pressure.*/
 /*ARM M0 Example*/
@@ -124,7 +173,7 @@
 const float LATITUDE    = 6.9271;
 const float LONGITUDE   = 79.8612;
 const float ALTITUDE_M  = 10.0;
-const float BASE_PRESSURE_HPA = 1014.0;  // Colombo data - testing purposes only. Since DHT11 has no barometric pressure out.
+const float BASE_PRESSURE_HPA = 1014.0;  // Approximated from NASA LARC POWER data for Colombo, Sri Lanka (Dec 24, 2025)
 
 LiquidCrystal_I2C lcd(0x27, 16, 2); 
 DHT dht_ref(PIN_DHT_REF, DHT_TYPE);
@@ -227,6 +276,23 @@ void updateLCD(FiaPhy::RadiationResult result, float t_ref, float t_flux) {
     lcd.print((int)result.heat_flux_Wm2);
     lcd.print(" W/m2");
 }</div>
+
+                    <!-- Understanding the Code Section -->
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Understanding the Code</h3>
+                    <p style="margin-bottom: 1rem;">This code sets up two DHT11 sensors in a differential configuration. The Reference Node measures ambient temperature and humidity, while the Flux Node is placed under a clear dome to measure how sunlight affects it.</p>
+                    <p style="margin-bottom: 1rem;">The FiaPhy library then calculates solar radiation (GHI in W/m²) and heat flux by analyzing the temperature difference between the two sensors. The Inertial Noise Reduction (INR) filter smooths out sensor noise for accurate readings.</p>
+                    <p style="margin-bottom: 1.5rem;">Since DHT11 does not measure barometric pressure, we use an approximated value from NASA LARC POWER datasets. For more accurate results, consider using a BME280 sensor which provides temperature, humidity, and pressure.</p>
+
+                    <!-- Next Steps Section -->
+                    <h3 style="margin-bottom: 1rem;">Next Steps</h3>
+                    <ul style="margin-bottom: 1.5rem; padding-left: 1.25rem;">
+                        <li style="margin-bottom: 0.5rem;">Experiment with different sensor placements and dome materials</li>
+                        <li style="margin-bottom: 0.5rem;">Upgrade to BME280 for real-time pressure readings</li>
+                        <li style="margin-bottom: 0.5rem;">Log data to an SD card for long-term analysis</li>
+                        <li style="margin-bottom: 0.5rem;">Visit <a href="../../fiaphy/index.html">FiaPhy documentation</a> for advanced features</li>
+                    </ul>
+
+                    <p style="color: var(--text-tertiary); font-size: 0.9375rem;">Questions or contributions? Contact us at <a href="mailto:research@fiaos.org">research@fiaos.org</a></p>
                 </div>
             </section>
         </main>

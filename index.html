@@ -17,7 +17,7 @@
     <div id="announcementRibbon" class="announcement-ribbon">
         <div class="announcement-content">
             <i class="bi bi-info-circle-fill"></i>
-            <span><strong>Developer Release v0.1</strong> — Biome framework is now open source. Build on top of our environmental intelligence platform. <a href="docs/">View Documentation →</a></span>
+            <span>Developer Release v0.1 Biome framework is now open source. Build on top of our environmental intelligence platform. <a href="docs/">View Documentation →</a></span>
         </div>
         <button id="dismissAnnouncement" class="announcement-dismiss" aria-label="Dismiss">
             <i class="bi bi-x"></i>
@@ -324,7 +324,7 @@
             </div>
             <div class="fiaphy-promo-content">
                 <div class="fiaphy-promo-eyebrow">
-                  v1.0.1 RELEASED
+                  v1.1.2 RELEASED
                 </div>
                 <h3 class="fiaphy-promo-title">Open-Source Library: <span>FiaPhy</span></h3>
                 <p class="fiaphy-promo-desc">Derive solar radiation and heat flux from standard environmental sensors. Works on Arduino, ESP32, Raspberry Pi.</p>
@@ -347,34 +347,29 @@
                     <h2 class="section-title">Overview</h2>
                     <div class="section-meta">
                         <span class="meta-item"><i class="bi bi-calendar3"></i> Updated: December 2025</span>
-                        <span class="meta-item"><i class="bi bi-tag"></i> Version 1.0.1</span>
+                        <span class="meta-item"><i class="bi bi-tag"></i> Version 1.1.2</span>
                     </div>
                 </div>
                 <div class="section-content">
-                    <p class="lead">FiaOS is a research platform focused on environmental sensing and derived parameter calculation. The platform demonstrates how standard, low-cost sensors can be used to derive advanced environmental parameters through physics-based algorithms. The core technology is FiaPhy, an open-source library implementing Differential Temporal Derivative Soft-Sensing (DTDSS) for reconstructing solar radiation and heat flux from commodity environmental sensors.</p>
+                    <p style="margin-bottom: 1.5rem;">Patent Pending in The United States of America<br>
+                    System and Method for Indirect Estimation of Solar Irradiance and Heat Flux via Differential Thermodynamic Sensing<br>
+                    US 63/937,986 · Filed December 29, 2025</p>
                     
-                    <div class="info-grid">
-                        <div class="info-card">
-                            <div class="info-icon"><i class="bi bi-cpu"></i></div>
-                            <h3>FiaPhy Library</h3>
-                            <p>Open-source C++ library for Arduino, ESP32, Raspberry Pi, and PlatformIO</p>
-                        </div>
-                        <div class="info-card">
-                            <div class="info-icon"><i class="bi bi-sun"></i></div>
-                            <h3>Derived Parameters</h3>
-                            <p>Calculate GHI, heat flux, and ET₀ from BME280 and similar sensors</p>
-                        </div>
-                        <div class="info-card">
-                            <div class="info-icon"><i class="bi bi-file-earmark-text"></i></div>
-                            <h3>Research-Based</h3>
-                            <p>Accepted by IEEE for peer review, under active development</p>
-                        </div>
-                        <div class="info-card">
-                            <div class="info-icon"><i class="bi bi-code-square"></i></div>
-                            <h3>Multi-Platform</h3>
-                            <p>VS Code extension, Arduino Library Manager, PlatformIO registry</p>
-                        </div>
-                    </div>
+                    <p style="margin-bottom: 1rem;">Modern environmental monitoring systems, from automotive platforms to industrial installations, often rely on sensing architectures decades old. While sensor hardware has plateaued, algorithmic processing potential has grown exponentially. This creates an engineering challenge as billions of functional sensors are discarded annually, perceived as incapable of advanced measurements like solar radiation or heat flux.</p>
+                    
+                    <p style="margin-bottom: 1rem;">This technology mitigates hardware obsolescence by transferring computation from physical components to intelligent software. By upcycling commodity sensors into high-precision radiometric instruments without firmware changes, it preserves global sensor infrastructure utility in modern autonomous frameworks.</p>
+                    
+                    <p style="margin-bottom: 1rem;">The core is the Differential Temporal Derivative Soft-Sensing (DTDSS) framework, replacing expensive and fragile specialized equipment like pyranometers which are prohibitive in autonomous systems. It uses a differential thermodynamic architecture with paired sensors: a Reference Node alongside a Flux Node to isolate active energy exchanges from ambient conditions. An Inertial Noise Reduction (INR) filter compensates for thermal inertia, predicting equilibrium temperatures in real time.</p>
+                    
+                    <p style="margin-bottom: 1rem;">Unlike machine learning approaches, this system uses physics-based derivations. Air density and enthalpy are calculated via first-principles thermodynamics, ensuring accuracy across altitudes and climates. The state machine is optimized for extreme efficiency, requiring under 60 bytes of RAM, compatible with 8-bit microcontrollers.</p>
+                    
+                    <p style="margin-bottom: 1rem;">FIA Operating Systems is a network of scientists, developers, and industry professionals advancing hardware-agnostic solutions for global sustainability. This ensures established innovations continue contributing to a data-rich, sustainable future.</p>
+                    
+                    <p style="margin-bottom: 1rem;">Billions of sensors exist measuring simple parameters only because that is how they were labeled. The true value of mathematical approximation is often overlooked. A combination of such sensors can yield derived parameters, values that cannot be obtained directly with perfect precision. However, perfect precision is not always required.</p>
+                    
+                    <p style="margin-bottom: 1.5rem;">Restricting sensor potential limits future generations from building upon current work. Sensors, old or new, built for various purposes, when combined together, can derive far more advanced real-world parameters in applications that do not demand absolute precision. FiaPhy is a research initiative focused on maximizing the potential of sensors, the near-future carriers of full-human automation, to help sustain existing and upcoming innovations while enabling them to work with these frameworks for generations to come.</p>
+                    
+                    <p>Research contributions or technical collaboration inquiries may be directed to <a href="mailto:research@fiaos.org">research@fiaos.org</a>.</p>
                 </div>
             </section>
 
@@ -418,107 +413,6 @@
                 ></iframe>
             </section>
 
-            <!-- Documentation Section -->
-            <section id="documentation" class="content-section">
-                <div class="section-header">
-                    <h2 class="section-title">Documentation</h2>
-                </div>
-                <div class="section-content">
-                    <div class="doc-categories">
-                        <div class="doc-category">
-                            <div class="doc-icon"><i class="bi bi-book"></i></div>
-                            <h3>Getting Started</h3>
-                            <ul class="doc-links">
-                                <li><a href="docs/introduction.html">Introduction</a></li>
-                                <li><a href="docs/installation.html">Installation Guide</a></li>
-                                <li><a href="docs/quickstart.html">Quick Start</a></li>
-                            </ul>
-                        </div>
-                        <div class="doc-category">
-                            <div class="doc-icon"><i class="bi bi-gear"></i></div>
-                            <h3>System Architecture</h3>
-                            <ul class="doc-links">
-                                <li><a href="docs/hardware.html">Hardware Components</a></li>
-                                <li><a href="docs/software.html">Software Stack</a></li>
-                                <li><a href="docs/algorithms.html">Algorithm Details</a></li>
-                            </ul>
-                        </div>
-                        <div class="doc-category">
-                            <div class="doc-icon"><i class="bi bi-code-slash"></i></div>
-                            <h3>Development</h3>
-                            <ul class="doc-links">
-                                <li><a href="api">API</a></li>
-                                <li><a href="sources">View Source</a></li>
-                                <li><a href="docs/development-updates-and-networks">Contributing</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Technical Specifications -->
-            <section id="specifications" class="content-section">
-                <div class="section-header">
-                    <h2 class="section-title">Technical Specifications</h2>
-                </div>
-                <div class="section-content">
-                    <div class="spec-table-container">
-                        <table class="spec-table">
-                            <thead>
-                                <tr>
-                                    <th>Component</th>
-                                    <th>Specification</th>
-                                    <th>Accuracy</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Temperature Sensor</td>
-                                    <td>DHT22 / BME280</td>
-                                    <td>±0.5°C</td>
-                                </tr>
-                                <tr>
-                                    <td>Humidity Sensor</td>
-                                    <td>DHT22 / BME280</td>
-                                    <td>±2-3% RH</td>
-                                </tr>
-                                <tr>
-                                    <td>Pressure Sensor</td>
-                                    <td>BME280</td>
-                                    <td>±1 hPa</td>
-                                </tr>
-                                <tr>
-                                    <td>Radiation Estimation</td>
-                                    <td>Solar Panel + TEG</td>
-                                    <td>±15%</td>
-                                </tr>
-                                <tr>
-                                    <td>Biome Prediction</td>
-                                    <td>Penman-Monteith Algorithm</td>
-                                    <td>±10-15%</td>
-                                </tr>
-                                <tr>
-                                    <td>Power System</td>
-                                    <td>Solar with Battery Backup</td>
-                                    <td>10+ years lifespan</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="spec-details">
-                        <h3>System Performance</h3>
-                        <ul>
-                            <li><strong>Environmental Parameters:</strong> 100+ unique input parameters</li>
-                            <li><strong>Data Points:</strong> Over 1 million real data points generated</li>
-                            <li><strong>Irrigation Precision:</strong> Milliliter-level accuracy</li>
-                            <li><strong>Water Savings:</strong> 30-40% compared to timer-based systems</li>
-                            <li><strong>Communication Range:</strong> Up to 5 kilometers</li>
-                            <li><strong>Platform Support:</strong> iOS, Windows, Web, IFTTT integration</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
             <section id="dev-updates-iframe" class="content-section" style="display: flex; flex-direction: column; align-items: center; margin: 2rem 0;">
                 <h2 class="section-title" style="margin-bottom: 1rem;">Development Updates & Networks</h2>
                 <iframe 
@@ -573,7 +467,7 @@
                             </div>
                             <details class="paper-abstract">
                                 <summary>Summerized Abstract</summary>
-                                <p>Current environmental monitoring is fundamentally limited by a reliance on static state variables—temperature, pressure, and humidity—while remaining blind to the dynamic energy exchanges that drive them. This paper introduces Differential Temporal Derivative Soft-Sensing (DTDSS), a novel physics-based framework that transforms standard, low-cost environmental sensors into capability-dense radiometers. By employing a differential topology with Inertial Noise Reduction (INR), we can mathematically reconstruct Global Horizontal Irradiance (GHI) and convective heat flux without the cost or fragility of thermopile pyranometers. While validated using the FiaOS reference architecture, this methodology is hardware-agnostic. The ultimate vision of this work is the deployment of a high-performance, open-source computational library designed for professional embedded development environments. By distributing this algorithm via global repositories, we aim to upgrade the capabilities of millions of existing and future IoT devices. This library allows standard electronics to move beyond simple linear measurements and unlock higher-order environmental physics. By deriving complex energy flux parameters from common sensors, we open a new frontier of derived equations and applications—from precision agriculture to autonomous energy management—essentially democratizing advanced meteorological physics for the global engineering community.</p>
+                                <p>Current environmental monitoring is fundamentally limited by a reliance on static state variables, temperature, pressure, and humidity, while remaining blind to the dynamic energy exchanges that drive them. This paper introduces Differential Temporal Derivative Soft-Sensing (DTDSS), a novel physics-based framework that transforms standard, low-cost environmental sensors into capability-dense radiometers. By employing a differential topology with Inertial Noise Reduction (INR), we can mathematically reconstruct Global Horizontal Irradiance (GHI) and convective heat flux without the cost or fragility of thermopile pyranometers. While validated using the FiaOS reference architecture, this methodology is hardware-agnostic. The ultimate vision of this work is the deployment of a high-performance, open-source computational library designed for professional embedded development environments. By distributing this algorithm via global repositories, we aim to upgrade the capabilities of millions of existing and future IoT devices. This library allows standard electronics to move beyond simple linear measurements and unlock higher-order environmental physics. By deriving complex energy flux parameters from common sensors, we open a new frontier of derived equations and applications, from precision agriculture to autonomous energy management, essentially democratizing advanced meteorological physics for the global engineering community.</p>
                             </details>
                         </article>
                     </div>
