@@ -191,6 +191,15 @@
         .useful-links a:hover {
             text-decoration: underline;
         }
+        
+        /* Mobile view - full width YouTube iframe */
+        @media (max-width: 768px) {
+            .video-wrapper iframe {
+                width: 100vw;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
     </style>
 </head>
 <body>
