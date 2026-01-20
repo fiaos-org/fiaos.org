@@ -293,6 +293,17 @@
                         <p>Having trouble viewing? <a href="https://youtu.be/IgoZqxBu-mM" target="_blank" rel="noopener noreferrer">Open directly on YouTube</a>.</p>
                     </div>
 
+                    <!-- Essential Reading Section - Moved above Appendix -->
+                    <div class="useful-links" style="margin-top: 1.5rem; margin-bottom: 2rem; padding: 1.25rem; background: var(--bg-secondary);">
+                        <h3 style="color: var(--primary-color); font-weight: 700;">Essential Reading</h3>
+                        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">Please read these resources in order to understand the full context after watching the presentation video. It is highly recommended to watch the full video since the validation is demonstrated at the end.</p>
+                        <ul>
+                            <li><a href="../index.html">Project summary and key innovations</a></li>
+                            <li><a href="../ccs/index.html">Published research hypothesis on sensor depreciation</a></li>
+                            <li><a href="../atmel-atmega-demo/index.html">Hardware agnosticism verification code</a></li>
+                        </ul>
+                    </div>
+
                     <!-- Appendix Section -->
                     <div class="appendix-section">
                         <div class="appendix-header">
@@ -781,14 +792,129 @@
                     </div>
                     <!-- End Appendix Section -->
 
-                    <div class="useful-links">
-                        <h3>Useful Links</h3>
-                        <ul>
-                            <li><a href="../index.html">Autonomous 25 Overview</a></li>
-                            <li><a href="../ccs/index.html">The Common Curve of Sensors</a></li>
-                            <li><a href="../atmel-atmega-demo/index.html">Atmel ATmega Demonstration</a></li>
-                        </ul>
-                    </div>
+                    <!-- Overview Section - From Main Page -->
+                    <section id="overview" class="content-section" style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid var(--border-color);">
+                        <div class="section-header">
+                            <h2 class="section-title">Overview</h2>
+                            <div class="section-meta">
+                                <span class="meta-item"><i class="bi bi-calendar3"></i> Updated: December 2025</span>
+                                <span class="meta-item"><i class="bi bi-tag"></i> Version 1.1.2</span>
+                            </div>
+                        </div>
+                        <div class="section-content">
+                            <p style="margin-bottom: 1.5rem;">Patent Pending in The United States of America<br>
+                            System and Method for Indirect Estimation of Solar Irradiance and Heat Flux via Differential Thermodynamic Sensing<br>
+                            US 63/937,986 · Filed December 29, 2025</p>
+                            
+                            <p style="margin-bottom: 1rem;">Modern environmental monitoring systems, from automotive platforms to industrial installations, often rely on sensing architectures decades old. While sensor hardware has plateaued, algorithmic processing potential has grown exponentially. This creates an engineering challenge as billions of functional sensors are discarded annually, perceived as incapable of advanced measurements like solar radiation or heat flux.</p>
+                            
+                            <p style="margin-bottom: 1rem;">This technology mitigates hardware obsolescence by transferring computation from physical components to intelligent software. By upcycling commodity sensors into high-precision radiometric instruments without firmware changes, it preserves global sensor infrastructure utility in modern autonomous frameworks.</p>
+                            
+                            <p style="margin-bottom: 1rem;">The core is the Differential Temporal Derivative Soft-Sensing (DTDSS) framework, replacing expensive and fragile specialized equipment like pyranometers which are prohibitive in autonomous systems. It uses a differential thermodynamic architecture with paired sensors: a Reference Node alongside a Flux Node to isolate active energy exchanges from ambient conditions. An Inertial Noise Reduction (INR) filter compensates for thermal inertia, predicting equilibrium temperatures in real time.</p>
+                            
+                            <p style="margin-bottom: 1rem;">Unlike machine learning approaches, this system uses physics-based derivations. Air density and enthalpy are calculated via first-principles thermodynamics, ensuring accuracy across altitudes and climates. The state machine is optimized for extreme efficiency, requiring under 60 bytes of RAM, compatible with 8-bit microcontrollers.</p>
+                            
+                            <p style="margin-bottom: 1rem;">FIA Operating Systems is a network of scientists, developers, and industry professionals advancing hardware-agnostic solutions for global sustainability. This ensures established innovations continue contributing to a data-rich, sustainable future.</p>
+                            
+                            <p style="margin-bottom: 1rem;">Billions of sensors exist measuring simple parameters only because that is how they were labeled. The true value of mathematical approximation is often overlooked. A combination of such sensors can yield derived parameters, values that cannot be obtained directly with perfect precision. However, perfect precision is not always required.</p>
+                            
+                            <p style="margin-bottom: 1.5rem;">Restricting sensor potential limits future generations from building upon current work. Sensors, old or new, built for various purposes, when combined together, can derive far more advanced real-world parameters in applications that do not demand absolute precision. FiaPhy is a research initiative focused on maximizing the potential of sensors, the near-future carriers of full-human automation, to help sustain existing and upcoming innovations while enabling them to work with these frameworks for generations to come.</p>
+                            
+                            <p>Research contributions or technical collaboration inquiries may be directed to <a href="mailto:research@fiaos.org">research@fiaos.org</a>.</p>
+                        </div>
+                    </section>
+
+                    <!-- Research Section - From Main Page -->
+                    <section id="research" class="content-section" style="margin-top: 2rem;">
+                        <div class="section-header">
+                            <h2 class="section-title">Research & Publications</h2>
+                        </div>
+                        <div class="section-content">
+                            <div class="publication-list">
+                                <div class="publication-item" style="padding: 1.25rem; background: var(--bg-secondary); margin-bottom: 1rem;">
+                                    <div class="pub-header">
+                                        <h3 class="pub-title" style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Temporal Derivative Soft-Sensing and Reconstructing Solar Radiation and Heat Flux from Common Environmental Sensors and FiaOS Engineering</h3>
+                                        <span class="pub-badge" style="display: inline-block; padding: 0.25rem 0.5rem; background: var(--primary-color); color: white; font-size: 0.75rem; border-radius: 3px;">Preprint - Under IEEE Review</span>
+                                    </div>
+                                    <div class="pub-meta" style="font-size: 0.875rem; color: var(--text-secondary); margin: 0.75rem 0;">
+                                        <span><i class="bi bi-person"></i> Neksha V. DeSilva</span> · 
+                                        <span><i class="bi bi-calendar"></i> November 25, 2025</span> · 
+                                        <span><i class="bi bi-tag"></i> Environmental Engineering, Soft-Sensing, IoT Systems</span>
+                                    </div>
+                                    <p class="pub-description" style="font-size: 0.9375rem; line-height: 1.6; color: var(--text-secondary);">This paper introduces Differential Temporal Derivative Soft-Sensing (DTDSS), a physics-based framework that transforms standard, low-cost environmental sensors into capability-dense radiometers. By employing a differential topology with Inertial Noise Reduction (INR), the system mathematically reconstructs Global Horizontal Irradiance (GHI) and convective heat flux without expensive thermopile pyranometers. The research demonstrates how to upgrade millions of existing and future IoT devices to derive complex energy flux parameters from common sensors.</p>
+                                    <div class="pub-links" style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                                        <a href="../../research/" class="btn-link" style="color: var(--primary-color); text-decoration: none;"><i class="bi bi-file-text"></i> Read Paper</a>
+                                        <a href="https://github.com/fiaos-org/fiaphy" target="_blank" class="btn-link" style="color: var(--primary-color); text-decoration: none;"><i class="bi bi-github"></i> Source Code</a>
+                                        <a href="https://www.nekshadesilva.com/docs/Temporal-Derivative-Soft-Sensing-and-Reconstrcting-Solar-Radiation-and-Heat-Flux-from-Common-Environmental-Sensors-and-FiaOS-Engineering/assets/Temporal%20Derivative%20Soft-Sensing%20and%20Reconstructing%20Solar%20Radiation%20and%20Heat%20Flux%20from%20Common%20Environmental%20Sensors.pdf" target="_blank" class="btn-link" style="color: var(--primary-color); text-decoration: none;"><i class="bi bi-file-pdf"></i> Download PDF</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- FiaPhy Library Section - From Main Page -->
+                    <section id="fiaphy-iframe" class="content-section" style="display: flex; flex-direction: column; align-items: center; margin: 2rem 0;">
+                        <h2 class="section-title" style="margin-bottom: 1rem;">FiaPhy Library</h2>
+                        <iframe 
+                            src="../../fiaphy/" 
+                            style="width: 100%; max-width: 1100px; height: 80vh; border: none; box-shadow: 0 2px 16px rgba(0,0,0,0.07);" 
+                            allowfullscreen
+                            loading="lazy"
+                            title="FiaPhy Library"
+                        ></iframe>
+                    </section>
+
+                    <!-- Publications List - From Main Page -->
+                    <section id="publications" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Publications</h2>
+                        </div>
+                        <div class="section-content">
+                            <style>
+                                .paper-entry { margin-bottom: 1.5rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border-color); }
+                                .paper-entry:last-child { border-bottom: none; }
+                                .paper-id { font-size: 0.875rem; color: var(--text-tertiary); margin-bottom: 0.25rem; }
+                                .paper-id a { color: var(--text-tertiary); margin-left: 0.5rem; }
+                                .paper-title-pub { font-size: 1.125rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; line-height: 1.4; }
+                                .paper-title-pub a { color: var(--primary-color); text-decoration: none; }
+                                .paper-title-pub a:hover { text-decoration: underline; }
+                                .paper-authors { font-size: 0.9375rem; color: var(--text-secondary); margin-bottom: 0.25rem; }
+                                .paper-authors a { color: #b45309; }
+                                .paper-meta-pub { font-size: 0.8125rem; color: var(--text-tertiary); margin-bottom: 0.5rem; }
+                                .paper-subjects { font-size: 0.8125rem; color: var(--text-secondary); }
+                                .paper-subjects strong { color: var(--text-primary); }
+                                .paper-abstract { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; margin-top: 0.75rem; }
+                                .paper-abstract summary { cursor: pointer; color: var(--primary-color); font-weight: 500; }
+                                .paper-abstract p { margin-top: 0.5rem; }
+                            </style>
+                            <div class="publication-list">
+                                <!-- Paper 1 -->
+                                <article class="paper-entry">
+                                    <div class="paper-id">
+                                        Preprint - Under review
+                                        <a href="https://www.nekshadesilva.com/docs/Temporal-Derivative-Soft-Sensing-and-Reconstrcting-Solar-Radiation-and-Heat-Flux-from-Common-Environmental-Sensors-and-FiaOS-Engineering/assets/Temporal%20Derivative%20Soft-Sensing%20and%20Reconstructing%20Solar%20Radiation%20and%20Heat%20Flux%20from%20Common%20Environmental%20Sensors.pdf" target="_blank" rel="noopener">[pdf]</a>
+                                    </div>
+                                    <h3 class="paper-title-pub">
+                                        <a href="https://www.nekshadesilva.com/docs/Temporal-Derivative-Soft-Sensing-and-Reconstrcting-Solar-Radiation-and-Heat-Flux-from-Common-Environmental-Sensors-and-FiaOS-Engineering/assets/Temporal%20Derivative%20Soft-Sensing%20and%20Reconstructing%20Solar%20Radiation%20and%20Heat%20Flux%20from%20Common%20Environmental%20Sensors.pdf" target="_blank" rel="noopener">Temporal Derivative Soft-Sensing and Reconstructing Solar Radiation and Heat Flux from Common Environmental Sensors and FiaOS Engineering</a>
+                                    </h3>
+                                    <div class="paper-authors">
+                                        <a href="https://nekshadesilva.com">Neksha V. DeSilva</a>
+                                    </div>
+                                    <div class="paper-meta-pub">
+                                        Independent researcher, FiaOS.org | Dated: November 25, 2025
+                                    </div>
+                                    <div class="paper-subjects">
+                                        Subjects: <strong>Environmental Engineering</strong>; Soft-Sensing; Solar Radiation (physics.ao-ph); IoT Systems
+                                    </div>
+                                    <details class="paper-abstract">
+                                        <summary>Summarized Abstract</summary>
+                                        <p>Current environmental monitoring is fundamentally limited by a reliance on static state variables, temperature, pressure, and humidity, while remaining blind to the dynamic energy exchanges that drive them. This paper introduces Differential Temporal Derivative Soft-Sensing (DTDSS), a novel physics-based framework that transforms standard, low-cost environmental sensors into capability-dense radiometers. By employing a differential topology with Inertial Noise Reduction (INR), we can mathematically reconstruct Global Horizontal Irradiance (GHI) and convective heat flux without the cost or fragility of thermopile pyranometers. While validated using the FiaOS reference architecture, this methodology is hardware-agnostic. The ultimate vision of this work is the deployment of a high-performance, open-source computational library designed for professional embedded development environments. By distributing this algorithm via global repositories, we aim to upgrade the capabilities of millions of existing and future IoT devices. This library allows standard electronics to move beyond simple linear measurements and unlock higher-order environmental physics. By deriving complex energy flux parameters from common sensors, we open a new frontier of derived equations and applications, from precision agriculture to autonomous energy management, essentially democratizing advanced meteorological physics for the global engineering community.</p>
+                                    </details>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+
                 </div>
             </section>
         </main>
