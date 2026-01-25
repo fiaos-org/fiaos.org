@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silicon | FIA Operating Systems</title>
+    <meta name="description" content="Official Silicon distributed by FIA Operating Systems - Microcontrollers, Microprocessors, SoCs, and Development Boards running patented FIA technology">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles/global.css">
+    <link rel="icon" type="image/png" href="../assets/media/favicon.png">
+    <style>
+        :root {
+            --text-primary: #000000;
+            --text-secondary: #333333;
+            --bg-primary: #ffffff;
+            --border-color: #000000;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+        }
+
+        .silicon-header {
+            background: var(--bg-primary);
+            padding: 1.5rem 1rem;
+            text-align: center;
+        }
+
+        .silicon-header-content {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+        }
+
+        .silicon-logo {
+            height: 22px;
+            width: auto;
+            filter: invert(1);
+            margin-right: 6px;
+        }
+
+        .silicon-title {
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin: 0;
+            color: var(--text-primary);
+        }
+
+        .silicon-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem 2rem;
+        }
+
+        .section-heading {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+.footer-container{
+    
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items:center;
+}
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1rem;
+        }
+
+        .product-card {
+            border: 1px solid #000000;
+            background: var(--bg-primary);
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 160px;
+            background: #f0f0f0;
+            margin-bottom: 0.75rem;
+        }
+
+        .skeleton {
+            background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+        }
+
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .skeleton-text {
+            height: 0.875rem;
+            margin-bottom: 0.4rem;
+            background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+        }
+
+        .skeleton-text.short { width: 50%; }
+        .skeleton-text.medium { width: 75%; }
+
+        .skeleton-price {
+            height: 1.25rem;
+            width: 35%;
+            margin-top: 0.75rem;
+            background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+        }
+
+        .payment-section {
+            margin-top: 2.5rem;
+            padding: 1.25rem;
+            border: 1px solid #000000;
+            background: #f8f9fa;
+        }
+
+        .payment-section h3 {
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin: 0 0 0.75rem;
+        }
+
+        .payment-icons {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .payment-icon {
+            width: 36px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .payment-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .notices-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .notice-banner {
+            background: #f8f9fa;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .notice-banner p {
+            margin: 0;
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .notice-banner a {
+            color: #0a66c2;
+            text-decoration: none;
+        }
+
+        .notice-banner a:hover {
+            text-decoration: underline;
+        }
+
+        .silicon-footer {
+            background: #000000;
+            color: #ffffff;
+            padding: 2.5rem 1rem 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .footer-container {
+            max-width: 98%;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand-section {
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .footer-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-brand img {
+            height: 20px;
+            width: auto;
+            margin-right: 5px;
+        }
+
+        .footer-tagline {
+            font-size: 1rem;
+            color: #ffffff;
+            margin: 0;
+
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-column h4 {
+            font-size: 0.8125rem;
+            font-weight: 500;
+            margin: 0 0 0.75rem;
+            color: #cccccc;
+        }
+
+        .footer-column ul {
+            list-style-type: none;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-column a {
+            font-size: 0.8125rem;
+            color: #888888;
+            text-decoration: none;
+        }
+
+        .footer-column a:hover {
+            color: #ffffff;
+        }
+
+        .footer-policies {
+            border-top: 1px solid #222222;
+            padding-top: 1.5rem;
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .policy-block {
+            margin-bottom: 1.25rem;
+        }
+
+        .policy-block h5 {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #aaaaaa;
+            margin: 0 0 0.4rem;
+        }
+
+        .policy-block p {
+            font-size: 0.75rem;
+            color: #777777;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .policy-block ul {
+            margin: 0.4rem 0 0 1rem;
+            padding: 0;
+            list-style: disc;
+            list-style-type: none;
+        }
+
+        .policy-block li {
+            font-size: 0.75rem;
+            color: #777777;
+            margin-bottom: 0.2rem;
+        }
+
+        .policy-block a {
+            color: #6699cc;
+            text-decoration: none;
+        }
+
+        .policy-block a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #222222;
+            padding-top: 1.25rem;
+            margin-top: 1.5rem;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 0.6875rem;
+            color: #555555;
+            margin: 0 0 0.25rem;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+        }
+
+        .footer-social a {
+            color: #666666;
+            transition: color 0.2s;
+        }
+
+        .footer-social a:hover {
+            color: #ffffff;
+        }
+
+        .footer-social svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .footer-top {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="silicon-header">
+        <div class="silicon-header-content">
+            <img src="../assets/media/umbrella-logo-clean.png" alt="FIA" class="silicon-logo"><h1 class="silicon-title">Silicon</h1>
+        </div>
+    </header>
+
+    <main class="silicon-container">
+        <h2 class="section-heading">Microcontrollers</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image skeleton"></div>
+                <div class="skeleton-text medium"></div>
+                <div class="skeleton-text short"></div>
+                <div class="skeleton-price"></div>
+            </div>
+            <div class="product-card">
+                <div class="product-image skeleton"></div>
+                <div class="skeleton-text medium"></div>
+                <div class="skeleton-text short"></div>
+                <div class="skeleton-price"></div>
+            </div>
+            <div class="product-card">
+                <div class="product-image skeleton"></div>
+                <div class="skeleton-text medium"></div>
+                <div class="skeleton-text short"></div>
+                <div class="skeleton-price"></div>
+            </div>
+        </div>
+
+        <h2 class="section-heading">Microprocessors</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image skeleton"></div>
+                <div class="skeleton-text medium"></div>
+                <div class="skeleton-text short"></div>
+                <div class="skeleton-price"></div>
+            </div>
+            <div class="product-card">
+                <div class="product-image skeleton"></div>
+                <div class="skeleton-text medium"></div>
+                <div class="skeleton-text short"></div>
+                <div class="skeleton-price"></div>
+            </div>
+        </div>
+
+        <h2 class="section-heading">System on Chips</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image skeleton"></div>
+                <div class="skeleton-text medium"></div>
+                <div class="skeleton-text short"></div>
+                <div class="skeleton-price"></div>
+            </div>
+            <div class="product-card">
+                <div class="product-image skeleton"></div>
+                <div class="skeleton-text medium"></div>
+                <div class="skeleton-text short"></div>
+                <div class="skeleton-price"></div>
+            </div>
+        </div>
+
+        <h2 class="section-heading">Single Board Computers</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image skeleton"></div>
+                <div class="skeleton-text medium"></div>
+                <div class="skeleton-text short"></div>
+                <div class="skeleton-price"></div>
+            </div>
+            <div class="product-card">
+                <div class="product-image skeleton"></div>
+                <div class="skeleton-text medium"></div>
+                <div class="skeleton-text short"></div>
+                <div class="skeleton-price"></div>
+            </div>
+            <div class="product-card">
+                <div class="product-image skeleton"></div>
+                <div class="skeleton-text medium"></div>
+                <div class="skeleton-text short"></div>
+                <div class="skeleton-price"></div>
+            </div>
+        </div>
+
+        <h2 class="section-heading">Development Boards</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image skeleton"></div>
+                <div class="skeleton-text medium"></div>
+                <div class="skeleton-text short"></div>
+                <div class="skeleton-price"></div>
+            </div>
+            <div class="product-card">
+                <div class="product-image skeleton"></div>
+                <div class="skeleton-text medium"></div>
+                <div class="skeleton-text short"></div>
+                <div class="skeleton-price"></div>
+            </div>
+        </div>
+
+        <div class="payment-section">
+            <h3>We Accept</h3>
+            <div class="payment-icons">
+                <div class="payment-icon">
+                    <svg viewBox="0 0 48 32" fill="none"><rect width="48" height="32" rx="4" fill="#1A1F71"/><path d="M19.5 21H17L18.75 11H21.25L19.5 21Z" fill="white"/><path d="M28.5 11.25C28 11.05 27.15 10.85 26.1 10.85C23.6 10.85 21.85 12.15 21.85 14C21.85 15.4 23.1 16.15 24.05 16.6C25.05 17.05 25.35 17.35 25.35 17.75C25.35 18.35 24.6 18.65 23.9 18.65C22.9 18.65 22.35 18.5 21.5 18.15L21.15 17.95L20.8 20.15C21.45 20.45 22.6 20.7 23.8 20.7C26.45 20.7 28.15 19.45 28.15 17.5C28.15 16.4 27.5 15.55 26.1 14.9C25.25 14.45 24.7 14.15 24.7 13.7C24.7 13.3 25.15 12.9 26.15 12.9C26.95 12.9 27.55 13.05 28 13.25L28.25 13.35L28.5 11.25Z" fill="white"/><path d="M32.5 11H30.5C29.9 11 29.4 11.15 29.15 11.75L25.5 21H28.15L28.65 19.6H31.85L32.15 21H34.5L32.5 11ZM29.35 17.5C29.55 16.95 30.4 14.65 30.4 14.65C30.4 14.65 30.6 14.05 30.75 13.65L30.9 14.55C30.9 14.55 31.45 17.05 31.55 17.5H29.35Z" fill="white"/><path d="M15.5 11L13 17.8L12.7 16.35C12.2 14.75 10.7 13 9 12.2L11.25 21H14L18.25 11H15.5Z" fill="white"/><path d="M11 11H7.05L7 11.2C10.2 12 12.35 14 13.15 16.35L12.3 11.8C12.15 11.2 11.65 11.05 11 11Z" fill="#F9A533"/></svg>
+                </div>
+                <div class="payment-icon">
+                    <svg viewBox="0 0 48 32" fill="none"><rect width="48" height="32" rx="4" fill="#000"/><circle cx="18" cy="16" r="8" fill="#EB001B"/><circle cx="30" cy="16" r="8" fill="#F79E1B"/><path d="M24 10.5C25.65 11.85 26.75 13.8 26.75 16C26.75 18.2 25.65 20.15 24 21.5C22.35 20.15 21.25 18.2 21.25 16C21.25 13.8 22.35 11.85 24 10.5Z" fill="#FF5F00"/></svg>
+                </div>
+                <div class="payment-icon">
+                    <svg viewBox="0 0 48 32" fill="none"><rect width="48" height="32" rx="4" fill="#003087"/><path d="M18.5 10H14L11 22H14L14.5 19.5H16.5C19.5 19.5 21.5 17.5 22 15C22.5 12 20.5 10 18.5 10ZM17 17H15.5L16.5 12.5H18C19 12.5 19.5 13 19.5 14C19.5 15.5 18.5 17 17 17Z" fill="white"/><path d="M31.5 10H27L24 22H27L27.5 19.5H29.5C32.5 19.5 34.5 17.5 35 15C35.5 12 33.5 10 31.5 10ZM30 17H28.5L29.5 12.5H31C32 12.5 32.5 13 32.5 14C32.5 15.5 31.5 17 30 17Z" fill="#0070E0"/></svg>
+                </div>
+                <div class="payment-icon" style="background: #f0f0f0; padding: 3px; border-radius: 2px;">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7V9H22V7L12 2Z" fill="#333"/><rect x="4" y="10" width="2" height="8" fill="#333"/><rect x="9" y="10" width="2" height="8" fill="#333"/><rect x="14" y="10" width="2" height="8" fill="#333"/><rect x="19" y="10" width="2" height="8" fill="#333"/><rect x="2" y="19" width="20" height="2" fill="#333"/></svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="notices-section">
+            <div class="notice-banner">
+                <p>All prices on this page are for non-commercial purposes. Price breakdowns are documented at <a href="../about/">fiaos.org/about</a>. These prices reflect shipping and material costs, not intellectual property fees. We want this technology accessible to everyone.</p>
+            </div>
+            <div class="notice-banner">
+                <p>Prices are final and non-negotiable, including bulk orders. This is the minimum we can offer while maintaining quality. We're committed to keeping these products affordable.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="silicon-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand-section">
+                    <p class="footer-tagline">Future is Autonomous.</p>
+                    <div class="footer-brand">
+                        <img src="../assets/media/umbrella-logo-clean.png" alt="FIA">
+                    </div>
+                    
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Project</h4>
+                        <ul>
+                            <li><a href="../research/">Research</a></li>
+                            <li><a href="../docs/">Documentation</a></li>
+                            <li><a href="../archive/">Archive</a></li>
+                            <li><a href="../data/">Data</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="../api/">API</a></li>
+                            <li><a href="../sources/">Sources</a></li>
+                            <li><a href="../docs/privacy/">Privacy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="mailto:research@fiaos.org">research@fiaos.org</a></li>
+                            <li><a href="https://nekshadesilva.com">nekshadesilva.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-policies">
+                <div class="policy-block">
+                    <h5>Authenticity</h5>
+                    <p>Always check for the official FIA mark and product URL printed on the PCB. Missing or altered marks may indicate a counterfeit product.</p>
+                </div>
+
+                <div class="policy-block">
+                    <h5>What's on every official product</h5>
+                    <ul>
+                        <li>FIA copyright mark</li>
+                        <li>Product download URL</li>
+                        <li>Serial number for support</li>
+                    </ul>
+                </div>
+
+                <div class="policy-block">
+                    <h5>Educational program</h5>
+                    <p>We're launching a program for students to get boards free or at delivery cost only. Requirements: enrolled in K-12 or university, under 20 years old, one board per year, non-commercial use only. Misuse leads to permanent removal from all FIA programs.</p>
+                </div>
+
+                <div class="policy-block">
+                    <h5>Documentation</h5>
+                    <p>Every product includes a PDF manual. Manuals cannot be edited, reproduced, or shared without authorization.</p>
+                </div>
+
+                <div class="policy-block">
+                    <h5>Manufacturing defects</h5>
+                    <p>Contact support with your serial number for defect claims. <a href="../docs/">Full warranty policy</a></p>
+                </div>
+
+                <div class="policy-block">
+                    <h5>Copyright</h5>
+                    <p>All content here—sketches, diagrams, photos, specs, documentation—is copyrighted by FIA Operating Systems and Neksha DeSilva. These products run patented technology only usable on official FIA silicon.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© Neksha DeSilva and nekshadesilva.com. All rights reserved.</p>
+                <p>All content on this page is copyrighted material.</p>
+                <div class="footer-social">
+                    <a href="https://x.com/NekshaDesilva" aria-label="X">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="https://youtube.com/@NekshaDesilva" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
