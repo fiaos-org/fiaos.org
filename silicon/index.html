@@ -93,7 +93,7 @@
         .product-image {
             width: 100%;
             height: 160px;
-            background: #f0f0f0;
+            background: #ffffff;
             margin-bottom: 0.75rem;
         }
 
@@ -119,6 +119,26 @@
         .skeleton-text.short { width: 50%; }
         .skeleton-text.medium { width: 75%; }
 
+        .product-name {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            margin: 0 0 0.25rem;
+            color: var(--text-primary);
+        }
+
+        .product-description {
+            font-size: 0.8125rem;
+            color: #666666;
+            margin: 0 0 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0;
+            color: var(--text-primary);
+        }
+
         .skeleton-price {
             height: 1.25rem;
             width: 35%;
@@ -128,37 +148,134 @@
             animation: skeleton-loading 1.5s infinite;
         }
 
-        .payment-section {
+        .order-section {
             margin-top: 2.5rem;
-            padding: 1.25rem;
+            padding: 1.5rem;
             border: 1px solid #000000;
             background: #f8f9fa;
         }
 
-        .payment-section h3 {
-            font-size: 0.875rem;
-            font-weight: 500;
+        .order-section h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0 0 1rem;
+        }
+
+        .order-info {
+            font-size: 0.8125rem;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .order-info p {
             margin: 0 0 0.75rem;
         }
 
-        .payment-icons {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            align-items: center;
+        .order-email {
+            font-weight: 600;
+            color: #0a66c2;
         }
 
-        .payment-icon {
-            width: 36px;
-            height: 22px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .order-details {
+            font-size: 0.8125rem;
+            color: #555;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #fff;
+            border: 1px solid #ddd;
         }
 
-        .payment-icon svg {
+        .order-details ul {
+            margin: 0.5rem 0 0 1.25rem;
+            padding: 0;
+        }
+
+        .order-details li {
+            margin-bottom: 0.25rem;
+        }
+
+        .order-form {
+            margin-top: 1.5rem;
+        }
+
+        .order-form label {
+            display: block;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            color: #333;
+        }
+
+        .order-form textarea {
             width: 100%;
-            height: 100%;
+            min-height: 120px;
+            padding: 0.75rem;
+            border: 1px solid #000;
+            font-family: inherit;
+            font-size: 0.875rem;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+
+        .order-form textarea:focus {
+            outline: none;
+            border-color: #0a66c2;
+        }
+
+        .order-form button {
+            margin-top: 0.75rem;
+            padding: 0.625rem 1.25rem;
+            background: #000;
+            color: #fff;
+            border: none;
+            font-size: 0.875rem;
+            cursor: pointer;
+        }
+
+        .order-form button:hover {
+            background: #333;
+        }
+
+        .copy-hint {
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .product-name {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            margin: 0 0 0.25rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .product-name:hover {
+            color: #0a66c2;
+        }
+
+        .product-name.copied {
+            color: #28a745;
+        }
+
+        .copy-toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #000;
+            color: #fff;
+            padding: 0.75rem 1.25rem;
+            font-size: 0.875rem;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .copy-toast.show {
+            opacity: 1;
         }
 
         .notices-section {
@@ -349,6 +466,50 @@
             height: 16px;
         }
 
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            margin: 0;
+            color: var(--text-primary);
+            font-family: 'Product Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.1;
+        }
+
+        .hero-image {
+            flex-shrink: 0;
+        }
+
+        .hero-image img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-title {
+                font-size: 3rem;
+            }
+            .hero-image {
+                order: -1;
+            }
+        }
+
         @media (max-width: 768px) {
             .products-grid {
                 grid-template-columns: 1fr 1fr;
@@ -373,115 +534,60 @@
     </header>
 
     <main class="silicon-container">
-        <h2 class="section-heading">Microcontrollers</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="product-image skeleton"></div>
-                <div class="skeleton-text medium"></div>
-                <div class="skeleton-text short"></div>
-                <div class="skeleton-price"></div>
+        <div class="hero-section">
+            <div class="hero-text">
+                <h2 class="hero-title">Silicon</h2>
             </div>
-            <div class="product-card">
-                <div class="product-image skeleton"></div>
-                <div class="skeleton-text medium"></div>
-                <div class="skeleton-text short"></div>
-                <div class="skeleton-price"></div>
-            </div>
-            <div class="product-card">
-                <div class="product-image skeleton"></div>
-                <div class="skeleton-text medium"></div>
-                <div class="skeleton-text short"></div>
-                <div class="skeleton-price"></div>
+            <div class="hero-image">
+                <img src="https://i.etsystatic.com/5282992/r/il/c0f1d0/3238913476/il_340x270.3238913476_8qu8.jpg" alt="Silicon">
             </div>
         </div>
-
-        <h2 class="section-heading">Microprocessors</h2>
+        <img src="https://fiaos.org/assets/media/fiaphy-clean.png" alt="FiaPhy" style="width: 6rem; filter: invert(1);">
         <div class="products-grid">
             <div class="product-card">
-                <div class="product-image skeleton"></div>
-                <div class="skeleton-text medium"></div>
-                <div class="skeleton-text short"></div>
-                <div class="skeleton-price"></div>
-            </div>
-            <div class="product-card">
-                <div class="product-image skeleton"></div>
-                <div class="skeleton-text medium"></div>
-                <div class="skeleton-text short"></div>
-                <div class="skeleton-price"></div>
-            </div>
-        </div>
-
-        <h2 class="section-heading">System on Chips</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="product-image skeleton"></div>
-                <div class="skeleton-text medium"></div>
-                <div class="skeleton-text short"></div>
-                <div class="skeleton-price"></div>
-            </div>
-            <div class="product-card">
-                <div class="product-image skeleton"></div>
-                <div class="skeleton-text medium"></div>
-                <div class="skeleton-text short"></div>
-                <div class="skeleton-price"></div>
-            </div>
-        </div>
-
-        <h2 class="section-heading">Single Board Computers</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="product-image skeleton"></div>
-                <div class="skeleton-text medium"></div>
-                <div class="skeleton-text short"></div>
-                <div class="skeleton-price"></div>
-            </div>
-            <div class="product-card">
-                <div class="product-image skeleton"></div>
-                <div class="skeleton-text medium"></div>
-                <div class="skeleton-text short"></div>
-                <div class="skeleton-price"></div>
-            </div>
-            <div class="product-card">
-                <div class="product-image skeleton"></div>
-                <div class="skeleton-text medium"></div>
-                <div class="skeleton-text short"></div>
-                <div class="skeleton-price"></div>
-            </div>
-        </div>
-
-        <h2 class="section-heading">Development Boards</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="product-image skeleton"></div>
-                <div class="skeleton-text medium"></div>
-                <div class="skeleton-text short"></div>
-                <div class="skeleton-price"></div>
-            </div>
-            <div class="product-card">
-                <div class="product-image skeleton"></div>
-                <div class="skeleton-text medium"></div>
-                <div class="skeleton-text short"></div>
-                <div class="skeleton-price"></div>
-            </div>
-        </div>
-
-        <div class="payment-section">
-            <h3>We Accept</h3>
-            <div class="payment-icons">
-                <div class="payment-icon">
-                    <svg viewBox="0 0 48 32" fill="none"><rect width="48" height="32" rx="4" fill="#1A1F71"/><path d="M19.5 21H17L18.75 11H21.25L19.5 21Z" fill="white"/><path d="M28.5 11.25C28 11.05 27.15 10.85 26.1 10.85C23.6 10.85 21.85 12.15 21.85 14C21.85 15.4 23.1 16.15 24.05 16.6C25.05 17.05 25.35 17.35 25.35 17.75C25.35 18.35 24.6 18.65 23.9 18.65C22.9 18.65 22.35 18.5 21.5 18.15L21.15 17.95L20.8 20.15C21.45 20.45 22.6 20.7 23.8 20.7C26.45 20.7 28.15 19.45 28.15 17.5C28.15 16.4 27.5 15.55 26.1 14.9C25.25 14.45 24.7 14.15 24.7 13.7C24.7 13.3 25.15 12.9 26.15 12.9C26.95 12.9 27.55 13.05 28 13.25L28.25 13.35L28.5 11.25Z" fill="white"/><path d="M32.5 11H30.5C29.9 11 29.4 11.15 29.15 11.75L25.5 21H28.15L28.65 19.6H31.85L32.15 21H34.5L32.5 11ZM29.35 17.5C29.55 16.95 30.4 14.65 30.4 14.65C30.4 14.65 30.6 14.05 30.75 13.65L30.9 14.55C30.9 14.55 31.45 17.05 31.55 17.5H29.35Z" fill="white"/><path d="M15.5 11L13 17.8L12.7 16.35C12.2 14.75 10.7 13 9 12.2L11.25 21H14L18.25 11H15.5Z" fill="white"/><path d="M11 11H7.05L7 11.2C10.2 12 12.35 14 13.15 16.35L12.3 11.8C12.15 11.2 11.65 11.05 11 11Z" fill="#F9A533"/></svg>
+                <div class="product-image">
+                    <img src="../assets/media/95389859583/29844294294.png" alt="FiaPhy Silicon Essential Dual Array 1x" style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
-                <div class="payment-icon">
-                    <svg viewBox="0 0 48 32" fill="none"><rect width="48" height="32" rx="4" fill="#000"/><circle cx="18" cy="16" r="8" fill="#EB001B"/><circle cx="30" cy="16" r="8" fill="#F79E1B"/><path d="M24 10.5C25.65 11.85 26.75 13.8 26.75 16C26.75 18.2 25.65 20.15 24 21.5C22.35 20.15 21.25 18.2 21.25 16C21.25 13.8 22.35 11.85 24 10.5Z" fill="#FF5F00"/></svg>
+                <h3 class="product-name">FIA FiaPhy Silicon Essential Dual Node Flat Array 2025</h3>
+                <p class="product-description">ARM M0 · PCB · 31g net weight · No RaH · USB Micro · Manual PDF</p>
+                <p class="product-price">$76.50</p>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/61E87RUI+wL.jpg" alt="USB Micro Cable" style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
-                <div class="payment-icon">
-                    <svg viewBox="0 0 48 32" fill="none"><rect width="48" height="32" rx="4" fill="#003087"/><path d="M18.5 10H14L11 22H14L14.5 19.5H16.5C19.5 19.5 21.5 17.5 22 15C22.5 12 20.5 10 18.5 10ZM17 17H15.5L16.5 12.5H18C19 12.5 19.5 13 19.5 14C19.5 15.5 18.5 17 17 17Z" fill="white"/><path d="M31.5 10H27L24 22H27L27.5 19.5H29.5C32.5 19.5 34.5 17.5 35 15C35.5 12 33.5 10 31.5 10ZM30 17H28.5L29.5 12.5H31C32 12.5 32.5 13 32.5 14C32.5 15.5 31.5 17 30 17Z" fill="#0070E0"/></svg>
-                </div>
-                <div class="payment-icon" style="background: #f0f0f0; padding: 3px; border-radius: 2px;">
-                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7V9H22V7L12 2Z" fill="#333"/><rect x="4" y="10" width="2" height="8" fill="#333"/><rect x="9" y="10" width="2" height="8" fill="#333"/><rect x="14" y="10" width="2" height="8" fill="#333"/><rect x="19" y="10" width="2" height="8" fill="#333"/><rect x="2" y="19" width="20" height="2" fill="#333"/></svg>
-                </div>
+                <h3 class="product-name">USB Micro Cable</h3>
+                <p class="product-description">For FiaPhy Silicon boards</p>
+                <p class="product-price">Included</p>
             </div>
         </div>
+
+        <div class="order-section">
+            <h3>How to Order</h3>
+            <div class="order-info">
+                <p>Due to ongoing third-party infrastructure work, we are implementing our own secure payment gateway alongside Stripe. In the meantime, please place orders via email.</p>
+                <p>Email us at <a href="mailto:silicon@fiaos.org" class="order-email">silicon@fiaos.org</a></p>
+            </div>
+            <div class="order-details">
+                <p>Please include the following in your email:</p>
+                <ul>
+                    <li>Your full name</li>
+                    <li>Shipping address</li>
+                    <li>Secondary address (optional)</li>
+                    <li>Contact email and phone number</li>
+                    <li>Receipt email (if different from contact email)</li>
+                    <li>Product name (click on a product name above to copy it)</li>
+                </ul>
+            </div>
+            <p class="copy-hint">Tip: Click on any product name to copy it to your clipboard.</p>
+            <div class="order-form">
+                <label for="orderMessage">Or send a message directly:</label>
+                <textarea id="orderMessage" placeholder="Enter your name, address, contact details, and the product you want to order..."></textarea>
+                <button type="button" onclick="sendOrderEmail()">Send via Email</button>
+            </div>
+        </div>
+
+        <div id="copyToast" class="copy-toast">Copied to clipboard</div>
 
         <div class="notices-section">
             <div class="notice-banner">
@@ -581,5 +687,48 @@
             </div>
         </div>
     </footer>
+     <div id="cookieConsent" class="cookie-consent">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-text">
+                <h3>Terms of Use & Data Policy</h3>
+                <p>This platform uses cookies and local storage for essential functionality, theme preferences, and analytics. <br><br>All documentation and data are provided for educational and non-commercial purposes unless otherwise specified. <br> Copyrights © Neksha DeSilva and www.nekshadesilva.com All rights reserved.<br> You are in control.</p>
+            </div>
+            <div class="cookie-consent-actions">
+                <button id="acceptCookies" class="cookie-btn cookie-btn-accept">Accept & Continue</button>
+                <a href="https://google.com" class="cookie-btn cookie-btn-learn">Decline</a>
+            </div>
+        </div>
+    </div>
 </body>
+<script src="../assets/scripts/main.js"></script>
+<script>
+    // Copy product name to clipboard
+    document.querySelectorAll('.product-name').forEach(function(el) {
+        el.addEventListener('click', function() {
+            const text = this.textContent;
+            navigator.clipboard.writeText(text).then(function() {
+                // Show toast
+                const toast = document.getElementById('copyToast');
+                toast.classList.add('show');
+                setTimeout(function() {
+                    toast.classList.remove('show');
+                }, 2000);
+                
+                // Visual feedback on element
+                el.classList.add('copied');
+                setTimeout(function() {
+                    el.classList.remove('copied');
+                }, 1500);
+            });
+        });
+    });
+
+    // Send order via email
+    function sendOrderEmail() {
+        const message = document.getElementById('orderMessage').value;
+        const subject = encodeURIComponent('Silicon Order Request');
+        const body = encodeURIComponent(message);
+        window.location.href = 'mailto:silicon@fiaos.org?subject=' + subject + '&body=' + body;
+    }
+</script>
 </html>
