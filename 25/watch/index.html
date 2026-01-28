@@ -195,7 +195,7 @@
         /* Mobile view - full width YouTube iframe */
         @media (max-width: 768px) {
             .video-wrapper iframe {
-                width: 100vw;
+                width: 100%;
                 left: 50%;
                 transform: translateX(-50%);
             }
@@ -307,7 +307,7 @@
                     <!-- Appendix Section -->
                     <div class="appendix-section">
                         <div class="appendix-header">
-                            <h2 class="appendix-title">Topics Discussed</h2>
+                            <h2 class="appendix-title">Full Transcript</h2>
                         </div>
                         <p class="appendix-note">Click on a topic to view the transcript. Use "Jump to topic" to navigate to that section in the video.</p>
 
@@ -800,11 +800,11 @@
                             <br>
                             <br>
                           
-                            <i class="bi bi-box-arrow-up-right" style="font-size: 2em; vertical-align: middle; color: var(--primary-color);" aria-label="External link">Fiaos.org/silicon</i><br>
+                           <a style="font-size: 1.4em; padding: .3rem; border-radius: .5rem ; background-color: black; color: white;" href="/silicon/"><i class="bi bi-box-arrow-up-right" style="color: rgb(255, 255, 255);" aria-label="External link"></i> fiaos.org/silicon</a><br>
                             Browse other official FIA silicon products including development boards, microcontrollers, and accessories.</p>
                         <iframe 
                             src="../../silicon/" 
-                            style="width: 110%; height: 80vh; border: 1px solid var(--border-color); display: block; margin: 0 auto;"
+                            style="width: 100%; height: 80vh; border: 1px solid var(--border-color); display: block; margin: 0 auto;"
                             loading="lazy"
                             title="Silicon Store"
                         ></iframe>
@@ -813,16 +813,17 @@
                     <!-- Overview Section - From Main Page -->
                     <section id="overview" class="content-section" style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid var(--border-color);">
                         <div class="section-header">
-                            <h2 class="section-title">Overview</h2>
+                            <h2 class="section-title">Change my mind.</h2>
                             <div class="section-meta">
-                                <span class="meta-item"><i class="bi bi-calendar3"></i> Updated: December 2025</span>
-                                <span class="meta-item"><i class="bi bi-tag"></i> Version 1.1.2</span>
+                                
+                                <span class="meta-item"></i> Version 1.1.2</span>
                             </div>
                         </div>
                         <div class="section-content">
                             <p style="margin-bottom: 1.5rem;">Patent Pending in The United States of America<br>
                             System and Method for Indirect Estimation of Solar Irradiance and Heat Flux via Differential Thermodynamic Sensing<br>
                             US 63/937,986 · Filed December 29, 2025</p>
+                            <img src="../../assets/media/95389859583/39482948948.png" style="width: 100%;">
                             
                             <p style="margin-bottom: 1rem;">Modern environmental monitoring systems, from automotive platforms to industrial installations, often rely on sensing architectures decades old. While sensor hardware has plateaued, algorithmic processing potential has grown exponentially. This creates an engineering challenge as billions of functional sensors are discarded annually, perceived as incapable of advanced measurements like solar radiation or heat flux.</p>
                             
@@ -845,25 +846,25 @@
                     <!-- Research Section - From Main Page -->
                     <section id="research" class="content-section" style="margin-top: 2rem;">
                         <div class="section-header">
-                            <h2 class="section-title">Research & Publications</h2>
+                            <h2 class="section-title">Research Article</h2>
                         </div>
                         <div class="section-content">
                             <div class="publication-list">
                                 <div class="publication-item" style="padding: 1.25rem; background: var(--bg-secondary); margin-bottom: 1rem;">
                                     <div class="pub-header">
                                         <h3 class="pub-title" style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Temporal Derivative Soft-Sensing and Reconstructing Solar Radiation and Heat Flux from Common Environmental Sensors and FiaOS Engineering</h3>
-                                        <span class="pub-badge" style="display: inline-block; padding: 0.25rem 0.5rem; background: var(--primary-color); color: white; font-size: 0.75rem; border-radius: 3px;">Preprint - Under IEEE Review</span>
+                                        <span class="pub-badge" style="display: inline-block; padding: 0.25rem 0.5rem; background: var(--primary-color); color: white; font-size: 0.75rem; border-radius: 3px;">Powered by CiteSquad</span>
                                     </div>
                                     <div class="pub-meta" style="font-size: 0.875rem; color: var(--text-secondary); margin: 0.75rem 0;">
-                                        <span><i class="bi bi-person"></i> Neksha V. DeSilva</span> · 
-                                        <span><i class="bi bi-calendar"></i> November 25, 2025</span> · 
-                                        <span><i class="bi bi-tag"></i> Environmental Engineering, Soft-Sensing, IoT Systems</span>
+                                        <span>Neksha V. DeSilva</span> · 
+                                        
                                     </div>
-                                    <p class="pub-description" style="font-size: 0.9375rem; line-height: 1.6; color: var(--text-secondary);">This paper introduces Differential Temporal Derivative Soft-Sensing (DTDSS), a physics-based framework that transforms standard, low-cost environmental sensors into capability-dense radiometers. By employing a differential topology with Inertial Noise Reduction (INR), the system mathematically reconstructs Global Horizontal Irradiance (GHI) and convective heat flux without expensive thermopile pyranometers. The research demonstrates how to upgrade millions of existing and future IoT devices to derive complex energy flux parameters from common sensors.</p>
+                                    <p class="pub-description" style="font-size: 0.9375rem; line-height: 1.6; color: var(--text-secondary);">
+                                        This research paper has been accepted for presentation at two prestigious conferences: the IEEE<sup>®</sup> ESCI 2026 (<em>International Conference on Emerging Technologies and Informatics</em>, Maharashtra, India) and the IEEE<sup>®</sup> ICRCA 2026 (<em>International Conference on Robotics Control and Automation</em>, Osaka, Japan), both through a rigorous double-blind peer review process. Publication in the renowned IEEE<sup>®</sup> Xplore<sup>®</sup> Journal of Science is forthcoming. For official updates regarding the final publication venue and conference details, please subscribe to our <a href="../../join/index.html">newsletter</a>. All references to IEEE<sup>®</sup> include the registered trademark as required.
+                                    </p>
                                     <div class="pub-links" style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                                        <a href="../../research/" class="btn-link" style="color: var(--primary-color); text-decoration: none;"><i class="bi bi-file-text"></i> Read Paper</a>
-                                        <a href="https://github.com/fiaos-org/fiaphy" target="_blank" class="btn-link" style="color: var(--primary-color); text-decoration: none;"><i class="bi bi-github"></i> Source Code</a>
-                                        <a href="https://www.nekshadesilva.com/docs/Temporal-Derivative-Soft-Sensing-and-Reconstrcting-Solar-Radiation-and-Heat-Flux-from-Common-Environmental-Sensors-and-FiaOS-Engineering/assets/Temporal%20Derivative%20Soft-Sensing%20and%20Reconstructing%20Solar%20Radiation%20and%20Heat%20Flux%20from%20Common%20Environmental%20Sensors.pdf" target="_blank" class="btn-link" style="color: var(--primary-color); text-decoration: none;"><i class="bi bi-file-pdf"></i> Download PDF</a>
+                                        <a  class="btn-link" style="color: var(--primary-color); text-decoration: none;">Sorry. Papers are never disclosed until the IEEE® Publication.</a>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -871,10 +872,11 @@
                     </section>
 
                     <!-- FiaPhy Library Section - From Main Page -->
-                    <section id="fiaphy-iframe" class="content-section" style="display: flex; flex-direction: column; align-items: center; margin: 2rem 0;">
-                        <h2 class="section-title" style="margin-bottom: 1rem;">FiaPhy Library</h2>
-                        <iframe 
-                            src="../../fiaphy/" 
+                    <section id="fiaphy-iframe" class="content-section" style="display: flex; flex-direction: column; align-items: flex-start; margin: 2rem 0;">
+  <div class="section-header">
+                            <h2 class="section-title">The Open-source Sensor Library - FiaPhy</h2>
+                        </div>                        
+                        <iframe src="../../fiaphy/" 
                             style="width: 100%; max-width: 1100px; height: 80vh; border: none; box-shadow: 0 2px 16px rgba(0,0,0,0.07);" 
                             allowfullscreen
                             loading="lazy"
