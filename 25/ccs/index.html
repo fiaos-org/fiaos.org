@@ -116,103 +116,103 @@
             <article class="article-container">
                 <header class="article-header">
                     <h1 class="article-title">The Common Curve of Sensors</h1>
-                    <p class="article-subtitle">The Post-Hardware Era: Two Diverging Pathways</p>
+                    <p class="article-subtitle">Understanding Hardware and Software Divergence in Modern Sensing</p>
                     <p class="article-meta">Neksha DeSilva, Researcher, FiaOS.org · December 2025</p>
                 </header>
 
                 <div class="article-body">
                     <div class="executive-summary">
-                        <h3>Executive Summary</h3>
-                        <p>In the past, we assumed electronic components would be available for years and would only fail when they wore out or broke physically. That assumption is no longer true.</p>
+                        <h3>Summary</h3>
+                        <p>Electronic components were once assumed to remain available for years, failing only through physical wear or damage. This assumption no longer holds true.</p>
                         
-                        <p>This article proposes a new model called <strong>The Common Curve of Sensors</strong>. This model argues that the "lifeline" of a sensor is splitting into two different paths:</p>
+                        <p>This article introduces a model called The Common Curve of Sensors. The model describes how the useful life of a sensor is increasingly splitting into two distinct trajectories.</p>
                         
-                        <p><strong>The Hardware Curve:</strong> This path is becoming fragile. Sensors can disappear overnight due to new laws or manufacturing changes.</p>
+                        <p>The first trajectory involves hardware, which is becoming increasingly fragile. Sensors can disappear from the market overnight due to regulatory changes or manufacturing constraints.</p>
                         
-                        <p><strong>The Software Curve:</strong> This path is rising. Smart software can now take cheap, simple sensors and make them perform like expensive scientific instruments.</p>
+                        <p>The second trajectory involves software, which is steadily rising in importance. Intelligent algorithms can now transform inexpensive commodity sensors into instruments that perform comparably to specialized scientific equipment.</p>
                         
-                        <p>We look at the sudden death of the popular Silicon Labs Si7021 sensor as a prime example of why relying only on hardware is dangerous. We then show how our software framework, DTDSS, allows us to switch to cheaper sensors (like the Aosong AHT20) without losing performance.</p>
+                        <p>We examine the discontinuation of the widely used Silicon Labs Si7021 sensor as an example of why depending solely on hardware is problematic. We then demonstrate how our software framework, DTDSS, enables a seamless transition to less expensive sensors like the Aosong AHT20 without sacrificing measurement quality.</p>
                     </div>
 
                     <figure style="margin: 1.5rem 0; text-align: center;">
                         <img src="../../assets/media/765434467589/Graph1.png" alt="Sensor Availability vs System Utility 2020-2030" style="max-width: 100%; height: auto;">
-                        <figcaption style="font-size: 0.9375rem; color: var(--text-secondary); margin-top: 0.5rem;">Figure 1: Sensor Availability vs System Utility (2020-2030)</figcaption>
+                        <figcaption style="font-size: 0.9375rem; color: var(--text-secondary); margin-top: 0.5rem;">Figure 1: Sensor Availability vs System Utility from 2020 to 2030</figcaption>
                     </figure>
 
-                    <h2>1. The Hardware Curve: The "Regulatory Cliff"</h2>
+                    <h2>1. Hardware Fragility and Regulatory Discontinuation</h2>
                     
-                    <p>Old theories assumed that a part would stop being sold only when a better version came out. Today, a part can be discontinued instantly because of environmental regulations. We call this the <strong>"Regulatory Hard Stop."</strong></p>
+                    <p>Traditional models assumed that electronic components would be discontinued only when superior alternatives emerged. Today, however, a component can be removed from production immediately due to environmental regulations. This phenomenon represents a fundamental shift in how we must approach sensor selection.</p>
 
-                    <h3>1.1 The Death of the Si7021</h3>
+                    <h3>1.1 The Si7021 Discontinuation</h3>
                     
-                    <p>For over a decade, the Silicon Labs Si7021 was the industry standard for measuring temperature and humidity. But on January 29, 2025, Silicon Labs issued an End of Life (EOL) notice that killed the entire product line.</p>
+                    <p>For over a decade, the Silicon Labs Si7021 served as an industry standard for temperature and humidity measurement. On January 29, 2025, Silicon Labs issued an End of Life notice that effectively terminated the entire product line.</p>
                     
-                    <p><strong>Why did it die?</strong> The sensor wasn't broken, and it wasn't obsolete technically. The problem was inside its materials. The sensor used a specific insulator called PBO (Polybenzoxazole).</p>
+                    <p>The sensor was neither defective nor technically obsolete. The problem lay within its material composition. Specifically, the sensor relied on an insulator called Polybenzoxazole, commonly abbreviated as PBO.</p>
                     
-                    <p><strong>The "Hard Stop":</strong> Compliance audits found that this PBO material contained PFAS (forever chemicals). Because of strict new bans from the EU and the US EPA, Silicon Labs had to stop making it immediately.</p>
+                    <p>Compliance audits subsequently revealed that this PBO material contained per- and polyfluoroalkyl substances, also known as PFAS or forever chemicals. Due to strict regulations from both the European Union and the US Environmental Protection Agency, Silicon Labs was required to halt production immediately.</p>
                     
-                    <p><strong>The Consequence:</strong> There was no "Plan B" or replacement part. If you designed a machine to use this sensor, you were stuck. The "Hardware Curve" for this sensor dropped straight to zero.</p>
+                    <p>The practical consequence was significant. There was no direct replacement available. Engineers who had designed systems around this sensor found themselves without options, and the hardware availability for this sensor dropped to zero essentially overnight.</p>
 
                     <figure style="margin: 1.5rem 0; text-align: center;">
                         <img src="../../assets/media/765434467589/Graph2.png" alt="Commodity Environmental Sensing Adoption in the Maker Ecosystem 2009-2015" style="max-width: 100%; height: auto;">
-                        <figcaption style="font-size: 0.9375rem; color: var(--text-secondary); margin-top: 0.5rem;">Figure 2: Commodity Environmental Sensing Adoption in the Maker Ecosystem (2009-2015)</figcaption>
+                        <figcaption style="font-size: 0.9375rem; color: var(--text-secondary); margin-top: 0.5rem;">Figure 2: Commodity Environmental Sensing Adoption in the Maker Ecosystem from 2009 to 2015</figcaption>
                     </figure>
 
-                    <h2>2. The Commodity Substitution: Jumping Ship to the AHT20</h2>
+                    <h2>2. Market Response and Commodity Substitution</h2>
                     
-                    <p>When a "Hard Stop" happens, engineers have to find a replacement fast. Since there was no high-end alternative ready, the market moved to what was available and cheap.</p>
+                    <p>When a sudden discontinuation occurs, engineers must quickly identify replacement components. Since no high-end alternative was readily available, the market naturally shifted toward what was accessible and affordable.</p>
                     
-                    <p><strong>The "J-Curve":</strong> This caused a massive spike in adoption for the Aosong AHT20. This is a "commodity" sensor, it is mass-produced, very cheap (cents instead of dollars), and widely available.</p>
+                    <p>This transition caused a substantial increase in adoption for the Aosong AHT20. This sensor is mass-produced, widely available, and costs significantly less than its predecessors, often measured in cents rather than dollars.</p>
                     
-                    <p><strong>The Trade-off:</strong> The AHT20 uses standard, safe materials and fits into modern circuit boards easily. However, on article, it is a "cheaper" device. Usually, switching to a cheaper sensor means accepting worse data. But with the right software, that isn't true anymore.</p>
+                    <p>The AHT20 uses standard, compliant materials and integrates easily into modern circuit boards. While it is nominally a less expensive device, switching to a lower-cost sensor does not necessarily mean accepting lower quality data. With appropriate software, the performance gap can be effectively closed.</p>
 
                     <figure style="margin: 1.5rem 0; text-align: center;">
                         <img src="../../assets/media/765434467589/graph3.png" alt="Normalized Industrial Shipment Volume Index 2015-2025" style="max-width: 100%; height: auto;">
-                        <figcaption style="font-size: 0.9375rem; color: var(--text-secondary); margin-top: 0.5rem;">Figure 3: Normalized Industrial Shipment Volume Index (2015-2025)</figcaption>
+                        <figcaption style="font-size: 0.9375rem; color: var(--text-secondary); margin-top: 0.5rem;">Figure 3: Normalized Industrial Shipment Volume Index from 2015 to 2025</figcaption>
                     </figure>
 
-                    <h2>3. The Software Curve: The "Vertical Ascension"</h2>
+                    <h2>3. Software-Driven Value Enhancement</h2>
                     
-                    <p>This is the core of our hypothesis. Even if the hardware gets cheaper or simpler (switching from Si7021 to AHT20), the utility, the actual value we get from the sensor, can go up if we use smart algorithms.</p>
+                    <p>This section presents the central argument of our hypothesis. Even when hardware becomes simpler or less expensive, such as transitioning from the Si7021 to the AHT20, the practical value derived from the sensor can actually increase through intelligent algorithmic processing.</p>
                     
-                    <p>We call our software solution the <strong>Differential Temporal Derivative Soft-Sensing (DTDSS)</strong> framework. It acts like a "brain" that upgrades the "eyes" of the sensor.</p>
+                    <p>We call our software solution Differential Temporal Derivative Soft-Sensing, abbreviated as DTDSS. This framework essentially functions as a computational layer that significantly enhances the capabilities of basic sensor hardware.</p>
 
-                    <h3>3.1 How DTDSS Works</h3>
+                    <h3>3.1 How DTDSS Operates</h3>
                     
-                    <p>Instead of just asking the sensor "what is the temperature right now?", DTDSS looks at how the temperature changes over time and compares two sensors against each other.</p>
+                    <p>Rather than simply querying a sensor for the current temperature reading, DTDSS analyzes how temperature changes over time and compares measurements between two sensors simultaneously.</p>
                     
-                    <p><strong>The Setup:</strong> We use two sensors. One is the Reference Node (sitting in the shade, measuring the air). The other is the Flux Node (sitting under a clear dome, absorbing sunlight).</p>
+                    <p>The configuration uses two sensors in a differential arrangement. The first sensor, called the Reference Node, is positioned in shade and measures ambient air conditions. The second sensor, called the Flux Node, is placed under a clear dome where it is exposed to direct sunlight.</p>
                     
-                    <p><strong>The Physics:</strong> By measuring the difference between the hot sensor and the cool sensor, we can calculate how much energy is hitting them. This allows us to measure Solar Radiation (Sunlight) and Heat Flux without buying a $500 pyranometer.</p>
+                    <p>By measuring the temperature difference between the sun-exposed sensor and the shaded sensor, we can calculate the amount of radiant energy striking the surface. This approach allows us to measure solar radiation and heat flux without requiring expensive specialized instruments like pyranometers, which typically cost several hundred dollars.</p>
 
-                    <h3>3.2 Fixing the "Jitters" with INR</h3>
+                    <h3>3.2 Noise Reduction Through Inertial Filtering</h3>
                     
-                    <p>Cheap sensors can be "noisy", their readings might jump around a bit. To fix this, we use a filter called <strong>Inertial Noise Reduction (INR)</strong>.</p>
+                    <p>Inexpensive sensors often produce noisy readings, where measurements fluctuate slightly even under stable conditions. To address this, we employ a filter called Inertial Noise Reduction, abbreviated as INR.</p>
                     
-                    <p><strong>How it works:</strong> Imagine a camera stabilizer that smooths out shaky hands. INR does that for temperature readings. It uses an adaptive math formula (Exponential Moving Average) that knows when a temperature change is real and when it's just noise.</p>
+                    <p>The filter operates similarly to image stabilization in cameras, which smooths out unintentional movement. INR applies this concept to temperature readings. It uses an adaptive mathematical approach based on exponential moving averages that can distinguish between genuine temperature changes and random noise.</p>
                     
-                    <p><strong>The Result:</strong> It mathematically reconstructs a "smooth" signal, allowing a cheap sensor to track rapid changes (like a cloud passing over the sun) just as well as an expensive one.</p>
+                    <p>The result is a mathematically reconstructed signal that is considerably smoother, allowing an inexpensive sensor to track rapid environmental changes, such as a cloud passing over the sun, with accuracy comparable to more expensive equipment.</p>
 
-                    <h3>3.3 Working Anywhere (Altitude Independence)</h3>
+                    <h3>3.3 Altitude Independence</h3>
                     
-                    <p>Most sensors get confused if you take them up a mountain because the air is thinner. DTDSS solves this by calculating the Air Density in real-time.</p>
+                    <p>Most sensors produce inconsistent readings at different elevations because air density varies with altitude. DTDSS addresses this by calculating air density in real time using the sensor's pressure readings.</p>
                     
-                    <p><strong>The Math:</strong> It uses the pressure reading from the sensor to calculate exactly how thick the air is using the Magnus-Tetens formula.</p>
+                    <p>The calculation relies on established thermodynamic relationships, specifically the Magnus-Tetens formula, to determine air density precisely at any given moment.</p>
                     
-                    <p><strong>The Benefit:</strong> This means the system works perfectly at sea level or on top of a mountain without needing GPS or manual adjustments.</p>
+                    <p>This means the system operates consistently whether at sea level or at high elevation, without requiring GPS positioning or manual calibration adjustments.</p>
 
                     <figure style="margin: 1.5rem 0; text-align: center;">
                         <img src="../../assets/media/765434467589/graph4.png" alt="Projected Active Industrial Design Share 2024-2030" style="max-width: 100%; height: auto;">
-                        <figcaption style="font-size: 0.9375rem; color: var(--text-secondary); margin-top: 0.5rem;">Figure 4: Projected Active Industrial Design Share (2024-2030)</figcaption>
+                        <figcaption style="font-size: 0.9375rem; color: var(--text-secondary); margin-top: 0.5rem;">Figure 4: Projected Active Industrial Design Share from 2024 to 2030</figcaption>
                     </figure>
 
                     <h2>4. Conclusion</h2>
                     
-                    <p>The "Common Curve of Sensors" tells us that we can no longer rely on hardware staying the same. Laws change, and chemicals get banned (like the Si7021). The hardware layer is fragile.</p>
+                    <p>The Common Curve of Sensors demonstrates that we can no longer assume hardware will remain consistently available. Regulations change and materials become restricted, as the Si7021 discontinuation clearly illustrates. The hardware layer has become inherently fragile.</p>
                     
-                    <p>However, the software layer is robust. By using physics-based code like DTDSS, we can take whatever compliant hardware is available (like the AHT20) and "upcycle" it into a precision instrument.</p>
+                    <p>The software layer, however, proves considerably more resilient. By applying physics-based algorithms like DTDSS, we can take whatever compliant hardware is currently available, such as the AHT20, and transform it into a capable precision instrument.</p>
                     
-                    <p><strong>The future of sensing isn't about better silicon; it's about better math.</strong></p>
+                    <p>Ultimately, the future of environmental sensing depends less on advancing silicon technology and more on developing sophisticated mathematical approaches.</p>
                 </div>
 
                 <!-- References Section -->
