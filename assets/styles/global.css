@@ -1130,8 +1130,19 @@ height: auto;
 }
 
 @media (max-width: 768px) {
+    .cookie-consent-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
     .cookie-consent-actions {
         flex-direction: column;
+        width: 100%;
+    }
+    .cookie-btn {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
     }
 }
 
