@@ -3,134 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join - FIA Operating Systems</title>
-    <meta name="description" content="Join the FIA Operating Systems research team. We welcome high schoolers, undergraduates, and graduate advisors from around the world.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Join - FiaOS</title>
+    <meta name="description" content="Join the FiaOS team. Contact us for research collaboration and partnerships.">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/styles/global.css">
     <link rel="icon" type="image/png" href="../assets/media/favicon.png">
-    <style>
-        .join-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem;
-        }
-        .join-hero {
-            text-align: center;
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .join-hero h1 {
-            font-family: 'Product Sans', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-        .join-hero .tagline {
-            font-family: 'Product Sans', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        .join-hero p {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-        .info-section {
-            margin-bottom: 2rem;
-        }
-        .info-section h2 {
-            font-family: 'Product Sans', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-        }
-        .info-section p, .info-section li {
-            font-size: 0.9375rem;
-            line-height: 1.7;
-            color: var(--text-secondary);
-            margin-bottom: 0.75rem;
-        }
-        .info-section ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .info-section li {
-            padding-left: 1.5rem;
-            position: relative;
-        }
-        .info-section li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-        }
-        .highlight-box {
-            background: var(--bg-secondary);
-            border-left: 3px solid var(--primary-color);
-            padding: 1rem 1.25rem;
-            margin: 1.5rem 0;
-        }
-        .highlight-box p {
-            margin: 0;
-            font-size: 0.9375rem;
-            color: var(--text-secondary);
-        }
-        .form-container {
-            margin: 2rem 0;
-            border: 1px solid var(--border-color);
-        }
-        .form-container iframe {
-            width: 100%;
-            height: 1200px;
-            border: none;
-        }
-        .contact-section {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border-color);
-        }
-        .contact-section p {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-        }
-        .contact-section a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        .contact-section a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 768px) {
-            .join-hero h1 {
-                font-size: 1.75rem;
-            }
-            .join-hero .tagline {
-                font-size: 1.25rem;
-            }
-            .form-container iframe {
-                height: 1400px;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Announcement Ribbon -->
     <div id="announcementRibbon" class="announcement-ribbon">
         <div class="announcement-content">
-            <i class="bi bi-circle-fill"></i>
-            <span>Developer Release v0.1 FiaPhy and Biome frameworks are now open source. <a href="../fiaphy">View →</a></span>
+            <i class="bi bi-megaphone-fill"></i>
+            <span>Developer Release v0.1 Biome framework is now open source. <a href="../docs/index.html">View Documentation →</a></span>
         </div>
         <button id="dismissAnnouncement" class="announcement-dismiss" aria-label="Dismiss"><i class="bi bi-x"></i></button>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-consent">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-text">
+                <h3>Terms of Use & Data Policy</h3>
+                <p>This platform uses cookies and local storage for essential functionality, theme preferences, and analytics. <br><br>All documentation and data are provided for educational and non-commercial purposes unless otherwise specified. <br> Copyrights © Neksha DeSilva and www.nekshadesilva.com All rights reserved.<br> You are in control.</p>
+            </div>
+            <div class="cookie-consent-actions">
+                <button id="acceptCookies" class="cookie-btn cookie-btn-accept">Accept & Continue</button>
+                <a href="https://google.com" class="cookie-btn cookie-btn-learn">Decline</a>
+            </div>
+        </div>
     </div>
 
     <div class="top-toolbar">
@@ -161,80 +62,42 @@
         </div>
     </header>
 
-    <div class="join-container">
-        <!-- Hero Section -->
-        <div class="join-hero">
-            <h1>Research at FIA Operating Systems</h1>
-            <p class="tagline">Make things. Break things.</p>
-            <p>Join a global network of researchers, developers, and innovators building the future of autonomous systems and environmental sensing technology.</p>
-        </div>
-
-        <!-- Who We Welcome -->
-        <div class="info-section">
-            <h2>Who We Welcome</h2>
-            <ul>
-                <li><strong>High Schoolers</strong> from the United States of America and the rest of the world — equal opportunity for everyone.</li>
-                <li><strong>Undergraduate Students</strong> looking to gain research experience and contribute to real-world projects.</li>
-                <li><strong>Graduate Students</strong> who wish to serve as advisors for our research team.</li>
-            </ul>
-        </div>
-
-        <!-- Positions -->
-        <div class="info-section">
-            <h2>Available Positions</h2>
-            <p>Select your preferred role in the application form below:</p>
-            <ul>
-                <li><strong>Advisor</strong> — Guide and mentor the research team (ideal for graduate students and professionals).</li>
-                <li><strong>Research Team Member</strong> — Contribute to ongoing research projects.</li>
-                <li><strong>Part-time or Full-time Researcher</strong> — Dedicate more time to in-depth research work.</li>
-            </ul>
-        </div>
-
-        <!-- How We Work -->
-        <div class="info-section">
-            <h2>How We Work</h2>
-            <p>All work is <strong>fully remote</strong>. We operate as a distributed network, coordinated through Slack and Discord. This is currently a <strong>voluntary position</strong> — we are not yet an incorporated company or nonprofit organization.</p>
-            <p>In the future, most procedures will be initiated from the United States of America. Currently, we are based in Colombo, the capital of Sri Lanka.</p>
-            
-            <div class="highlight-box">
-                <p><strong>What you'll receive:</strong> A company email domain (@fiaos.org) upon acceptance. You can also initiate any project within FIA Operating Systems — including requesting subdomains for your work — without any election procedure. We operate in an open, voted model.</p>
-            </div>
-        </div>
-
-        <!-- Application Timeline -->
-        <div class="info-section">
-            <h2>Application Timeline</h2>
-            <p>You will receive an acceptance or declination notification within <strong>a maximum of two weeks</strong>. Most responses are sent within 3–4 days.</p>
-            <p>If you do not receive a response after two weeks, please email <a href="mailto:n.desilva@fiaos.org">n.desilva@fiaos.org</a>.</p>
-        </div>
-
-        <!-- Application Form -->
-        <div class="info-section">
-            <h2>Apply Now</h2>
-            <p>Fill out the form below to join the research team. Stay tuned — we'll be in touch.</p>
-        </div>
-
-        <div class="form-container">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSesbqbTr-P9utlO_UjVZEyoUtIDtOgqZINYunhSABgdpijs2A/viewform?embedded=true" title="Join FIA Operating Systems Application Form">Loading…</iframe>
-        </div>
-
-        <!-- Contact -->
-        <div class="contact-section">
-            <p><strong>General inquiries:</strong> <a href="mailto:research@fiaos.org">research@fiaos.org</a></p>
-            <p><strong>No response after 2 weeks?</strong> <a href="mailto:n.desilva@fiaos.org">n.desilva@fiaos.org</a></p>
-        </div>
+    <div class="page-container">
+        <main class="main-content">
+            <section class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">Join Our Team</h2>
+                </div>
+                <div class="section-content" style="max-width: 600px;">
+                    <p style="margin-bottom: 2rem; line-height: 1.7;">We are building the future of environmental intelligence. If you're interested in contributing to open-source sensor technology, physics-based algorithms, or autonomous systems research, we'd like to hear from you.</p>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="font-size: 1.125rem; margin-bottom: 0.5rem;">Research</h3>
+                        <p>For research inquiries and collaboration:</p>
+                        <a href="mailto:research@fiaos.org" style="font-size: 1.125rem; color: var(--primary-color);">research@fiaos.org</a>
+                    </div>
+                    
+                    <div>
+                        <h3 style="font-size: 1.125rem; margin-bottom: 0.5rem;">Partnerships</h3>
+                        <p>For partnership opportunities:</p>
+                        <a href="mailto:partnership@fiaos.org" style="font-size: 1.125rem; color: var(--primary-color);">partnership@fiaos.org</a>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
 
     <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
-            <div class="footer-section">
+              <div class="footer-section">
                 <br>
                 <span style="font-weight: 400;">Future is Autonomous.</span>
-                <div class="footer-logo" style="margin-top: 1rem;">
-                    <img src="../assets/media/logo-satur.png" alt="FIA Logo">
+               
+                 <div class="footer-logo" style=" margin-top: 1rem;">
+                    <img src="../assets/media/logo-satur.png" alt="Logo">
                 </div>
-            </div>
+           </div>
             <div class="footer-section">
                 <h4>Project</h4>
                 <ul>
@@ -257,11 +120,10 @@
                     <li><a href="mailto:research@fiaos.org">research@fiaos.org</a></li>
                 </ul>
             </div>
-        </div>
     </footer>
     <footer class="footer">
         <div class="container">
-            <div class="footer-bottom" style="text-align: center; padding: 0 5rem;">
+            <div class="footer-bottom" style="text-align: center; padding:0 5rem;">
                 <p>Copyrights © Neksha DeSilva and www.nekshadesilva.com. All rights reserved.</p>
             </div>
             <div class="footer-social">
