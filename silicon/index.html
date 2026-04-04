@@ -13,9 +13,9 @@
     <style>
         :root {
             --text-primary: #000000;
-            --text-secondary: #333333;
+            --text-secondary: #000000;
             --bg-primary: #ffffff;
-            --border-color: #000000;
+            ---color: #000000;
         }
 
         body {
@@ -65,7 +65,7 @@
             font-weight: 600;
             margin: 2rem 0 1rem;
             padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border-color);
+            -bottom: 1px solid var(---color);
         }
 .footer-container{
     
@@ -83,7 +83,7 @@
         }
 
         .product-card {
-            border: 1px solid #000000;
+            : 1px solid #000000;
             background: var(--bg-primary);
             padding: 1rem;
             display: flex;
@@ -98,7 +98,6 @@
         }
 
         .skeleton {
-            background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
             background-size: 200% 100%;
             animation: skeleton-loading 1.5s infinite;
         }
@@ -111,7 +110,6 @@
         .skeleton-text {
             height: 0.875rem;
             margin-bottom: 0.4rem;
-            background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
             background-size: 200% 100%;
             animation: skeleton-loading 1.5s infinite;
         }
@@ -143,7 +141,6 @@
             height: 1.25rem;
             width: 35%;
             margin-top: 0.75rem;
-            background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
             background-size: 200% 100%;
             animation: skeleton-loading 1.5s infinite;
         }
@@ -151,7 +148,7 @@
         .order-section {
             margin-top: 2.5rem;
             padding: 1.5rem;
-            border: 1px solid #000000;
+            : 1px solid #000000;
             background: #f8f9fa;
         }
 
@@ -182,8 +179,8 @@
             color: #555;
             margin: 1rem 0;
             padding: 1rem;
-            background: #fff;
-            border: 1px solid #ddd;
+            background: #ffffff;
+           
         }
 
         .order-details ul {
@@ -211,24 +208,24 @@
             width: 100%;
             min-height: 120px;
             padding: 0.75rem;
-            border: 1px solid #000;
+            : 1px solid #000;
             font-family: inherit;
             font-size: 0.875rem;
             resize: vertical;
-            box-sizing: border-box;
+            box-sizing: -box;
         }
 
         .order-form textarea:focus {
             outline: none;
-            border-color: #0a66c2;
+            -color: #0a66c2;
         }
 
         .order-form button {
             margin-top: 0.75rem;
             padding: 0.625rem 1.25rem;
             background: #000;
-            color: #fff;
-            border: none;
+            color: #ffffff;
+            : none;
             font-size: 0.875rem;
             cursor: pointer;
         }
@@ -281,7 +278,7 @@
         .notices-section {
             margin-top: 3rem;
             padding-top: 2rem;
-            border-top: 1px solid #e0e0e0;
+            -top: 1px solid #e0e0e0;
         }
 
         .notice-banner {
@@ -376,7 +373,7 @@
 
         .footer-column a {
             font-size: 0.8125rem;
-            color: #888888;
+            color: #000000;
             text-decoration: none;
         }
 
@@ -385,7 +382,6 @@
         }
 
         .footer-policies {
-            border-top: 1px solid #222222;
             padding-top: 1.5rem;
             text-align: center;
             margin-top: 1.5rem;
@@ -412,7 +408,7 @@
         .policy-block ul {
             margin: 0.4rem 0 0 1rem;
             padding: 0;
-            list-style: disc;
+            list-style: none;
             list-style-type: none;
         }
 
@@ -432,7 +428,7 @@
         }
 
         .footer-bottom {
-            border-top: 1px solid #222222;
+            -top: 1px solid #222222;
             padding-top: 1.25rem;
             margin-top: 1.5rem;
             flex-direction: column;
@@ -570,16 +566,15 @@
             </div>
             <div class="order-details">
                 <p>Please include the following in your email:</p>
-                <ul>
-                    <li>Your full name</li>
-                    <li>Shipping address</li>
-                    <li>Secondary address (optional)</li>
-                    <li>Contact email and phone number</li>
-                    <li>Receipt email (if different from contact email)</li>
-                    <li>Product name (click on a product name above to copy it)</li>
-                </ul>
+           
+                Your full name
+                Shipping address
+                Secondary address (optional)
+                Contact email and phone number
+                Receipt email (if different from contact email)
+                Product name (click on a product name above to copy it)
+              
             </div>
-            <p class="copy-hint">Tip: Click on any product name to copy it to your clipboard.</p>
             <div class="order-form">
                 <label for="orderMessage">Or send a message directly:</label>
                 <textarea id="orderMessage" placeholder="Enter your name, address, contact details, and the product you want to order..."></textarea>
@@ -605,25 +600,25 @@
                     <div class="footer-column">
                         <h4>Project</h4>
                         <ul>
-                            <li><a href="../research/">Research</a></li>
-                            <li><a href="../docs/">Documentation</a></li>
-                            <li><a href="../archive/">Archive</a></li>
-                            <li><a href="../data/">Data</a></li>
+                        <a href="../research/">Research</a>
+                        <a href="../docs/">Documentation</a>
+                        <a href="../archive/">Archive</a>
+                        <a href="../data/">Data</a>
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h4>Resources</h4>
                         <ul>
-                            <li><a href="../api/">API</a></li>
-                            <li><a href="../sources/">Sources</a></li>
-                            <li><a href="../docs/privacy/">Privacy</a></li>
+                        <a href="../api/">API</a>
+                        <a href="../sources/">Sources</a>
+                        <a href="../docs/privacy/">Privacy</a>
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h4>Contact</h4>
                         <ul>
-                            <li><a href="mailto:research@fiaos.org">research@fiaos.org</a></li>
-                            <li><a href="https://nekshadesilva.com">nekshadesilva.com</a></li>
+                        <a href="mailto:research@fiaos.org">research@fiaos.org</a>
+                        <a href="https://nekshadesilva.com">nekshadesilva.com</a>
                         </ul>
                     </div>
                 </div>
