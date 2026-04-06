@@ -10,37 +10,37 @@
         wrapper.className = 'mobile-network-status';
         wrapper.innerHTML = `
             <div class="network-status-inner">
-                <span class="network-status-label"><i class="bi bi-broadcast"></i> Network:</span>
+       
                 <div class="network-status-display">
                     <div class="network-status-item active" data-index="0">
                         <span class="status-dot status-declined" aria-hidden="true"></span>
                         <span class="location">New York, USA</span>
-                        <span class="status-text">• Testing</span>
+                        <span class="status-text"></span>
                     </div>
                     <div class="network-status-item" data-index="1">
                         <span class="status-dot status-declined" aria-hidden="true"></span>
                         <span class="location">Sydney, AU</span>
-                        <span class="status-text">• Testing</span>
+                        <span class="status-text"></span>
                     </div>
                      <div class="network-status-item" data-index="1">
                         <span class="status-dot status-declined" aria-hidden="true"></span>
                         <span class="location">Delhi, IN</span>
-                        <span class="status-text">• Testing</span>
+                        <span class="status-text"></span>
                     </div>
                     <div class="network-status-item" data-index="2">
                         <span class="status-dot status-declined" aria-hidden="true"></span>
                         <span class="location">Colombo, LK</span>
-                        <span class="status-text">• Testing</span>
+                        <span class="status-text"></span>
                     </div>
                     <div class="network-status-item" data-index="3">
                         <span class="status-dot status-active" aria-hidden="true"></span>
                         <span class="location">api.fiaos.org</span>
-                        <span class="status-text">• LIVE</span>
+                        <span class="status-text"></span>
                     </div>
                     <div class="network-status-item" data-index="4">
                         <span class="status-dot status-active" aria-hidden="true"></span>
                         <span class="location">cloud.fiaos.org</span>
-                        <span class="status-text">• LIVE</span>
+                        <span class="status-text"></span>
                     </div>
                 </div>
             </div>
