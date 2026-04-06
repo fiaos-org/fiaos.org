@@ -225,7 +225,7 @@
             padding: 0.625rem 1.25rem;
             background: #000;
             color: #ffffff;
-            : none;
+        
             font-size: 0.875rem;
             cursor: pointer;
         }
@@ -520,6 +520,89 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Old-school HTML cleanup overrides */
+        body {
+            font-size: 16px;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+        }
+
+        .product-card,
+        .order-section,
+        .order-details,
+        .section-heading,
+        .footer-policies,
+        .footer-bottom {
+            border: none !important;
+            border-top: none !important;
+            border-bottom: none !important;
+        }
+
+        .order-form textarea {
+            border: none !important;
+            box-shadow: none !important;
+            font-size: 0.95rem;
+        }
+
+        .order-form button,
+        .cookie-btn,
+        .cookie-btn.cookie-btn-accept,
+        .cookie-btn.cookie-btn-learn {
+            background: transparent !important;
+            border: none !important;
+            color: #0a66c2 !important;
+            padding: 0 !important;
+            text-decoration: underline !important;
+            font-size: 0.95rem !important;
+            font-weight: 400 !important;
+        }
+
+        .order-form button:hover,
+        .cookie-btn:hover,
+        .cookie-btn.cookie-btn-accept:hover,
+        .cookie-btn.cookie-btn-learn:hover {
+            color: #084c93 !important;
+        }
+
+        .product-description,
+        .order-info,
+        .order-details,
+        .order-form label,
+        .copy-hint,
+        .footer-column a,
+        .footer-column h4,
+        .footer-bottom p,
+        .policy-block h5,
+        .policy-block p,
+        .policy-block li {
+            font-size: 0.9rem !important;
+        }
+
+        .footer-column a,
+        .notice-banner a,
+        .policy-block a,
+        a {
+            text-decoration: underline;
+        }
+
+        .footer-social a,
+        .product-name {
+            transition: none !important;
+        }
+
+        iframe {
+            border: none !important;
+            border-radius: 0 !important;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -559,27 +642,7 @@
         </div>
 
         <div class="order-section">
-            <h3>How to Order</h3>
-            <div class="order-info">
-                <p>Due to ongoing third-party infrastructure work, we are implementing our own secure payment gateway alongside Stripe. In the meantime, please place orders via email.</p>
-                <p>Email us at <a href="mailto:silicon@fiaos.org" class="order-email">silicon@fiaos.org</a></p>
-            </div>
-            <div class="order-details">
-                <p>Please include the following in your email:</p>
-           
-                Your full name
-                Shipping address
-                Secondary address (optional)
-                Contact email and phone number
-                Receipt email (if different from contact email)
-                Product name (click on a product name above to copy it)
-              
-            </div>
-            <div class="order-form">
-                <label for="orderMessage">Or send a message directly:</label>
-                <textarea id="orderMessage" placeholder="Enter your name, address, contact details, and the product you want to order..."></textarea>
-                <button type="button" onclick="sendOrderEmail()">Send via Email</button>
-            </div>
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdbbz3QW9LfPWmLTz9C_Ao_RKbgo1CpmmlZwS_-N4X0LOSBRg/viewform?usp=publish-editor" frameborder="0" style="width: 100%; height: 40rem;"></iframe>
         </div>
 
         <div id="copyToast" class="copy-toast">Copied to clipboard</div>

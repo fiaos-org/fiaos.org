@@ -13,7 +13,7 @@
     --bg-primary: #ffffff;
     --bg-secondary: #ffffff;
     --bg-tertiary: #ffffff;
-    --border-color: #000000;
+    --border-color: #ffffff;
     --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
     --shadow-md: 0 2px 4px rgba(0,0,0,0.1);
     --shadow-lg: 0 4px 8px rgba(0,0,0,0.15);
@@ -30,7 +30,7 @@
     --bg-primary: #000000;
     --bg-secondary: #000000;
     --bg-tertiary: #000000;
-    --border-color: #ffffff;
+    --border-color: #000000;
 }
 
 /* Reset */
@@ -236,21 +236,12 @@ a:hover {
     padding: 0.5rem 1rem;
     font-size: 0.875rem;
     font-weight: 500;
-    color: var(--text-secondary);
-    border-radius: 4px;
-    transition: background-color var(--transition), color var(--transition);
-    white-space: nowrap; background: var(--bg-secondary);
-}
-
-.nav-link:hover {
-   
     color: var(--text-primary);
+
+    
+    white-space: nowrap; 
 }
 
-.nav-link.active {
-    background: var(--bg-tertiary);
-    color: var(--primary-color);
-}
 
 /* Full-Screen Mobile Menu Overlay */
 .mobile-menu-overlay {

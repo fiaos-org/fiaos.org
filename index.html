@@ -25,12 +25,7 @@
     </div>
 
     <!-- Autonomous 25 Ribbon -->
-    <div class="announcement-ribbon" style="background: black; border-bottom: 1px solid #d0d7de;">
-        <div class="announcement-content">
-            <i class="bi bi-play-circle-fill"></i>
-            <span style="color:white  "><strong style="font-family: 'Product Sans', sans-serif;">Autonomous 25 | The Common Curve of Sensors</strong><a style="color: #4a9eff;" href="25/ccs/"> Read Article →</a></span>
-        </div>
-    </div>
+    
 
     <!-- Mobile Network Status Ribbon (visible only on mobile) -->
 
@@ -166,14 +161,14 @@
                     </div>
                 </div>
                 <br>
-               <span>Systems are under testing and development. <br><a href="./docs/development-updates-and-networks">Learn more</a></span>
+               <span>FIA Operating Systems is currently (online) <br><a href="./docs/development-updates-and-networks">Learn more</a></span>
             </div>
         </aside>
 
         <!-- FiaPhy Promotional Banner -->
         <style>
             .fiaphy-promo-banner {
-                background: linear-gradient(135deg, #000000 0%, #000000 50%, #16213e 100%);
+                background: rgb(60, 60, 60);
       
                 padding: 2rem 2rem;
                 margin: 1.5rem 0;
@@ -323,17 +318,14 @@
                 <img src="assets/media/fiaphy-clean.png" alt="FiaPhy">
             </div>
             <div class="fiaphy-promo-content">
-                <div class="fiaphy-promo-eyebrow">
-                  v1.1.2 RELEASED
-                </div>
+              
                 <h3 class="fiaphy-promo-title">Ready for the new era of sensing.<span><Br>Introducing FiaPhy</span></h3>
-                <p class="fiaphy-promo-desc">Derive solar radiation and heat flux from standard environmental sensors. Works on Arduino, ESP32, Raspberry Pi.</p>
             </div>
             <div class="fiaphy-promo-cta">
                 <a href="fiaphy/" class="fiaphy-promo-btn">
                     <i class="bi bi-download"></i> Download
                 </a>
-                <a href="silicon/" class="fiaphy-promo-cta" style="background: transparent; margin-left: 1rem; margin-top: 0.5rem;">
+                <a href="silicon/" class="fiaphy-promo-cta" style="color: white; background: transparent; margin-left: 1rem; margin-top: 0.5rem;">
                     <i class="bi bi-cart3"></i> Purchase a Board
                 </a>
             </div>
@@ -361,21 +353,7 @@
                         title="Patent Pending Receipt"
                     ></iframe>
                     
-                    <p style="margin-bottom: 1rem;">Modern environmental monitoring systems, from automotive platforms to industrial installations, often rely on sensing architectures decades old. While sensor hardware has plateaued, algorithmic processing potential has grown exponentially. This creates an engineering challenge as billions of functional sensors are discarded annually, perceived as incapable of advanced measurements like solar radiation or heat flux.</p>
-                    
-                    <p style="margin-bottom: 1rem;">This technology mitigates hardware obsolescence by transferring computation from physical components to intelligent software. By upcycling commodity sensors into high-precision radiometric instruments without firmware changes, it preserves global sensor infrastructure utility in modern autonomous frameworks.</p>
-                    
-                    <p style="margin-bottom: 1rem;">The core is the Differential Temporal Derivative Soft-Sensing (DTDSS) framework, replacing expensive and fragile specialized equipment like pyranometers which are prohibitive in autonomous systems. It uses a differential thermodynamic architecture with paired sensors: a Reference Node alongside a Flux Node to isolate active energy exchanges from ambient conditions. An Inertial Noise Reduction (INR) filter compensates for thermal inertia, predicting equilibrium temperatures in real time.</p>
-                    
-                    <p style="margin-bottom: 1rem;">Unlike machine learning approaches, this system uses physics-based derivations. Air density and enthalpy are calculated via first-principles thermodynamics, ensuring accuracy across altitudes and climates. The state machine is optimized for extreme efficiency, requiring under 60 bytes of RAM, compatible with 8-bit microcontrollers.</p>
-                    
-                    <p style="margin-bottom: 1rem;">FIA Operating Systems is a network of scientists, developers, and industry professionals advancing hardware-agnostic solutions for global sustainability. This ensures established innovations continue contributing to a data-rich, sustainable future.</p>
-                    
-                    <p style="margin-bottom: 1rem;">Billions of sensors exist measuring simple parameters only because that is how they were labeled. The true value of mathematical approximation is often overlooked. A combination of such sensors can yield derived parameters, values that cannot be obtained directly with perfect precision. However, perfect precision is not always required.</p>
-                    
-                    <p style="margin-bottom: 1.5rem;">Restricting sensor potential limits future generations from building upon current work. Sensors, old or new, built for various purposes, when combined together, can derive far more advanced real-world parameters in applications that do not demand absolute precision. FiaPhy is a research initiative focused on maximizing the potential of sensors, the near-future carriers of full-human automation, to help sustain existing and upcoming innovations while enabling them to work with these frameworks for generations to come.</p>
-                    
-                    <p>Research contributions or technical collaboration inquiries may be directed to <a href="mailto:research@fiaos.org">research@fiaos.org</a>.</p>
+                    Modern methods of environmental monitoring are deficient in the lack of ability to take measurements of energy flows since traditional readings involve capturing parameters such as temperature, pressure, and humidity without considering their physical causes. The present research describes Differential Temporal Derivative Soft-Sensing (DTDSS), a physics-based approach which enables any ordinary low cost sensor array to infer estimates of the energy exchange in the environment by modeling its radiative heat fluxes. In particular, the proposed approach combines a novel paired sensor configuration along with a unique algorithmic solution called Inertial Noise Reduction or INR, that mathematically models the flow of energy in the environment by computing Global Horizontal Irradiance, or GHI, and convective heat flux. Experimental field testing has been conducted with the use of calibrated reference pyranometers supplied by the Department of Meteorology of Sri Lanka, yielding a correspondence between 8-bit embedded processor results and the reference of R2 ¿ 0.9 and RMSE approx. eqv. to 45 Watts per square meter in under 2KB RAM of a microcontroller unit.
                 </div>
             </section>
 
