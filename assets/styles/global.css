@@ -183,7 +183,9 @@ a:hover {
  
     filter: invert(1);
 }
-
+#themeToggle{
+    visibility: hidden;
+}
 /* Invert logo in dark mode */
 [data-theme="dark"] .brand-logo {
     filter: invert(0);
