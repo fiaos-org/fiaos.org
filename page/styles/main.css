@@ -18,7 +18,9 @@
     --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
-
+svg{
+    visibility: hidden;
+}
 body {
  font-family: "Lato", sans-serif;    line-height: 1.6;
     color: var(--text-dark);
@@ -726,4 +728,7 @@ html {
 ::selection {
     background: var(--primary-color);
     color: var(--white);
+}
+svg{
+    visibility: hidden;
 }
