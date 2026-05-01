@@ -615,9 +615,7 @@ height: 70px;
 }
 
 @media (max-width: 768px) {
-    .nav-menu {
-        display: none;
-    }
+   
     
     .hero {
         padding: 0;
@@ -735,4 +733,8 @@ svg{
 }
 a{
     color: var(--primary-color);
+}
+.bi-list{
+       visibility: visible;
+    opacity: 100;
 }

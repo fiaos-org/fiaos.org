@@ -818,10 +818,7 @@ a:hover {
         display: none;
     }
     
-    .main-nav {
-        display: none;
-    }
-
+  
     .mobile-menu-btn {
         display: flex;
     }
@@ -1652,5 +1649,9 @@ a{
 }
 .bi-x{
     visibility: visible;
+    opacity: 100;
+}
+.bi-list{
+       visibility: visible;
     opacity: 100;
 }
