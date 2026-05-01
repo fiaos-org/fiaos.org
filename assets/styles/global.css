@@ -5,10 +5,10 @@
 
 /* CSS Variables */
 :root {
-    --primary-color: #0a66c2;
+    --primary-color: #f4f4f4;
     --secondary-color: #00a0dc;
-    --text-primary: #000000;
-    --text-secondary: #000000;
+    --text-primary: #ffffff;
+    --text-secondary: #d7d7d7;
     --text-tertiary: #000000;
     --bg-primary: #ffffff;
     --bg-secondary: #ffffff;
@@ -22,7 +22,7 @@
 }
 
 [data-theme="dark"] {
-    --primary-color: #4a9eff;
+    --primary-color: #e7e7e7;
     --secondary-color: #00a0dc;
     --text-primary: #e8e8e8;
     --text-secondary: #b0b0b0;
@@ -1281,11 +1281,13 @@ height: auto;
    PLAIN ACADEMIC OVERRIDES
    Reference-inspired styling from tempassets/cloud.fiaos.org-main
    ============================================ */
-
+.fiaphy-promo-cta{
+    background-color: wheat;
+}
 :root,
 [data-theme="light"],
 [data-theme="dark"] {
-    --primary-color: #000000 !important;
+    --primary-color: #ededed !important;
     --secondary-color: #000000 !important;
     --text-primary: #000000 !important;
     --text-secondary: #000000 !important;
@@ -1643,4 +1645,12 @@ svg{
 .bi{
     visibility: hidden;
     opacity: 0;
+}
+a{
+    color: var(--primary-color);
+   
+}
+.bi-x{
+    visibility: visible;
+    opacity: 100;
 }
