@@ -1647,6 +1647,9 @@ a{
     color: var(--primary-color);
    
 }
+iframe {
+    border: 1px solid #999999 !important;
+}
 .bi-x{
     visibility: visible;
     opacity: 100;
@@ -1654,4 +1657,37 @@ a{
 .bi-list{
        visibility: visible;
     opacity: 100;
+}
+
+.media-audio-player {
+    width: 100%;
+    margin: 0.75rem 0 1rem;
+}
+
+.download-actions {
+    margin: 0 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.download-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.media-embed {
+    width: 100%;
+}
+
+.media-embed-audio {
+    height: 6rem;
+    margin: 0.75rem 0 1rem;
 }
