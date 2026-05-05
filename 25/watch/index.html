@@ -230,7 +230,7 @@
     <div id="announcementRibbon" class="announcement-ribbon">
         <div class="announcement-content">
             <i class="bi bi-circle-fill"></i>
-            <span>Developer Release v0.1 FiaPhy and Biome frameworks are now open source. <a href="../../fiaphy">View →</a></span>
+            <span>FIA Operating Systems is starting a journal with the OpenRockets Foundation. <a href="https://fiaos.substack.com/" target="_blank" rel="noopener noreferrer">Read on Substack</a></span>
         </div>
         <button id="dismissAnnouncement" class="announcement-dismiss" aria-label="Dismiss"><i class="bi bi-x"></i></button>
     </div>
@@ -299,7 +299,7 @@
 
                     <!-- Project Links -->
                     <div class="useful-links" style="margin-top: 1.5rem; margin-bottom: 2rem; padding: 1.25rem; background: var(--bg-secondary);">
-                        <h3 style="color: var(--primary-color); font-weight: 700;">Project Links</h3>
+                        <h3 style="color: #000000; font-weight: 700;">Project Links</h3>
                         <ul>
                             <li><a href="https://ieeexplore.ieee.org/document/11476295" target="_blank" rel="noopener noreferrer">Published on IEEE Xplore</a></li>
                             <li><a href="https://cloud.fiaos.org" target="_blank" rel="noopener noreferrer">Cloud Dashboard</a></li>
@@ -329,7 +329,7 @@
                     The FiaPhy Essential Board enables research-grade environmental sensing by connecting up to 25 differential sensor pairs for maximum statistical accuracy. Features include 802.11 b/g/n Wi-Fi and Bluetooth Low Energy 4.0 for seamless data transmission.
                     <br>
                     <br>
-                    <a style="font-size: 1.4em; padding: .3rem; border-radius: .5rem ; background-color: black; color: white;" href="/silicon/"><i class="bi bi-box-arrow-up-right" style="color: rgb(255, 255, 255);" aria-label="External link"></i> fiaos.org/silicon</a><br>
+                    <a style="font-size: 1.4em; padding: .3rem; border-radius: .5rem ; background-color: black; color: #ffffff;" href="/silicon/"><i class="bi bi-box-arrow-up-right" style="color: #ffffff;" aria-label="External link"></i> fiaos.org/silicon</a><br>
                     Browse other official FIA silicon products including development boards, microcontrollers, and accessories.
                 </p>
                 <iframe 
@@ -343,13 +343,10 @@
             <section id="overview" class="content-section" style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid var(--border-color);">
                 <div class="section-header">
                     <h2 class="section-title">Change my mind.</h2>
-                    <div class="section-meta">
-                        <span class="meta-item"></i> Version 1.1.2</span>
-                    </div>
+                    <div class="section-meta"></div>
                 </div>
                 <div class="section-content">
-                    <p style="margin-bottom: 1.5rem;">Patent Pending in The United States of America<br>
-                    System and Method for Indirect Estimation of Solar Irradiance and Heat Flux via Differential Thermodynamic Sensing<br>
+                    <p style="margin-bottom: 1.5rem;">Patent pending in the United States. System and Method for Indirect Estimation of Solar Irradiance and Heat Flux via Differential Thermodynamic Sensing.<br>
                     US 63/937,986 · Filed January 5, 2026</p>
                     
                     <iframe 
@@ -358,13 +355,7 @@
                         title="Patent Pending Receipt"
                     ></iframe>
                     
-                    <p style="margin-bottom: 1rem;">Modern environmental monitoring systems, from automotive platforms to industrial installations, often rely on sensing architectures decades old. While sensor hardware has plateaued, algorithmic processing potential has grown exponentially. This creates an engineering challenge as billions of functional sensors are discarded annually, perceived as incapable of advanced measurements like solar radiation or heat flux.</p>
-                    
-                    <p style="margin-bottom: 1rem;">This technology mitigates hardware obsolescence by transferring computation from physical components to intelligent software. By upcycling commodity sensors into high-precision radiometric instruments without firmware changes, it preserves global sensor infrastructure utility in modern autonomous frameworks.</p>
-                    
-                    <p style="margin-bottom: 1rem;">The core is the Differential Temporal Derivative Soft-Sensing (DTDSS) framework, replacing expensive and fragile specialized equipment like pyranometers which are prohibitive in autonomous systems. It uses a differential thermodynamic architecture with paired sensors: a Reference Node alongside a Flux Node to isolate active energy exchanges from ambient conditions. An Inertial Noise Reduction (INR) filter compensates for thermal inertia, predicting equilibrium temperatures in real time.</p>
-                    
-                    <p style="margin-bottom: 1rem;">Unlike machine learning approaches, this system uses physics-based derivations. Air density and enthalpy are calculated via first-principles thermodynamics, ensuring accuracy across altitudes and climates. The state machine is optimized for extreme efficiency, requiring under 60 bytes of RAM, compatible with 8-bit microcontrollers.</p>
+                    <p style="margin-bottom: 1rem;">Modern methods of environmental monitoring are deficient in the lack of ability to take measurements of energy flows since traditional readings involve capturing parameters such as temperature, pressure, and humidity without considering their physical causes. The present research describes Differential Temporal Derivative Soft-Sensing (DTDSS), a physics-based approach which enables any ordinary low cost sensor array to infer estimates of the energy exchange in the environment by modeling its radiative heat fluxes. In particular, the proposed approach combines a novel paired sensor configuration along with a unique algorithmic solution called Inertial Noise Reduction or INR, that mathematically models the flow of energy in the environment by computing Global Horizontal Irradiance, or GHI, and convective heat flux. Experimental field testing has been conducted with the use of calibrated reference pyranometers supplied by the Department of Meteorology of Sri Lanka, yielding a correspondence between 8-bit embedded processor results and the reference of R2 ¿ 0.9 and RMSE approx. eqv. to 45 Watts per square meter in under 2KB RAM of a microcontroller unit.</p>
                 </div>
             </section>
 
@@ -374,10 +365,9 @@
                 </div>
                 <div class="section-content">
                     <div class="publication-list">
-                        <div class="publication-item" style="padding: 1.25rem; background: var(--bg-secondary); margin-bottom: 1rem;">
+                        <div class="publication-item" style="padding: 1.25rem; background: var(--bg-secondary); margin-bottom: 1rem; border: none; box-shadow: none;">
                             <div class="pub-header">
                                 <h3 class="pub-title" style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Temporal Derivative Soft-Sensing and Reconstructing Solar Radiation and Heat Flux from Common Environmental Sensors and FiaOS Engineering</h3>
-                                <span class="pub-badge" style="display: inline-block; padding: 0.25rem 0.5rem; background: var(--primary-color); color: white; font-size: 0.75rem; border-radius: 3px;">Powered by CiteSquad</span>
                             </div>
                             <div class="pub-meta" style="font-size: 0.875rem; color: var(--text-secondary); margin: 0.75rem 0;">
                                 <span>Neksha V. DeSilva</span>
@@ -387,7 +377,11 @@
                             <img src="https://attend.ieee.org/southeastcon-2024/wp-content/uploads/sites/497/ieee-head.png" alt="IEEE Logo" style="height:3rem; width:auto; margin-bottom:0.75rem;">
 
                             <p class="pub-description" style="font-size: 0.9375rem; line-height: 1.6; color: var(--text-secondary);">
-                                This research paper has been accepted for presentation at three prestigious conferences: <br>the IEEE<sup>®</sup> SouthEastCon 2026 in AL, United States of America<br> the IEEE<sup>®</sup> ESCI 2026 (<em>International Conference on Emerging Technologies and Informatics)</em>, Maharashtra, India<br> and the IEEE<sup>®</sup> ICRCA 2026 <em>International Conference on Robotics Control and Automation</em>, Osaka, Japan , through a rigorous double-blind peer review process. Publication in the renowned IEEE<sup>®</sup> Xplore<sup>®</sup> Journal of Science is forthcoming. For official updates regarding the final publication venue and conference details, please subscribe to our <a href="../../join/index.html">newsletter</a>. All references to IEEE<sup>®</sup> include the registered trademark as required.
+                                Accepted for presentation at:<br>
+                                IEEE SouthEastCon 2026 (AL, United States of America)<br>
+                                IEEE ESCI 2026 (International Conference on Emerging Technologies and Informatics), Maharashtra, India<br>
+                                IEEE ICRCA 2026 (International Conference on Robotics Control and Automation), Osaka, Japan<br>
+                                Published via conference proceedings on IEEE Xplore.
                             </p>
                             <div class="pub-links" style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
                                 <a class="btn-link" href="https://ieeexplore.ieee.org/document/11476295" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color); text-decoration: none;">Published on IEEE Xplore</a>
@@ -447,6 +441,7 @@
         </main>
     </div>
 
+    <iframe src="https://fiaos.substack.com/embed" style="width: 100%; height: 20rem; border: 1px solid #EEE; background: white;" frameborder="0" scrolling="no"></iframe>
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-section">
