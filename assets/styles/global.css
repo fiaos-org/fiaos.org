@@ -43,6 +43,7 @@
 html {
     font-size: 16px;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -51,6 +52,7 @@ body {
     color: var(--text-primary);
     background-color: var(--bg-primary);
     transition: background-color var(--transition), color var(--transition);
+    overflow-x: hidden;
 }
 
 /* Typography */
@@ -1125,6 +1127,12 @@ height: auto;
     display: flex;
     gap: 12px;
     flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .cookie-consent-actions {
+        flex-direction: column;
+    }
 }
 
 .cookie-btn {
