@@ -399,6 +399,166 @@
             </section>
 
        
+            <!-- IntelliHacks Presentation + Process of Making -->
+            <style>
+                .intellihacks-video-wrap { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; background: var(--bg-secondary); }
+                .intellihacks-video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+                .intellihacks-video-note { margin: 0 0 1rem; color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6; }
+                .process-gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; width: 100%; }
+                .process-gallery-item { appearance: none; -webkit-appearance: none; display: block; width: 100%; margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; text-align: left; cursor: zoom-in; }
+                .process-gallery-item img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 0; border-radius: 0; }
+                .process-gallery-caption { display: block; height: 5.5rem; padding-top: 0.65rem; font-size: 0.875rem; line-height: 1.35; color: var(--text-secondary); overflow: hidden; }
+                .process-gallery-item:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+                .process-gallery-lightbox { position: fixed; inset: 0; z-index: 10000; display: none; align-items: center; justify-content: center; padding: 2rem; background: rgba(0, 0, 0, 0.88); }
+                .process-gallery-lightbox.is-open { display: flex; }
+                .process-gallery-lightbox-inner { position: relative; width: min(92vw, 1200px); max-height: 92vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; border: 0; border-radius: 0; background: transparent; }
+                .process-gallery-lightbox-image { display: block; max-width: 100%; max-height: calc(92vh - 7rem); width: auto; height: auto; object-fit: contain; border: 0; border-radius: 0; }
+                .process-gallery-lightbox-caption { margin: 0; max-width: 900px; color: #ffffff; text-align: center; font-size: 0.9375rem; line-height: 1.5; }
+                .process-gallery-lightbox-close { position: absolute; top: -2.25rem; right: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: #ffffff; font-family: inherit; font-size: 2rem; line-height: 1; cursor: pointer; }
+                @media (max-width: 768px) {
+                    .process-gallery-grid { gap: 0.55rem; }
+                    .process-gallery-caption { height: 7.75rem; padding-top: 0.45rem; font-size: clamp(0.64rem, 2.8vw, 0.78rem); line-height: 1.28; }
+                    .process-gallery-lightbox { padding: 1rem; }
+                    .process-gallery-lightbox-inner { width: 96vw; }
+                    .process-gallery-lightbox-image { max-height: calc(90vh - 8rem); }
+                }
+            </style>
+
+            <section id="intellihacks-presentation" class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">Presentation at the University of Colombo School of Computing — IntelliHacks</h2>
+                </div>
+                <div class="section-content">
+                    <p class="intellihacks-video-note">Autonomous 25 presentation recording from the University of Colombo School of Computing during the IntelliHacks competition. If the embedded video is unavailable, <a href="https://youtu.be/IgoZqxBu-mM?t=1895" target="_blank" rel="noopener noreferrer">watch it on YouTube</a>.</p>
+                    <div class="intellihacks-video-wrap">
+                        <iframe src="https://www.youtube.com/embed/IgoZqxBu-mM?start=1895&amp;end=2372" title="Autonomous 25 Presentation at the University of Colombo School of Computing — IntelliHacks" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <section id="process-of-making" class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">Process of Making</h2>
+                </div>
+                <div class="section-content">
+                    <div class="process-gallery-grid">
+                    <button type="button" class="process-gallery-item" data-gallery-src="strong-assets/images/Barely%20working%20wifi%20station%20(lagging).jpeg" data-gallery-caption="Barely Working Wi-Fi Station (Lagging)" aria-label="Open image: Barely Working Wi-Fi Station (Lagging)">
+                        <img src="strong-assets/images/Barely%20working%20wifi%20station%20(lagging).jpeg" alt="Barely Working Wi-Fi Station (Lagging)" loading="lazy" decoding="async">
+                        <span class="process-gallery-caption">Barely Working Wi-Fi Station (Lagging)</span>
+                    </button>
+                    <button type="button" class="process-gallery-item" data-gallery-src="strong-assets/images/Designing%20the%20stevenson%20sensor%20(rain,%20radiation%20shield)%20.jpeg" data-gallery-caption="Designing the Stevenson Sensor (Rain, Radiation Shield)" aria-label="Open image: Designing the Stevenson Sensor (Rain, Radiation Shield)">
+                        <img src="strong-assets/images/Designing%20the%20stevenson%20sensor%20(rain,%20radiation%20shield)%20.jpeg" alt="Designing the Stevenson Sensor (Rain, Radiation Shield)" loading="lazy" decoding="async">
+                        <span class="process-gallery-caption">Designing the Stevenson Sensor (Rain, Radiation Shield)</span>
+                    </button>
+                    <button type="button" class="process-gallery-item" data-gallery-src="strong-assets/images/FIA%20FiaPhy%20first%20successful%20test%20(2nd%20floor%20home%20mounted%20and%20kept%20on%20line%20with%20internet%20for%20over%2018%20hours.)%20another%20another%20picture.jpeg" data-gallery-caption="FIA FiaPhy First Successful Test (2nd Floor, Home-Mounted and Kept Online with Internet for Over 18 Hours) — Another Another Picture" aria-label="Open image: FIA FiaPhy First Successful Test (2nd Floor, Home-Mounted and Kept Online with Internet for Over 18 Hours) — Another Another Picture">
+                        <img src="strong-assets/images/FIA%20FiaPhy%20first%20successful%20test%20(2nd%20floor%20home%20mounted%20and%20kept%20on%20line%20with%20internet%20for%20over%2018%20hours.)%20another%20another%20picture.jpeg" alt="FIA FiaPhy First Successful Test (2nd Floor, Home-Mounted and Kept Online with Internet for Over 18 Hours) — Another Another Picture" loading="lazy" decoding="async">
+                        <span class="process-gallery-caption">FIA FiaPhy First Successful Test (2nd Floor, Home-Mounted and Kept Online with Internet for Over 18 Hours) — Another Another Picture</span>
+                    </button>
+                    <button type="button" class="process-gallery-item" data-gallery-src="strong-assets/images/FIA%20FiaPhy%20first%20successful%20test%20(2nd%20floor%20home%20mounted%20and%20kept%20on%20line%20with%20internet%20for%20over%2018%20hours.)%20another%20picture%20.jpeg" data-gallery-caption="FIA FiaPhy First Successful Test (2nd Floor, Home-Mounted and Kept Online with Internet for Over 18 Hours) — Another Picture" aria-label="Open image: FIA FiaPhy First Successful Test (2nd Floor, Home-Mounted and Kept Online with Internet for Over 18 Hours) — Another Picture">
+                        <img src="strong-assets/images/FIA%20FiaPhy%20first%20successful%20test%20(2nd%20floor%20home%20mounted%20and%20kept%20on%20line%20with%20internet%20for%20over%2018%20hours.)%20another%20picture%20.jpeg" alt="FIA FiaPhy First Successful Test (2nd Floor, Home-Mounted and Kept Online with Internet for Over 18 Hours) — Another Picture" loading="lazy" decoding="async">
+                        <span class="process-gallery-caption">FIA FiaPhy First Successful Test (2nd Floor, Home-Mounted and Kept Online with Internet for Over 18 Hours) — Another Picture</span>
+                    </button>
+                    <button type="button" class="process-gallery-item" data-gallery-src="strong-assets/images/FIA%20FiaPhy%20first%20successful%20test%20(2nd%20floor%20home%20mounted%20and%20kept%20on%20line%20with%20internet%20for%20over%2018%20hours.).jpeg" data-gallery-caption="FIA FiaPhy First Successful Test (2nd Floor, Home-Mounted and Kept Online with Internet for Over 18 Hours)" aria-label="Open image: FIA FiaPhy First Successful Test (2nd Floor, Home-Mounted and Kept Online with Internet for Over 18 Hours)">
+                        <img src="strong-assets/images/FIA%20FiaPhy%20first%20successful%20test%20(2nd%20floor%20home%20mounted%20and%20kept%20on%20line%20with%20internet%20for%20over%2018%20hours.).jpeg" alt="FIA FiaPhy First Successful Test (2nd Floor, Home-Mounted and Kept Online with Internet for Over 18 Hours)" loading="lazy" decoding="async">
+                        <span class="process-gallery-caption">FIA FiaPhy First Successful Test (2nd Floor, Home-Mounted and Kept Online with Internet for Over 18 Hours)</span>
+                    </button>
+                    <button type="button" class="process-gallery-item" data-gallery-src="strong-assets/images/Failed%20version%201.jpeg" data-gallery-caption="Failed Version 1" aria-label="Open image: Failed Version 1">
+                        <img src="strong-assets/images/Failed%20version%201.jpeg" alt="Failed Version 1" loading="lazy" decoding="async">
+                        <span class="process-gallery-caption">Failed Version 1</span>
+                    </button>
+                    <button type="button" class="process-gallery-item" data-gallery-src="strong-assets/images/Fitting%20the%20Heat%20Sink.jpeg" data-gallery-caption="Fitting the Heat Sink" aria-label="Open image: Fitting the Heat Sink">
+                        <img src="strong-assets/images/Fitting%20the%20Heat%20Sink.jpeg" alt="Fitting the Heat Sink" loading="lazy" decoding="async">
+                        <span class="process-gallery-caption">Fitting the Heat Sink</span>
+                    </button>
+                    <button type="button" class="process-gallery-item" data-gallery-src="strong-assets/images/In%20the%20final%20stages%20before%20first%20successful%20deployment.jpeg" data-gallery-caption="In the Final Stages Before the First Successful Deployment" aria-label="Open image: In the Final Stages Before the First Successful Deployment">
+                        <img src="strong-assets/images/In%20the%20final%20stages%20before%20first%20successful%20deployment.jpeg" alt="In the Final Stages Before the First Successful Deployment" loading="lazy" decoding="async">
+                        <span class="process-gallery-caption">In the Final Stages Before the First Successful Deployment</span>
+                    </button>
+                    <button type="button" class="process-gallery-item" data-gallery-src="strong-assets/images/Installing%20the%20sensors%20inside%20the%20custom%20flux%20sensor.jpeg" data-gallery-caption="Installing the Sensors Inside the Custom Flux Sensor" aria-label="Open image: Installing the Sensors Inside the Custom Flux Sensor">
+                        <img src="strong-assets/images/Installing%20the%20sensors%20inside%20the%20custom%20flux%20sensor.jpeg" alt="Installing the Sensors Inside the Custom Flux Sensor" loading="lazy" decoding="async">
+                        <span class="process-gallery-caption">Installing the Sensors Inside the Custom Flux Sensor</span>
+                    </button>
+                    <button type="button" class="process-gallery-item" data-gallery-src="strong-assets/images/Oh%20custom%20made%20flux%20sensor!%20.jpeg" data-gallery-caption="Oh, Custom-Made Flux Sensor!" aria-label="Open image: Oh, Custom-Made Flux Sensor!">
+                        <img src="strong-assets/images/Oh%20custom%20made%20flux%20sensor!%20.jpeg" alt="Oh, Custom-Made Flux Sensor!" loading="lazy" decoding="async">
+                        <span class="process-gallery-caption">Oh, Custom-Made Flux Sensor!</span>
+                    </button>
+                    <button type="button" class="process-gallery-item" data-gallery-src="strong-assets/images/Thermoelectric%20generator%20fitting%20stage.jpeg" data-gallery-caption="Thermoelectric Generator Fitting Stage" aria-label="Open image: Thermoelectric Generator Fitting Stage">
+                        <img src="strong-assets/images/Thermoelectric%20generator%20fitting%20stage.jpeg" alt="Thermoelectric Generator Fitting Stage" loading="lazy" decoding="async">
+                        <span class="process-gallery-caption">Thermoelectric Generator Fitting Stage</span>
+                    </button>
+                    <button type="button" class="process-gallery-item" data-gallery-src="strong-assets/images/Tweaking%20things.jpeg" data-gallery-caption="Tweaking Things" aria-label="Open image: Tweaking Things">
+                        <img src="strong-assets/images/Tweaking%20things.jpeg" alt="Tweaking Things" loading="lazy" decoding="async">
+                        <span class="process-gallery-caption">Tweaking Things</span>
+                    </button>
+                    <button type="button" class="process-gallery-item" data-gallery-src="strong-assets/images/Ventilation%20system%20creation%20of%20the%20FiaPhy%20custom%20flux%20%20sensor.jpeg" data-gallery-caption="Ventilation System Creation for the FiaPhy Custom Flux Sensor" aria-label="Open image: Ventilation System Creation for the FiaPhy Custom Flux Sensor">
+                        <img src="strong-assets/images/Ventilation%20system%20creation%20of%20the%20FiaPhy%20custom%20flux%20%20sensor.jpeg" alt="Ventilation System Creation for the FiaPhy Custom Flux Sensor" loading="lazy" decoding="async">
+                        <span class="process-gallery-caption">Ventilation System Creation for the FiaPhy Custom Flux Sensor</span>
+                    </button>
+                    <button type="button" class="process-gallery-item" data-gallery-src="strong-assets/images/Waterproof,%20IPV4%203d%20printed%20enclosure%20arrived%20via%20mail.jpeg" data-gallery-caption="Waterproof, IPV4 3D-Printed Enclosure Arrived via Mail" aria-label="Open image: Waterproof, IPV4 3D-Printed Enclosure Arrived via Mail">
+                        <img src="strong-assets/images/Waterproof,%20IPV4%203d%20printed%20enclosure%20arrived%20via%20mail.jpeg" alt="Waterproof, IPV4 3D-Printed Enclosure Arrived via Mail" loading="lazy" decoding="async">
+                        <span class="process-gallery-caption">Waterproof, IPV4 3D-Printed Enclosure Arrived via Mail</span>
+                    </button>
+                    <button type="button" class="process-gallery-item" data-gallery-src="strong-assets/images/stevenson%20sensor%20is%20ready%20after%20printing.jpeg" data-gallery-caption="Stevenson Sensor Is Ready After Printing" aria-label="Open image: Stevenson Sensor Is Ready After Printing">
+                        <img src="strong-assets/images/stevenson%20sensor%20is%20ready%20after%20printing.jpeg" alt="Stevenson Sensor Is Ready After Printing" loading="lazy" decoding="async">
+                        <span class="process-gallery-caption">Stevenson Sensor Is Ready After Printing</span>
+                    </button>
+                    <button type="button" class="process-gallery-item" data-gallery-src="assets/media/4987584957/2.png" data-gallery-caption="IP65 Waterproof" aria-label="Open image: IP65 Waterproof">
+                        <img src="assets/media/4987584957/2.png" alt="IP65 Waterproof" loading="lazy" decoding="async">
+                        <span class="process-gallery-caption">IP65 Waterproof</span>
+                    </button>
+                    </div>
+                </div>
+            </section>
+
+            <div id="processGalleryLightbox" class="process-gallery-lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Process of Making image viewer">
+                <div class="process-gallery-lightbox-inner">
+                    <button type="button" class="process-gallery-lightbox-close" aria-label="Close image viewer">&times;</button>
+                    <img class="process-gallery-lightbox-image" src="" alt="">
+                    <p class="process-gallery-lightbox-caption"></p>
+                </div>
+            </div>
+
+            <script>
+                (function () {
+                    const lightbox = document.getElementById('processGalleryLightbox');
+                    if (!lightbox) return;
+                    const image = lightbox.querySelector('.process-gallery-lightbox-image');
+                    const caption = lightbox.querySelector('.process-gallery-lightbox-caption');
+                    const closeButton = lightbox.querySelector('.process-gallery-lightbox-close');
+                    const items = document.querySelectorAll('.process-gallery-item');
+                    let previousFocus = null;
+
+                    function openLightbox(item) {
+                        previousFocus = document.activeElement;
+                        const src = item.getAttribute('data-gallery-src');
+                        const text = item.getAttribute('data-gallery-caption') || '';
+                        image.src = src;
+                        image.alt = text;
+                        caption.textContent = text;
+                        lightbox.classList.add('is-open');
+                        lightbox.setAttribute('aria-hidden', 'false');
+                        document.body.style.overflow = 'hidden';
+                        closeButton.focus();
+                    }
+
+                    function closeLightbox() {
+                        if (!lightbox.classList.contains('is-open')) return;
+                        lightbox.classList.remove('is-open');
+                        lightbox.setAttribute('aria-hidden', 'true');
+                        image.src = '';
+                        document.body.style.overflow = '';
+                        if (previousFocus && typeof previousFocus.focus === 'function') previousFocus.focus();
+                    }
+
+                    items.forEach(function (item) {
+                        item.addEventListener('click', function () { openLightbox(item); });
+                    });
+                    closeButton.addEventListener('click', closeLightbox);
+                    lightbox.addEventListener('click', function (event) { if (event.target === lightbox) closeLightbox(); });
+                    document.addEventListener('keydown', function (event) { if (event.key === 'Escape') closeLightbox(); });
+                })();
+            </script>
+
             <!-- Publications List -->
             <section id="publications" class="content-section">
                 <div class="section-header">
