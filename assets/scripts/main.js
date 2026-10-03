@@ -141,6 +141,37 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = '';
         }
     });
+
+    // ============================================
+    // Mobile Homepage Sidebar Content
+    // ============================================
+    const desktopSidebar = document.querySelector('.page-container > .sidebar');
+    const promoBanner = document.querySelector('.fiaphy-promo-banner');
+    const mobileSidebarMedia = window.matchMedia('(max-width: 1024px)');
+
+    function syncMobileHomepageSidebar() {
+        const existingMobileSidebar = document.getElementById('mobileHomepageSidebar');
+
+        if (mobileSidebarMedia.matches) {
+            if (!existingMobileSidebar && desktopSidebar && promoBanner) {
+                const mobileSidebar = document.createElement('div');
+                mobileSidebar.id = 'mobileHomepageSidebar';
+                mobileSidebar.innerHTML = desktopSidebar.innerHTML;
+                mobileSidebar.style.cssText = 'width:100%;padding:1.5rem 1rem 0;background:var(--bg-secondary);';
+                promoBanner.parentNode.insertBefore(mobileSidebar, promoBanner);
+            }
+        } else if (existingMobileSidebar) {
+            existingMobileSidebar.remove();
+        }
+    }
+
+    syncMobileHomepageSidebar();
+
+    if (mobileSidebarMedia.addEventListener) {
+        mobileSidebarMedia.addEventListener('change', syncMobileHomepageSidebar);
+    } else {
+        mobileSidebarMedia.addListener(syncMobileHomepageSidebar);
+    }
     
     // ============================================
     // Full-Screen Search Overlay
