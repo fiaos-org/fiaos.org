@@ -680,5 +680,195 @@
 
     <script src="assets/scripts/network-status-injector.js"></script>
     <script src="assets/scripts/main.js"></script>
+
+    <!-- NonPU presentation spotlight: intentionally shown on every page visit. -->
+    <style>
+        .nonpu-spotlight {
+            position: fixed;
+            right: 1rem;
+            bottom: 1rem;
+            z-index: 12000;
+            width: min(430px, calc(100vw - 2rem));
+            background: rgba(22, 22, 22, 0.96);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.34);
+            font-family: 'Product Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            opacity: 0;
+            transform: translateY(14px);
+            pointer-events: none;
+            transition: opacity 220ms ease, transform 220ms ease;
+            overflow: hidden;
+        }
+
+        .nonpu-spotlight.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .nonpu-spotlight-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.9rem 1rem 0.8rem;
+        }
+
+        .nonpu-spotlight-title {
+            margin: 0;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+        }
+
+        .nonpu-spotlight-close {
+            width: 2rem;
+            height: 2rem;
+            flex: 0 0 2rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            color: #ffffff;
+            font: inherit;
+            font-size: 1.45rem;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .nonpu-spotlight-close:hover,
+        .nonpu-spotlight-close:focus-visible {
+            background: rgba(255, 255, 255, 0.10);
+            outline: none;
+        }
+
+        .nonpu-spotlight-video {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000000;
+        }
+
+        .nonpu-spotlight-video iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .nonpu-spotlight-footer {
+            padding: 0.7rem 1rem 0.85rem;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nonpu-spotlight-link {
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.8rem;
+            font-weight: 400;
+            text-decoration: underline;
+            text-underline-offset: 0.18em;
+        }
+
+        .nonpu-spotlight-link:hover,
+        .nonpu-spotlight-link:focus-visible {
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .nonpu-spotlight {
+                right: 0.5rem;
+                bottom: 0.5rem;
+                width: calc(100vw - 1rem);
+                max-height: 40vh;
+            }
+
+            .nonpu-spotlight-header {
+                padding: 0.55rem 0.75rem 0.5rem;
+            }
+
+            .nonpu-spotlight-title {
+                font-size: 0.9rem;
+            }
+
+            .nonpu-spotlight-video {
+                height: 24vh;
+                aspect-ratio: auto;
+            }
+
+            .nonpu-spotlight-footer {
+                padding: 0.45rem 0.75rem 0.6rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .nonpu-spotlight {
+                transition: none;
+            }
+        }
+    </style>
+
+    <aside id="nonpuSpotlight" class="nonpu-spotlight" aria-label="NonPU presentation">
+        <div class="nonpu-spotlight-header">
+            <h2 class="nonpu-spotlight-title">NonPU — the Neuronal Processing Unit</h2>
+            <button id="nonpuSpotlightClose" class="nonpu-spotlight-close" type="button" aria-label="Close NonPU presentation">&times;</button>
+        </div>
+        <div class="nonpu-spotlight-video">
+            <iframe
+                src="https://www.youtube.com/embed/Pu4rqq7JeLE?rel=0"
+                title="NonPU — the Neuronal Processing Unit"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+            ></iframe>
+        </div>
+        <div class="nonpu-spotlight-footer">
+            <a class="nonpu-spotlight-link" href="https://nvd.nekshadesilva.com/" target="_blank" rel="noopener noreferrer">Visit the NonPU website</a>
+        </div>
+    </aside>
+
+    <script>
+        (function () {
+            const spotlight = document.getElementById('nonpuSpotlight');
+            const closeButton = document.getElementById('nonpuSpotlightClose');
+            if (!spotlight || !closeButton) return;
+
+            let dismissTimer = null;
+            let dismissed = false;
+
+            const dismiss = () => {
+                if (dismissed) return;
+                dismissed = true;
+                window.clearTimeout(dismissTimer);
+                spotlight.classList.remove('is-visible');
+                window.setTimeout(() => {
+                    spotlight.hidden = true;
+                }, 240);
+            };
+
+            const keepOpen = () => {
+                window.clearTimeout(dismissTimer);
+            };
+
+            window.requestAnimationFrame(() => {
+                spotlight.classList.add('is-visible');
+            });
+
+            dismissTimer = window.setTimeout(dismiss, 5000);
+
+            closeButton.addEventListener('click', dismiss);
+            spotlight.addEventListener('pointerdown', keepOpen, { once: true });
+            spotlight.addEventListener('focusin', keepOpen, { once: true });
+        })();
+    </script>
+
 </body>
 </html>
